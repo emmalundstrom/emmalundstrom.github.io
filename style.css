@@ -1,7 +1,311 @@
-body {background-color: antiquewhite;
-    color: lightpink;
-    font-family: 'Times New Roman', Times, serif;}
-h1 {
-    font-family: Georgia, serif;
-    font-size: 80px;
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f5f3ef;
+
+    color: #171717;
+
+}
+
+nav {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 30px 6%;
+
+}
+
+.logo {
+
+    color: #171717;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+.nav-links {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+.nav-links a {
+
+    color: #171717;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+}
+
+.hero {
+
+    min-height: 85vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 80px 10%;
+
+}
+
+.eyebrow,
+
+.section-label {
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+
+}
+
+.hero h1 {
+
+    font-size: clamp(60px, 10vw, 150px);
+
+    line-height: 0.9;
+
+    letter-spacing: -6px;
+
+}
+
+.hero h1 span {
+
+    font-style: italic;
+
+    font-weight: 400;
+
+}
+
+.intro {
+
+    max-width: 500px;
+
+    margin-top: 40px;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+}
+
+.buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 40px;
+
+}
+
+.button {
+
+    padding: 15px 25px;
+
+    text-decoration: none;
+
+    border: 1px solid #171717;
+
+}
+
+.primary {
+
+    background: #171717;
+
+    color: white;
+
+}
+
+.secondary {
+
+    color: #171717;
+
+}
+
+.section {
+
+    padding: 120px 10%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+.section h2 {
+
+    font-size: 60px;
+
+    margin-bottom: 50px;
+
+}
+
+.section > p:not(.section-label) {
+
+    max-width: 700px;
+
+    font-size: 22px;
+
+    line-height: 1.7;
+
+}
+
+.timeline-item,
+
+.experience-card {
+
+    border-top: 1px solid #aaa;
+
+    padding: 30px 0;
+
+}
+
+.timeline-item span,
+
+.experience-card span {
+
+    font-size: 13px;
+
+    color: #666;
+
+}
+
+.timeline-item h3,
+
+.experience-card h3 {
+
+    font-size: 30px;
+
+    margin: 10px 0;
+
+}
+
+.projects {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+.project-image {
+
+    height: 400px;
+
+    background: #ddd;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+}
+
+.project h3 {
+
+    font-size: 25px;
+
+}
+
+.contact {
+
+    padding: 150px 10%;
+
+    text-align: center;
+
+}
+
+.contact h2 {
+
+    font-size: clamp(50px, 8vw, 100px);
+
+}
+
+.contact a {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color: #171717;
+
+    font-size: 20px;
+
+}
+
+footer {
+
+    padding: 30px 10%;
+
+    border-top: 1px solid #ccc;
+
+}
+
+/* MOBIL */
+
+@media (max-width: 700px) {
+
+    .nav-links {
+
+        display: none;
+
+    }
+
+    .hero h1 {
+
+        letter-spacing: -3px;
+
+    }
+
+    .projects {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .section h2 {
+
+        font-size: 45px;
+
+    }
+
+    .project-image {
+
+        height: 300px;
+
+    }
+
 }
