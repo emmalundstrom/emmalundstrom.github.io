@@ -1,273 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WHB7WG3W');</script>
-<!-- End Google Tag Manager -->
-  <link rel="stylesheet" href="style.css">
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WHB7WG3W');</script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="style.css">
 </head>
-  <meta charset="utf-8">
-  <title></title>
-  <link href="style.css" rel="stylesheet" />
+<meta charset="utf-8">
+<title></title>
+<link href="style.css" rel="stylesheet" />
 </head>
-<body> 
+
+<body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHB7WG3W"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script>
-  </script>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHB7WG3W" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+    </script>
 </body>
+
 </html>
 <!DOCTYPE html>
-
-<html lang="sv">
+<html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Emma Lundstrom | Portfolio</title>
-
+    <title>Emma Lundström — Growth Marketing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <nav>
-
-        <a href="#" class="logo">Emma Lundstrom</a>
-
-        <div class="nav-links">
-
-            <a href="#about">About me</a>
-
-            <a href="#education">Education</a>
-
-            <a href="#experience">Experience</a>
-
-            <a href="#projects">Projects</a>
-
+    <!-- ============ NAV ============ -->
+    <header class="nav">
+        <button class="nav__mark" aria-label="Menu">
+            <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+                <line x1="2" y1="6" x2="18" y2="6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <line x1="2" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <line x1="2" y1="14" x2="18" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+        </button>
+        <nav class="nav__links">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
             <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+        <svg class="hero__blob" viewBox="0 0 600 600" aria-hidden="true">
+            <path fill="#F2BFCB"
+                d="M451,313Q436,376,384,414Q332,452,270,447Q208,442,157,404Q106,366,95,301Q84,236,120,180Q156,124,217,95Q278,66,338,92Q398,118,431,172Q464,226,451,313Z">
+            </path>
+        </svg>
+        <p class="hero__eyebrow">Growth Marketing Student · Berghs School of Communication</p>
+        <h1 class="hero__title">Hi, I'm<br><span>Emma Lundström.</span></h1>
+        <p class="hero__sub">I like figuring out why people click on one thing and scroll past another - and I'm learning how to turn that into real growth.</p>
+        <div class="hero__actions">
+            <a href="#work" class="btn btn--primary">See my work</a>
+            <a href="#contact" class="btn btn--ghost">Get in touch</a>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+        <div class="about__text">
+            <p class="section__label">About</p>
+            <h2>Equal parts data and story.</h2>
+            <!-- EDIT ME: swap this for your own bio in your own voice -->
+            <p>I'm a growth marketing student at Berghs School of Communication in Stockholm. I'm early in my studies,
+                so this site will grow along with what I learn. Right now I'm building my foundation across acquisition,
+                CRO, content and analytics, and figuring out which parts I want to go deeper into.</p>
+            <ul class="about__skills">
+                <li>Campaign strategy</li>
+                <li>SEO &amp; Content</li>
+                <li>CRO &amp; Analytics</li>
+                <li>CRM &amp; Customer Loyalty</li>
+                <li>Performance Marketing</li>
+            </ul>
+        </div>
+        <svg class="about__graphic" viewBox="0 0 400 320" aria-hidden="true">
+            <line x1="30" y1="270" x2="370" y2="270" stroke="#D9C3C9" stroke-width="1" />
+            <line x1="30" y1="30" x2="30" y2="270" stroke="#D9C3C9" stroke-width="1" />
+            <path d="M40,240 C 90,230 120,180 150,190 C 190,205 210,120 250,110 C 290,100 310,60 360,40" fill="none"
+                stroke="#7A2140" stroke-width="3" stroke-linecap="round" />
+            <circle cx="360" cy="40" r="6" fill="#7A2140" />
+            <circle cx="150" cy="190" r="5" fill="#A9C9A4" />
+            <circle cx="250" cy="110" r="5" fill="#A9C9A4" />
+        </svg>
+    </section>
+
+    <!-- ============ WORK (horizontal swipe) ============ -->
+    <section class="work" id="work">
+        <div class="work__head">
+            <div>
+                <p class="section__label">Selected work</p>
+                <h2>Swipe through my projects.</h2>
+            </div>
+            <div class="work__nav">
+                <button class="work__arrow" data-dir="-1" aria-label="Scroll left">←</button>
+                <button class="work__arrow" data-dir="1" aria-label="Scroll right">→</button>
+            </div>
         </div>
 
-    </nav>
+        <!-- EDIT ME: this whole track is placeholder. Duplicate a .card block per real project. -->
+        <div class="work__track" id="workTrack">
 
-    <main>
+            <article class="card">
+                <div class="card__tag">Case study · coming soon</div>
+                <h3>Social Growth Sprint </h3>
+                <p>A placeholder for a project where I'll grow an audience from zero using a tight content and paid mix
+                    — swap this in once it's live.</p>
+                <div class="card__meta">Channel: Instagram &amp; TikTok</div>
+            </article>
 
-        <!-- HERO -->
-
-        <section class="hero">
-
-            <p class="eyebrow">PORTFOLIO • 2026</p>
-
-            <h1>
-
-                Hello, I am master<br>
-
-                <span>Emma Lundstrom.</span>
-
-            </h1>
-
-            <p class="intro">
-
-                I am a creative student at Berghs School of Communication
-
-                
-
-            </p>
-
-            <div class="buttons">
-
-                <a href="#about" class="button primary">
-
-                    About me
-
-                </a>
-
-                <a href="#projects" class="button secondary">
-
-                    My Projects
-
-                </a>
-
-            </div>
-
-        </section>
-
-        <!-- ABOUT -->
-
-        <section id="about" class="section">
-
-            <p class="section-label">01 — ABOUT ME</p>
-
-            <h2>A Little Bit About Me</h2>
-
-            <p>
-
-                My name is Emma Lundstrom and I am currently studying
-
-                [Growth Marketing]. 
-
-                
-
-            </p>
-
-        </section>
-
-        <!-- EDUCATION -->
-
-        <section id="education" class="section">
-
-            <p class="section-label">02 — EDUCATION</p>
-
-            <h2>My Education</h2>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <span>2026 — 2027</span>
-
-                    <h3>Growth Marketing</h3>
-
-                    <p>Berghs School of Communication</p>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <span>2021 — 2024</span>
-
-                    <h3>Economics</h3>
-
-                    <p>Liljaskolan</p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- EXPERIENCE -->
-
-        <section id="experience" class="section">
-
-            <p class="section-label">03 — EXPERIENCE</p>
-
-            <h2>My Experience</h2>
-
-            <div class="experience-card">
-
-                <span>2025 — 2026</span>
-
-                <h3>Work / Internship</h3>
-
-                <p class="company">
-
-                    Company Name
-
+            <article class="card">
+                <div class="card__tag">Case study · coming soon</div>
+                <h3>Email Funnel Redesign</h3>
+                <p>A placeholder for a welcome-flow rebuild aimed at lifting open rate and first-purchase conversion.
                 </p>
+                <div class="card__meta">Focus: Lifecycle &amp; CRO</div>
+            </article>
 
-                <p>
+            <article class="card">
+                <div class="card__tag">Case study · coming soon</div>
+                <h3>Content &amp; Community Strategy</h3>
+                <p>A placeholder for a content calendar and community plan built around one clear brand voice.</p>
+                <div class="card__meta">Focus: Content strategy</div>
+            </article>
 
-                    
+            <article class="card card--cta">
+                <h3>More coming soon</h3>
+                <p>This is where your next project card goes. Copy one of the cards above and edit the text.</p>
+            </article>
 
-                </p>
+        </div>
+    </section>
 
-            </div>
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+        <p class="section__label">Contact</p>
+        <h2>Let's talk growth.</h2>
+        <p class="contact__sub">Open to internships and entry-level roles in growth marketing.</p>
+        <div class="contact__links">
+            <a href="mailto:emmalundstrom15@gmail.com">emmalundstrom15@gmail.com</a>
+            <!-- EDIT ME: update the href below to your real LinkedIn URL -->
+            <a href="https://www.linkedin.com/in/emma-lundstr%C3%B6m-65845b388/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+    </section>
 
-        </section>
-
-        <!-- PROJECTS -->
-
-        <section id="projects" class="section">
-
-            <p class="section-label">04 — PROJECTS</p>
-
-            <h2>Selected Projects</h2>
-
-            <div class="projects">
-
-                <article class="project">
-
-                    <div class="project-image">
-
-                        Project 01
-
-                    </div>
-
-                    <h3>My first website</h3>
-
-                    <p>
-
-                        HTML • CSS • JavaScript
-
-                    </p>
-
-                </article>
-
-                <article class="project">
-
-                    <div class="project-image">
-
-                        Project 02
-
-                    </div>
-
-                    <h3>My second project</h3>
-
-                    <p>
-
-                        React • JavaScript
-
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-        <!-- CONTACT -->
-
-        <section id="contact" class="contact">
-
-            <p class="section-label">05 — CONTACT</p>
-
-            <h2>Do you have a Project?</h2>
-
-            <p>
-
-                Fell free to reach out!
-
-            </p>
-
-            <a href="mailto:emmalundstrom15@email.com">
-
-                emmalundstrom15@email.com
-
-            </a>
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        © 2026 Emma Lundstrom
-
+    <footer class="footer">
+        <span>Emma Lundström</span>
+        <span>Stockholm, Sweden</span>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
