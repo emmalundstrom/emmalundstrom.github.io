@@ -1,38 +1,180 @@
-js
-// Horizontal "swipe" track for the Work section.
-// Touch swipe works natively via CSS scroll-snap. This adds
-// mouse-drag support for desktop, plus the arrow buttons.
+/* =========================================
 
-const track = document.getElementById('workTrack');
-const arrows = document.querySelectorAll('.work__arrow');
+   EMMA LUNDSTRÖM
 
-arrows.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const dir = Number(btn.dataset.dir);
-    const cardWidth = track.querySelector('.card').getBoundingClientRect().width + 20; // + gap
-    track.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
-  });
-});
+   PORTFOLIO INTERACTIONS
 
-let isDown = false;
-let startX = 0;
-let startScroll = 0;
+========================================= */
 
-track.addEventListener('mousedown', (e) => {
-  isDown = true;
-  track.classList.add('is-dragging');
-  startX = e.pageX;
-  startScroll = track.scrollLeft;
-});
+/* =========================================
 
-window.addEventListener('mouseup', () => {
-  isDown = false;
-  track.classList.remove('is-dragging');
-});
+   PARALLAX IMAGES
 
-window.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const walk = e.pageX - startX;
-  track.scrollLeft = startScroll - walk;
-});
+========================================= */
+
+const parallaxImages = document.querySelectorAll(".parallax-image");
+
+function updateParallax() {
+
+    parallaxImages.forEach((image) => {
+
+        const container = image.closest(".parallax-container");
+
+        if (!container) return;
+
+        const rect = container.getBoundingClientRect();
+
+        const windowHeight = window.innerHeight;
+
+        if (rect.bottom > 0 && rect.top < windowHeight) {
+
+            const progress =
+
+                (rect.top + rect.height / 2 - windowHeight / 2)
+
+                / windowHeight;
+
+            const movement = progress * -180;
+
+            image.style.transform =
+
+                `translate3d(0, ${movement}px, 0)`;
+
+        }
+
+    });
+
+}
+
+/* =========================================
+
+   HERO SCROLL EFFECT
+
+========================================= */
+
+const hero = document.querySelector(".hero");
+
+const heroContent = document.querySelector(".hero-content");
+
+const heroStars = document.querySelector(".stars");
+const aboutStars = document.querySelector(".stars-about");
+const contactStars = document.querySelector(".stars-contact");
+
+function updateHero() {
+
+    if (!hero) return;
+
+    const scrollPosition = window.scrollY;
+
+    const heroHeight = hero.offsetHeight;
+
+    const progress =
+
+        Math.min(scrollPosition / heroHeight, 1);
+
+    /*
+
+        Text slowly moves upward
+
+        when the user scrolls.
+
+    */
+
+    if (heroContent) {
+
+        heroContent.style.transform =
+
+            `translate3d(0, ${progress * -80}px, 0)`;
+
+        heroContent.style.opacity =
+
+            1 - progress * 0.7;
+
+    }
+
+    /*
+
+        Stars move slightly slower
+
+        to create depth.
+
+    */
+
+    if (heroStars) {
+
+        heroStars.style.transform =
+
+            `translate3d(0, ${progress * 60}px, 0)`;
+
+        heroStars.style.opacity =
+
+            0.8 - progress * 0.4;
+
+    }
+
+}
+
+/* =========================================
+
+   SCROLL EVENT
+
+========================================= */
+
+function updatePage() {
+
+    updateParallax();
+
+    updateHero();
+
+}
+
+window.addEventListener(
+
+    "scroll",
+
+    updatePage,
+
+    { passive: true }
+
+);
+
+window.addEventListener(
+
+    "resize",
+
+    updatePage
+
+);
+
+/* Initial position */
+
+updatePage();
+/* =========================================
+   SECTION STAR MOVEMENT
+========================================= */
+
+function updateSectionStars() {
+
+    const scrollPosition = window.scrollY;
+
+    if (aboutStars) {
+        aboutStars.style.transform =
+            `translate3d(0, ${scrollPosition * 0.015}px, 0)`;
+    }
+
+    if (contactStars) {
+        contactStars.style.transform =
+            `translate3d(0, ${scrollPosition * 0.025}px, 0)`;
+    }
+}
+
+
+/* Update page */
+
+function updatePage() {
+
+    updateParallax();
+    updateHero();
+    updateSectionStars();
+
+}

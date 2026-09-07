@@ -32,136 +32,578 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
 </body>
-
-</html>
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emma Lundström — Growth Marketing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emma Lundström — Growth Marketing</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-  <!-- ============ NAV ============ -->
-  <header class="nav">
-    <button class="nav__mark" aria-label="Menu">
-      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
-        <line x1="2" y1="6" x2="18" y2="6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        <line x1="2" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        <line x1="2" y1="14" x2="18" y2="14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
-    </button>
-    <nav class="nav__links">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <!-- =========================================
 
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <svg class="hero__blob" viewBox="0 0 600 600" aria-hidden="true">
-      <path fill="#F2BFCB" d="M451,313Q436,376,384,414Q332,452,270,447Q208,442,157,404Q106,366,95,301Q84,236,120,180Q156,124,217,95Q278,66,338,92Q398,118,431,172Q464,226,451,313Z"></path>
-    </svg>
-    <p class="hero__eyebrow">Growth Marketing Student · Berghs School of Communication</p>
-    <h1 class="hero__title">Hi, I'm<br><span>Emma Lundström.</span></h1>
-    <p class="hero__sub">I like figuring out why people click on one thing and scroll past another and I'm learning how to turn that into real growth.</p>
-    <div class="hero__actions">
-      <a href="#work" class="btn btn--primary">See my work</a>
-      <a href="#contact" class="btn btn--ghost">Get in touch</a>
-    </div>
-  </section>
+         NAVIGATION
 
-  <!-- ============ ABOUT ============ -->
-  <section class="about" id="about">
-    <div class="about__text">
-      <p class="section__label"></p>
-      <h2>Equal parts data and story.</h2>
-      <p>I'm a growth marketing student at Berghs School of Communication in Stockholm. I'm early in my studies, so this site will grow along with what I learn — right now I'm building my foundation across acquisition, CRO, content and analytics, and figuring out which parts I want to go deeper into.</p>
-      <ul class="about__skills">
-        <li>Campaign strategy</li>
-        <li>SEO &amp; Content</li>
-        <li>CRO &amp; Analytics</li>
-        <li>CRM &amp; Customer loyalty</li>
-        <li>Performance marketing</li>
-      </ul>
-    </div>
-    <svg class="about__graphic" viewBox="0 0 400 320" aria-hidden="true">
-      <line x1="30" y1="270" x2="370" y2="270" stroke="#D9C3C9" stroke-width="1"/>
-      <line x1="30" y1="30" x2="30" y2="270" stroke="#D9C3C9" stroke-width="1"/>
-      <path d="M40,240 C 90,230 120,180 150,190 C 190,205 210,120 250,110 C 290,100 310,60 360,40" fill="none" stroke="#7A2140" stroke-width="3" stroke-linecap="round"/>
-      <circle cx="360" cy="40" r="6" fill="#7A2140"/>
-      <circle cx="150" cy="190" r="5" fill="#A9C9A4"/>
-      <circle cx="250" cy="110" r="5" fill="#A9C9A4"/>
-    </svg>
-  </section>
+    ========================================== -->
 
-  <!-- ============ WORK (horizontal swipe) ============ -->
-  <section class="work" id="work">
-    <div class="work__head">
-      <div>
-        <p class="section__label">Selected work</p>
-        <h2>Swipe through my projects.</h2>
-      </div>
-      <div class="work__nav">
-        <button class="work__arrow" data-dir="-1" aria-label="Scroll left">←</button>
-        <button class="work__arrow" data-dir="1" aria-label="Scroll right">→</button>
-      </div>
-    </div>
+    <header class="navbar">
 
-    <!-- EDIT ME: this whole track is placeholder. Duplicate a .card block per real project. -->
-    <div class="work__track" id="workTrack">
+        <a href="#work" class="nav-link">Work</a>
 
-      <article class="card">
-        <div class="card__tag">Case study · coming soon</div>
-        <h3>Social Growth Sprint</h3>
-        <p>A placeholder for a project where I'll grow an audience from zero using a tight content and paid mix — swap this in once it's live.</p>
-        <div class="card__meta">Channel: Instagram &amp; TikTok</div>
-      </article>
+        <a href="#about" class="nav-link">About</a>
 
-      <article class="card">
-        <div class="card__tag">Case study · coming soon</div>
-        <h3>Email Funnel Redesign</h3>
-        <p>A placeholder for a welcome-flow rebuild aimed at lifting open rate and first-purchase conversion.</p>
-        <div class="card__meta">Focus: Lifecycle &amp; CRO</div>
-      </article>
+        <a href="#contact" class="nav-link">Contact</a>
 
-      <article class="card">
-        <div class="card__tag">Case study · coming soon</div>
-        <h3>Content &amp; Community Strategy</h3>
-        <p>A placeholder for a content calendar and community plan built around one clear brand voice.</p>
-        <div class="card__meta">Focus: Content strategy</div>
-      </article>
+        <a
 
-      <article class="card card--cta">
-        <h3>More coming soon</h3>
-        <p>This is where your next project card goes. Copy one of the cards above and edit the text.</p>
-      </article>
+            href="https://www.linkedin.com/in/emma-lundstr%C3%B6m-65845b388/"
 
-    </div>
-  </section>
+            target="_blank"
 
-  <!-- ============ CONTACT ============ -->
-  <section class="contact" id="contact">
-    <p class="section__label">Contact</p>
-    <h2>Let's talk growth.</h2>
-    <p class="contact__sub">Open to internships and entry-level roles in growth marketing.</p>
-    <div class="contact__links">
-      <a href="mailto:emmalundstrom15@gmail.com">emmalundstrom15@gmail.com</a>
-      <a href="https://www.linkedin.com/in/emma-lundstr%C3%B6m-65845b388/" target="_blank" rel="noopener">LinkedIn ↗</a>
-    </div>
-  </section>
+            class="linkedin-link"
 
-  <footer class="footer">
-    <span>Emma Lundström</span>
-    <span>Stockholm, Sweden</span>
-  </footer>
+        >
 
-  <script src="script.js"></script>
+            LinkedIn ↗
+
+        </a>
+
+    </header>
+
+    <!-- =========================================
+
+         HERO
+
+    ========================================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <!-- Subtle glitter / stars -->
+
+            <div class="stars" aria-hidden="true"></div>
+
+            <!-- Small metadata -->
+
+            <div class="hero-meta hero-meta-left">
+
+                <span>GROWTH MARKETING</span>
+
+                <span>2026</span>
+
+            </div>
+
+            <div class="hero-meta hero-meta-right">
+
+                <span></span>
+
+            </div>
+
+            <!-- Main statement -->
+
+            <div class="hero-content">
+
+                <p class="hero-intro reveal">
+
+                    Growth Marketing student
+
+                    <br>
+
+                    at Berghs School of Communication
+
+                </p>
+
+                <h1 class="hero-title">
+
+                    <span class="title-line reveal">
+
+                        I TURN
+
+                    </span>
+
+                    <span class="title-line title-italic reveal">
+
+                        curiosity
+
+                    </span>
+
+                    <span class="title-line reveal">
+
+                        INTO GROWTH.
+
+                    </span>
+
+                </h1>
+
+            </div>
+
+            <!-- Bottom information -->
+
+            <div class="hero-bottom">
+
+                <div class="hero-name">
+
+                    Emma Lundström
+
+                </div>
+
+                <div class="scroll-indicator">
+
+                    <span>SCROLL TO EXPLORE</span>
+
+                    <span class="scroll-arrow">↓</span>
+
+                </div>
+
+                <div class="hero-year">
+
+                    PORTFOLIO / 01
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+
+             INTRO
+
+        ========================================== -->
+
+        <section class="intro-section">
+
+            <div class="section-label">
+
+                <span>01</span>
+
+                <span>ABOUT</span>
+
+            </div>
+
+            <div class="intro-content">
+
+                <h2>
+
+                    Curious by nature.
+
+                    <br>
+
+                    <em>Driven by growth.</em>
+
+                </h2>
+
+                <div class="intro-text">
+
+                    <p>
+
+                        I’m Emma — a Growth Marketing student at
+
+                        Berghs School of Communication.
+
+                    </p>
+
+                    <p>
+
+                        I’m fascinated by how data, creativity and
+
+                        experimentation can turn good ideas into real growth.
+
+                    </p>
+
+                    <p>
+
+                        I’m naturally curious about people, their behaviour
+
+                        and what drives their decisions. I believe the best
+
+                        marketing starts with understanding who you’re talking to.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+
+             WORK
+
+        ========================================== -->
+
+        <section class="work-section" id="work">
+
+            <div class="section-label">
+
+                <span>02</span>
+
+                <span>SELECTED WORK</span>
+
+            </div>
+
+            <!-- CASE 01 -->
+
+            <article class="case-study">
+
+                <div class="case-header">
+
+                    <div class="case-number">
+
+                        01
+
+                    </div>
+
+                    <div class="case-title">
+
+                        Growth Strategy
+
+                    </div>
+
+                    <div class="case-year">
+
+                        2026
+
+                    </div>
+
+                </div>
+
+                <div class="case-image parallax-container">
+
+                    <div class="parallax-image image-one"></div>
+
+                    <div class="coming-soon">
+
+                        <span>COMING</span>
+
+                        <span>SOON</span>
+
+                    </div>
+
+                </div>
+
+                <div class="case-info">
+
+                    <span>STRATEGY</span>
+
+                    <span>GROWTH</span>
+
+                    <span>2026</span>
+
+                </div>
+
+            </article>
+
+            <!-- CASE 02 -->
+
+            <article class="case-study">
+
+                <div class="case-header">
+
+                    <div class="case-number">
+
+                        02
+
+                    </div>
+
+                    <div class="case-title">
+
+                        Digital Campaign
+
+                    </div>
+
+                    <div class="case-year">
+
+                        2026
+
+                    </div>
+
+                </div>
+
+                <div class="case-image parallax-container">
+
+                    <div class="parallax-image image-two"></div>
+
+                    <div class="coming-soon">
+
+                        <span>COMING</span>
+
+                        <span>SOON</span>
+
+                    </div>
+
+                </div>
+
+                <div class="case-info">
+
+                    <span>PAID MEDIA</span>
+
+                    <span>CONTENT</span>
+
+                    <span>2026</span>
+
+                </div>
+
+            </article>
+
+            <!-- CASE 03 -->
+
+            <article class="case-study">
+
+                <div class="case-header">
+
+                    <div class="case-number">
+
+                        03
+
+                    </div>
+
+                    <div class="case-title">
+
+                        Conversion & CRO
+
+                    </div>
+
+                    <div class="case-year">
+
+                        2026
+
+                    </div>
+
+                </div>
+
+                <div class="case-image parallax-container">
+
+                    <div class="parallax-image image-three"></div>
+
+                    <div class="coming-soon">
+
+                        <span>COMING</span>
+
+                        <span>SOON</span>
+
+                    </div>
+
+                </div>
+
+                <div class="case-info">
+
+                    <span>CRO</span>
+
+                    <span>ANALYTICS</span>
+
+                    <span>2026</span>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- =========================================
+
+             ABOUT
+
+        ========================================== -->
+
+        <section class="about-section" id="about">
+
+          <div class="stars stars-about" aria-hidden="true"></div>
+
+            <div class="section-label">
+
+                <span>03</span>
+
+                <span>ABOUT ME</span>
+
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-heading">
+
+                    <h2>
+
+                        Marketing is
+
+                        <em>human.</em>
+
+                    </h2>
+
+                </div>
+
+                <div class="about-content">
+
+                    <p>
+
+                        I’m currently studying Growth Marketing at
+
+                        Berghs School of Communication in Stockholm.
+
+                    </p>
+
+                    <p>
+
+                        I’m interested in the intersection of creativity,
+
+                        strategy and data — and how they can work together
+
+                        to create marketing that people actually remember.
+
+                    </p>
+
+                    <p>
+
+                        I’m always looking for new questions to ask,
+
+                        ideas to test and ways to understand people
+
+                        a little better.
+
+                    </p>
+
+                    <div class="skills">
+
+                        <span>Growth Strategy</span>
+
+                        <span>Digital Marketing</span>
+
+                        <span>Paid Social</span>
+
+                        <span>SEO</span>
+
+                        <span>CRO</span>
+
+                        <span>Analytics</span>
+
+                        <span>Content</span>
+
+                        <span>Performance Marketing</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+
+             CONTACT
+
+        ========================================== -->
+
+        <section class="contact-section" id="contact">
+
+          <div class="stars stars-contact" aria-hidden="true"></div>
+
+            <div class="section-label">
+
+                <span>04</span>
+
+                <span>CONTACT</span>
+
+            </div>
+
+            <div class="contact-content">
+
+                <p class="contact-small">
+
+                    HAVE A PROJECT IN MIND?
+
+                </p>
+
+                <h2>
+
+                    Let’s create
+
+                    <br>
+
+                    <em>something great.</em>
+
+                </h2>
+
+                <div class="contact-links">
+
+                    <!-- Replace hello@example.com with your real email -->
+
+                    <a href="emmalundstrom15@gmail.com">
+
+                        Get in touch ↗
+
+                    </a>
+
+                    <a
+
+                        href="https://www.linkedin.com/in/emma-lundstr%C3%B6m-65845b388/"
+
+                        target="_blank"
+
+                    >
+
+                        LinkedIn ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =========================================
+
+         FOOTER
+
+    ========================================== -->
+
+    <footer>
+
+        <span>© 2026 Emma Lundström</span>
+
+        <span>
+
+            Growth Marketing · Sweden
+
+        </span>
+
+        <a
+
+            href="https://www.linkedin.com/in/emma-lundstr%C3%B6m-65845b388/"
+
+            target="_blank"
+
+        >
+
+            LinkedIn ↗
+
+        </a>
+
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
