@@ -249,46 +249,45 @@ function updatePage() {
 
 }
 /* =========================================
-   7 INSIGHTS - API
+   MARKET SNAPSHOT - API
 ========================================= */
 
-const insightText = document.getElementById("insight-text");
-const insightAuthor = document.getElementById("insight-author");
-const nextInsight = document.getElementById("next-insight");
+const marketSelect = document.getElementById("market-select");
+const marketName = document.getElementById("market-name");
+const marketPopulation = document.getElementById("market-population");
+const marketCurrency = document.getElementById("market-currency");
+const marketRegion = document.getElementById("market-region");
 
-let insightNumber = 1;
-const insightNumberDisplay = document.querySelector(".insight-number");
-
-async function getInsight() {
+async function getMarket(countryCode) {
 
     try {
 
-        insightNumberDisplay.textContent =
-            `${String(insightNumber).padStart(2, "0")} / 07`;
+       const response = await fetch(
+    `https://countries.dev/alpha/${countryCode}`
+);
+;
 
-        const response = await fetch(
-            "https://www.drivebird.com/api/quotes/random"
-        );
+const data = await response.json();
 
-        const data = await response.json();
+const country = Array.isArray(data)
+    ? data[0]
+    : data;
 
-        const quote = data.data[0];
+        marketName.textContent = country.name.common;
 
-        insightText.textContent = `"${quote.quote}"`;
-        insightAuthor.textContent = `— ${quote.author}`;
+        marketPopulation.textContent =
+            country.population.toLocaleString();
 
-        insightNumber++;
+       marketCurrency.textContent = country.currencies[0].code;
 
-        if (insightNumber > 7) {
-            insightNumber = 1;
-        }
+        marketRegion.textContent = country.region;
 
     } catch (error) {
 
-        insightText.textContent =
-            "Could not load an insight.";
-
-        insightAuthor.textContent = "";
+        marketName.textContent = "Could not load market data.";
+        marketPopulation.textContent = "";
+        marketCurrency.textContent = "";
+        marketRegion.textContent = "";
 
         console.error("API error:", error);
 
@@ -296,6 +295,10 @@ async function getInsight() {
 
 }
 
-getInsight();
+getMarket("SE");
 
-nextInsight.addEventListener("click", getInsight);
+marketSelect.addEventListener("change", () => {
+
+    getMarket(marketSelect.value);
+
+});

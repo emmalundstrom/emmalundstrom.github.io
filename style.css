@@ -1205,113 +1205,133 @@ footer {
     filter: brightness(1.5);
 }
 /* =========================================
-   7 INSIGHTS
+   MARKET SNAPSHOT
 ========================================= */
 
-.insights-section {
-    min-height: 80vh;
+.market-section {
+    position: relative;
+    overflow: hidden;
     background: #080808;
     color: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px 40px;
+    padding: 120px 8%;
 }
 
-.insights-content {
-    width: 100%;
-    max-width: 900px;
+.market-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.section-label {
+/* Header */
+
+.market-section .section-label {
     font-family: "DM Mono", monospace;
     font-size: 12px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    margin-bottom: 60px;
     opacity: 0.6;
+    margin-bottom: 25px;
 }
 
-.insight-card {
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 35px 0 45px;
+.market-section .section-label::after {
+    content: "LIVE DATA";
+    margin-left: 20px;
+    opacity: 0.4;
 }
 
-.insight-number {
-    display: block;
+/* Selector */
+
+.market-selector {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 70px 0 60px;
+}
+
+.market-selector label {
     font-family: "DM Mono", monospace;
-    font-size: 12px;
-    letter-spacing: 0.1em;
+    font-size: 11px;
+    letter-spacing: 0.12em;
     opacity: 0.5;
-    margin-bottom: 35px;
 }
 
-#insight-text {
-    max-width: 800px;
-    font-size: clamp(32px, 5vw, 68px);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    margin: 0 0 30px;
-}
-
-#insight-author {
+#market-select {
+    background: transparent;
+    color: #f5f5f5;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.35);
+    padding: 8px 30px 8px 0;
     font-family: "DM Mono", monospace;
     font-size: 13px;
-    opacity: 0.6;
+    cursor: pointer;
+}
+
+#market-select option {
+    background: #080808;
+    color: #f5f5f5;
+}
+
+/* Data */
+
+.market-card {
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.market-card h2 {
+    font-size: 0;
     margin: 0;
 }
 
-#next-insight {
-    margin-top: 40px;
-    background: none;
-    border: none;
-    color: #f5f5f5;
-    font-family: "DM Mono", monospace;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    cursor: pointer;
-    padding: 0;
-    transition: opacity 0.3s ease;
+.market-data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-#next-insight:hover {
-    opacity: 0.5;
+.market-data div {
+    padding: 35px 30px 35px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.market-data div + div {
+    padding-left: 30px;
+    border-left: 1px solid rgba(255,255,255,0.12);
+}
+
+.market-data span {
+    display: block;
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    opacity: 0.45;
+    margin-bottom: 20px;
+}
+
+.market-data strong {
+    font-size: clamp(28px, 4vw, 50px);
+    font-weight: 400;
+    letter-spacing: -0.03em;
 }
 /* =========================================
-   INSIGHTS — SUBTLE STARDUST
+   MARKET — SUBTLE STARDUST
 ========================================= */
 
-.insights-section {
+.market-section {
     position: relative;
     overflow: hidden;
 }
 
-.stars-insights {
-    opacity: 0.22;
+.stars-market {
+    opacity: 0.18;
     z-index: 0;
 }
 
-.stars-insights::before,
-.stars-insights::after {
+.stars-market::before,
+.stars-market::after {
     animation-duration: 32s;
 }
 
-.insights-section .insights-content {
-    position: relative;
-    z-index: 2;
-}
-.stars-insights {
-    opacity: 0.22;
-    z-index: 0;
-}
-
-.stars-insights::before,
-.stars-insights::after {
-    animation-duration: 32s;
-}
-
-.insights-section .insights-content {
+.market-section .market-content {
     position: relative;
     z-index: 2;
 }
