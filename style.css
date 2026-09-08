@@ -48,28 +48,21 @@ a {
 
 ========================================= */
 
-.navbar {
 
-    position: absolute;
-
+    .navbar {
+    position: fixed;
     top: 0;
-
     left: 0;
-
     width: 100%;
 
     display: flex;
-
     justify-content: flex-end;
-
     align-items: center;
-
     gap: 34px;
 
     padding: 28px 42px;
 
-    z-index: 100;
-
+    z-index: 99999;
 }
 
 .nav-link,
