@@ -123,6 +123,7 @@ const heroContent = document.querySelector(".hero-content");
 const heroStars = document.querySelector(".stars");
 const aboutStars = document.querySelector(".stars-about");
 const contactStars = document.querySelector(".stars-contact");
+const insightsStars = document.querySelector(".stars-insights");
 
 function updateHero() {
 
@@ -230,6 +231,11 @@ function updateSectionStars() {
         contactStars.style.transform =
             `translate3d(0, ${scrollPosition * 0.025}px, 0)`;
     }
+
+        if (insightsStars) {
+        insightsStars.style.transform =
+            `translate3d(0, ${scrollPosition * 0.02}px, 0)`;
+    }
 }
 
 
@@ -242,3 +248,54 @@ function updatePage() {
     updateSectionStars();
 
 }
+/* =========================================
+   7 INSIGHTS - API
+========================================= */
+
+const insightText = document.getElementById("insight-text");
+const insightAuthor = document.getElementById("insight-author");
+const nextInsight = document.getElementById("next-insight");
+
+let insightNumber = 1;
+const insightNumberDisplay = document.querySelector(".insight-number");
+
+async function getInsight() {
+
+    try {
+
+        insightNumberDisplay.textContent =
+            `${String(insightNumber).padStart(2, "0")} / 07`;
+
+        const response = await fetch(
+            "https://www.drivebird.com/api/quotes/random"
+        );
+
+        const data = await response.json();
+
+        const quote = data.data[0];
+
+        insightText.textContent = `"${quote.quote}"`;
+        insightAuthor.textContent = `— ${quote.author}`;
+
+        insightNumber++;
+
+        if (insightNumber > 7) {
+            insightNumber = 1;
+        }
+
+    } catch (error) {
+
+        insightText.textContent =
+            "Could not load an insight.";
+
+        insightAuthor.textContent = "";
+
+        console.error("API error:", error);
+
+    }
+
+}
+
+getInsight();
+
+nextInsight.addEventListener("click", getInsight);
