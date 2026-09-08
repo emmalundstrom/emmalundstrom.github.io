@@ -1,3 +1,67 @@
+// =========================================
+// DATA LAYER
+// =========================================
+
+window.dataLayer = window.dataLayer || [];
+
+// =========================================
+
+// CUSTOM DATA LAYER EVENTS
+
+// =========================================
+
+document.querySelectorAll(".nav-link").forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        window.dataLayer.push({
+
+            event: "portfolio_navigation_click",
+
+            link_name: link.textContent.trim()
+
+        });
+
+    });
+
+});
+
+const linkedinLinks = document.querySelectorAll(".linkedin-link");
+
+linkedinLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        window.dataLayer.push({
+
+            event: "portfolio_linkedin_click",
+
+            link_name: "LinkedIn"
+
+        });
+
+    });
+
+});
+
+const contactLinks = document.querySelectorAll(".contact-links a");
+
+contactLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        window.dataLayer.push({
+
+            event: "portfolio_contact_click",
+
+            link_name: link.textContent.trim()
+
+        });
+
+    });
+
+});
+
 /* =========================================
 
    EMMA LUNDSTRÖM
