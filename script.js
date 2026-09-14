@@ -14,13 +14,17 @@ document.querySelectorAll(".nav-link").forEach((link) => {
 
     link.addEventListener("click", () => {
 
-        window.dataLayer.push({
+    window.dataLayer.push({
 
-            event: "portfolio_navigation_click",
+    event: "portfolio_navigation_click",
 
-            link_name: link.textContent.trim()
+    link_name: link.textContent.trim(),
 
-        });
+    link_type: "navigation",
+
+    destination: link.getAttribute("href")
+
+});
 
     });
 
