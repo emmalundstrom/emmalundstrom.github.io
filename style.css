@@ -1010,19 +1010,27 @@ footer {
 
     .navbar {
 
-        padding: 22px 20px;
+    padding: 22px 20px;
 
-        gap: 18px;
+    gap: 12px;
 
-    }
+    justify-content: flex-end;
+
+    flex-wrap: nowrap;
+
+}
 
     .nav-link,
 
-    .linkedin-link {
+.linkedin-link {
 
-        font-size: 8px;
+    font-size: 7px;
 
-    }
+    letter-spacing: 0.08em;
+
+    white-space: nowrap;
+
+}
 
     .hero {
 
@@ -1041,17 +1049,12 @@ footer {
         right: 20px;
 
     }
-
     .hero-title {
-
-        font-size: clamp(55px, 16vw, 95px);
-
-    }
+    font-size: clamp(55px, 11vw, 175px);
+   }
 
     .title-italic {
-
-        margin-left: 8vw;
-
+    margin-left: 12vw;
     }
 
     .hero-bottom {
