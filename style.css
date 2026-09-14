@@ -1018,6 +1018,8 @@ footer {
 
     flex-wrap: nowrap;
 
+    white-space: nowrap;
+
 }
 
     .nav-link,
