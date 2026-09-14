@@ -1010,9 +1010,9 @@ footer {
 
     .navbar {
 
-    padding: 22px 20px;
+    padding: 22px 12px;
 
-    gap: 12px;
+    gap: 8px;
 
     justify-content: flex-end;
 
