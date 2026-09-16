@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #100b09;
+  color: #f5eee8;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* =========================================
+   MAIN
+========================================= */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 40px 120px;
+  text-align: center;
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  opacity: 0.45;
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(58px, 8vw, 100px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -4px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro {
+  font-size: 18px;
+  opacity: 0.55;
+  margin-top: 28px;
+  text-align: center;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+button {
+  margin-top: 38px;
+  background: #f5eee8;
+  color: #100b09;
+  border: none;
+  padding: 16px 26px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* =========================================
+   RESULT
+========================================= */
+
+.result {
+  display: none;
+  margin-top: 100px;
+}
+
+#weather {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 45px;
+}
+
+/* =========================================
+   WINE CARD
+========================================= */
+
+.wine-card {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: 80px;
+  max-width: 900px;
+}
+
+/* =========================================
+   BOTTLE
+========================================= */
+
+.bottle-wrapper {
+  height: 440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* subtle glow behind bottle */
+
+.bottle-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.035);
+  filter: blur(40px);
+}
+
+.bottle-wrapper img {
+  position: relative;
+  max-width: 260px;
+  max-height: 420px;
+  object-fit: contain;
+
+  opacity: 0;
+  transform: translateY(35px) scale(0.96);
+
+  animation: bottleReveal 0.9s ease forwards;
+}
+
+/* =========================================
+   WINE INFO
+========================================= */
+
+.wine-info {
+  max-width: 430px;
+
+  opacity: 0;
+  transform: translateY(25px);
+
+  animation: textReveal 0.8s ease 0.45s forwards;
+}
+
+.wine-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  opacity: 0.4;
+  margin-bottom: 18px;
+}
+
+#wine {
+  font-family: Georgia, serif;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+
+#wineDetails {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 28px;
+}
+
+#reason {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 1.5;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+#wineRegion {
+  margin-top: 32px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.35;
+  line-height: 1.6;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes bottleReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+@keyframes textReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .container {
+    padding: 60px 24px 80px;
+  }
+
+  h1 {
+    font-size: 58px;
+    letter-spacing: -3px;
+  }
+
+  .result {
+    margin-top: 80px;
+  }
+
+  .wine-card {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+
+  .bottle-wrapper {
+    height: 330px;
+  }
+
+  .bottle-wrapper img {
+    max-height: 320px;
+  }
+
+  .wine-info {
+    max-width: 100%;
+  }
+
+  #wine {
+    font-size: 45px;
+  }
+
+  #reason {
+    font-size: 18px;
+  }
+
+}
