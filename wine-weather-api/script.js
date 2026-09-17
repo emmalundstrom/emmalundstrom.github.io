@@ -261,6 +261,8 @@ async function getWeather() {
 }
 
     }
+    
+document.getElementById("project-footer").classList.add("show");
 
   }
 

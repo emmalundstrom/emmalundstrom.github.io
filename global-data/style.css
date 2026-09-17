@@ -1,0 +1,416 @@
+/* =========================================
+   GLOBAL DATA — CLEAN VERSION
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #f2f0eb;
+    font-family: "Manrope", sans-serif;
+    font-weight: 300;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.project-nav {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px max(70px, 12vw);
+
+    border-bottom: 1px solid rgba(242, 240, 235, 0.12);
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+
+    color: rgba(242, 240, 235, 0.7);
+}
+
+.back-link {
+    font-size: 12px;
+    color: #f2f0eb;
+
+    transition: opacity 0.25s ease;
+}
+
+.back-link:hover {
+    opacity: 0.55;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.project-hero,
+.data-section {
+    width: 76%;
+    max-width: 1050px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.project-hero {
+    padding-top: 60px;
+    padding-bottom: 15px;
+}
+
+.eyebrow {
+    margin-bottom: 20px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+
+    color: rgba(242, 240, 235, 0.5);
+}
+
+.project-hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(60px, 7vw, 100px);
+    font-weight: 400;
+
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+}
+
+.project-hero h1 em {
+    font-weight: 400;
+    font-style: italic;
+
+    color: #d8d3c9;
+}
+
+.project-intro {
+    max-width: 540px;
+
+    margin-top: 22px;
+
+    font-size: 16px;
+    line-height: 1.65;
+
+    color: rgba(242, 240, 235, 0.68);
+}
+
+.scroll-text {
+    display: none;
+}
+
+
+/* =========================================
+   DATA SECTION
+========================================= */
+
+.data-section {
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+
+/* =========================================
+   COUNTRY SELECTOR
+========================================= */
+
+.country-selector {
+    margin: 15px 0 55px;
+}
+
+.country-selector label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+
+    color: rgba(242, 240, 235, 0.55);
+}
+
+#country-select {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 18px 20px;
+
+    background: #111;
+    color: #f2f0eb;
+
+    border: 1px solid rgba(242, 240, 235, 0.25);
+    border-radius: 6px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    transition: border-color 0.25s ease;
+}
+
+#country-select:hover {
+    border-color: rgba(242, 240, 235, 0.6);
+}
+
+#country-select:focus {
+    outline: none;
+    border-color: #f2f0eb;
+}
+
+#country-select option {
+    background: #111;
+    color: #f2f0eb;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   SELECTED COUNTRY
+========================================= */
+
+.country-title {
+    margin-bottom: 28px;
+}
+
+.country-title span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+
+    color: rgba(242, 240, 235, 0.45);
+}
+
+.country-title h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 5vw, 72px);
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+
+/* =========================================
+   COUNTRY DATA
+========================================= */
+
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid rgba(242, 240, 235, 0.15);
+}
+
+.data-item {
+    min-height: 130px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 24px 30px 24px 0;
+
+    border-bottom: 1px solid rgba(242, 240, 235, 0.15);
+}
+
+.data-item:nth-child(even) {
+    padding-left: 30px;
+
+    border-left: 1px solid rgba(242, 240, 235, 0.15);
+}
+
+.data-item span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+    letter-spacing: 0.1em;
+
+    color: rgba(242, 240, 235, 0.5);
+}
+
+.data-item strong {
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(25px, 2.8vw, 38px);
+    font-weight: 300;
+
+    letter-spacing: -0.025em;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px max(70px, 12vw);
+
+    border-top: 1px solid rgba(242, 240, 235, 0.12);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+    letter-spacing: 0.09em;
+
+    color: rgba(242, 240, 235, 0.5);
+}
+
+footer a {
+    font-size: 11px;
+    color: rgba(242, 240, 235, 0.8);
+
+    transition: opacity 0.25s ease;
+}
+
+footer a:hover {
+    opacity: 0.55;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .project-nav {
+        padding: 22px;
+
+        font-size: 8px;
+    }
+
+    .back-link {
+        font-size: 9px;
+    }
+
+    .project-hero,
+    .data-section {
+        width: auto;
+
+        margin-left: 22px;
+        margin-right: 22px;
+    }
+
+    .project-hero {
+        padding-top: 45px;
+        padding-bottom: 10px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+    }
+
+    .project-hero h1 {
+        font-size: 16vw;
+    }
+
+    .project-intro {
+        margin-top: 18px;
+
+        font-size: 14px;
+    }
+
+    .data-section {
+        padding-top: 15px;
+        padding-bottom: 75px;
+    }
+
+    .country-selector {
+        margin-top: 10px;
+        margin-bottom: 45px;
+    }
+
+    .country-selector label {
+        font-size: 9px;
+    }
+
+    #country-select {
+        max-width: none;
+
+        padding: 16px;
+
+        font-size: 16px;
+    }
+
+    .country-title span {
+        font-size: 9px;
+    }
+
+    .country-title h2 {
+        font-size: 13vw;
+    }
+
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .data-item,
+    .data-item:nth-child(even) {
+        min-height: 105px;
+
+        padding: 20px 0;
+
+        border-left: none;
+    }
+
+    .data-item span {
+        font-size: 9px;
+    }
+
+    .data-item strong {
+        font-size: 28px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 14px;
+
+        padding: 25px 22px;
+
+        font-size: 9px;
+    }
+
+    footer a {
+        font-size: 9px;
+    }
+}

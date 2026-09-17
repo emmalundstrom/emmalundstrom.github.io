@@ -1,0 +1,218 @@
+/* ---------------------------------------------
+   Färger och grundvärden
+   --------------------------------------------- */
+:root {
+  --bakgrund: #f7f6f3;
+  --panel: #ffffff;
+  --text: #16181d;
+  --text-svag: #5b6068;
+  --linje: #dcd9d2;
+  --gjorda: #db0007;    /* Arsenalrött - gjorda mal */
+  --inslappta: #2f4a63; /* mörkblå - insläppta mål */
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bakgrund);
+  color: var(--text);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.sida {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+}
+
+/* ---------------------------------------------
+   Rubriker och text
+   --------------------------------------------- */
+h1, h2 {
+  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 2.9rem);
+  max-width: 32ch;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.topp {
+  padding-bottom: 2rem;
+  border-bottom: 3px solid var(--gjorda);
+  margin-bottom: 2.5rem;
+}
+
+.ingress {
+  margin: 1.25rem 0 0;
+  max-width: 62ch;
+  font-size: 1.15rem;
+}
+
+.hjalptext,
+.bildtext {
+  color: var(--text-svag);
+  font-size: 0.95rem;
+  max-width: 60ch;
+}
+
+.bildtext { margin: 1rem 0 0; }
+
+section { margin-bottom: 3rem; }
+
+/* ---------------------------------------------
+   Diagrammet
+   --------------------------------------------- */
+.diagram-ram {
+  background: var(--panel);
+  border: 1px solid var(--linje);
+  border-radius: 4px;
+  padding: 1.25rem 1rem;
+  /* Höjden styr diagrammet, canvas fyller ut */
+  height: 24rem;
+}
+
+@media (max-width: 30rem) {
+  .diagram-ram { height: 20rem; padding: 0.75rem 0.5rem; }
+}
+
+/* ---------------------------------------------
+   Tabellen
+   --------------------------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  font-variant-numeric: tabular-nums;
+  font-size: 1rem;
+}
+
+caption {
+  text-align: left;
+  padding-bottom: 0.6rem;
+  color: var(--text-svag);
+  font-size: 0.9rem;
+}
+
+th, td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--linje);
+  text-align: right;
+}
+
+th:first-child,
+td:first-child { text-align: left; }
+
+thead th {
+  font-family: Archivo, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-bottom: 2px solid var(--text);
+}
+
+tbody tr:last-child td { border-bottom: none; }
+
+/* ---------------------------------------------
+   Om datan
+   --------------------------------------------- */
+dl { margin: 0; }
+
+dt {
+  font-family: Archivo, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-top: 1.1rem;
+}
+
+dd {
+  margin: 0.2rem 0 0;
+  max-width: 62ch;
+  color: var(--text-svag);
+}
+
+a {
+  color: var(--inslappta);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:focus-visible,
+:focus-visible {
+  outline: 2px solid var(--gjorda);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------
+   Fot
+   --------------------------------------------- */
+.fot {
+  border-top: 1px solid var(--linje);
+  padding-top: 1.25rem;
+  color: var(--text-svag);
+  font-size: 0.9rem;
+}
+
+.fot p { margin: 0; }
+/* =========================================
+   BACK TO PORTFOLIO
+========================================= */
+
+.project-nav {
+    width: 100%;
+    padding: 30px 8vw;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.back-link {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+
+    color: rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+
+    transition: opacity 0.25s ease;
+}
+
+.back-link:hover {
+    opacity: 0.55;
+}
+
+@media (max-width: 700px) {
+    .project-nav {
+        padding: 22px;
+    }
+
+    .back-link {
+        font-size: 9px;
+    }
+}
+.project-footer {
+    width: 100%;
+    padding: 30px 8vw;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+    text-align: right;
+}
+
+@media (max-width: 700px) {
+    .project-footer {
+        padding: 22px;
+    }
+}
