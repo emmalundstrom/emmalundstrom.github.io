@@ -1,0 +1,281 @@
+/* =========================================
+   SCRAPING PROJECT
+   EMMA LUNDSTRÖM
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #f2f0eb;
+    font-family: "Manrope", sans-serif;
+    font-weight: 300;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.project-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 42px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    z-index: 10;
+}
+
+.project-nav a {
+    color: #f2f0eb;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.project-nav a:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 150px 42px 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.label,
+.section-number {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.55;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 125px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+    max-width: 1200px;
+}
+
+.hero h1 em {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+}
+
+.hero-info {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+
+/* =========================================
+   PROJECT INTRO
+========================================= */
+
+.project-intro {
+    padding: 140px 42px;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.intro-content {
+    max-width: 800px;
+}
+
+.intro-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 75px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 50px;
+}
+
+.intro-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0.75;
+    max-width: 650px;
+    margin-bottom: 24px;
+}
+
+
+/* =========================================
+   DATA
+========================================= */
+
+.data-section {
+    padding: 140px 42px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.data-section > h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(45px, 6vw, 85px);
+    font-weight: 500;
+    margin: 50px 0 80px;
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.data-grid div {
+    min-height: 220px;
+    padding: 25px 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.data-grid div:last-child {
+    border-right: none;
+}
+
+.data-grid span {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    opacity: 0.45;
+}
+
+.data-grid h3 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.result-section {
+    min-height: 75vh;
+    padding: 140px 42px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.result-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 7vw, 100px);
+    font-weight: 500;
+    margin: 40px 0;
+}
+
+.result-section > p:not(.section-number) {
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0.7;
+}
+
+.data-link {
+    display: inline-block;
+    margin-top: 45px;
+
+    color: #f2f0eb;
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    border-bottom: 1px solid #f2f0eb;
+    padding-bottom: 6px;
+
+    transition: opacity 0.3s ease;
+}
+
+.data-link:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .project-nav {
+        padding: 24px 20px;
+    }
+
+    .hero {
+        padding: 130px 20px 30px;
+    }
+
+    .hero h1 {
+        font-size: 14vw;
+    }
+
+    .project-intro {
+        padding: 90px 20px;
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .data-section {
+        padding: 90px 20px;
+    }
+
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .data-grid div {
+        min-height: 140px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .result-section {
+        padding: 100px 20px;
+    }
+}
