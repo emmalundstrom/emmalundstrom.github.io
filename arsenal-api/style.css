@@ -1,218 +1,1521 @@
-/* ---------------------------------------------
-   Färger och grundvärden
-   --------------------------------------------- */
+/* =========================================
+   ARSENAL GOAL TRENDS
+   EMMA LUNDSTRÖM PORTFOLIO
+========================================= */
+
 :root {
-  --bakgrund: #f7f6f3;
-  --panel: #ffffff;
-  --text: #16181d;
-  --text-svag: #5b6068;
-  --linje: #dcd9d2;
-  --gjorda: #db0007;    /* Arsenalrött - gjorda mal */
-  --inslappta: #2f4a63; /* mörkblå - insläppta mål */
+
+    --cream: #f3ede3;
+    --paper: #f8f4ed;
+
+    --burgundy: #5b1824;
+    --burgundy-dark: #48121c;
+
+    --text: #151313;
+    --text-soft: rgba(21, 19, 19, 0.62);
+
+    --line: rgba(21, 19, 19, 0.14);
+
+    --arsenal-red: #DB0007;
+    --arsenal-grey: #77736f;
+
 }
 
-* { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 body {
-  margin: 0;
-  background: var(--bakgrund);
-  color: var(--text);
-  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
-  font-size: 1.0625rem;
-  line-height: 1.65;
+
+    background: var(--cream);
+
+    color: var(--text);
+
+    font-family: "Manrope", sans-serif;
+
+    font-weight: 300;
+
+    overflow-x: hidden;
+
 }
 
-.sida {
-  max-width: 50rem;
-  margin: 0 auto;
-  padding: 3.5rem 1.5rem 4rem;
-}
-
-/* ---------------------------------------------
-   Rubriker och text
-   --------------------------------------------- */
-h1, h2 {
-  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.15;
-  margin: 0;
-}
-
-h1 {
-  font-size: clamp(1.9rem, 5vw, 2.9rem);
-  max-width: 32ch;
-}
-
-h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.topp {
-  padding-bottom: 2rem;
-  border-bottom: 3px solid var(--gjorda);
-  margin-bottom: 2.5rem;
-}
-
-.ingress {
-  margin: 1.25rem 0 0;
-  max-width: 62ch;
-  font-size: 1.15rem;
-}
-
-.hjalptext,
-.bildtext {
-  color: var(--text-svag);
-  font-size: 0.95rem;
-  max-width: 60ch;
-}
-
-.bildtext { margin: 1rem 0 0; }
-
-section { margin-bottom: 3rem; }
-
-/* ---------------------------------------------
-   Diagrammet
-   --------------------------------------------- */
-.diagram-ram {
-  background: var(--panel);
-  border: 1px solid var(--linje);
-  border-radius: 4px;
-  padding: 1.25rem 1rem;
-  /* Höjden styr diagrammet, canvas fyller ut */
-  height: 24rem;
-}
-
-@media (max-width: 30rem) {
-  .diagram-ram { height: 20rem; padding: 0.75rem 0.5rem; }
-}
-
-/* ---------------------------------------------
-   Tabellen
-   --------------------------------------------- */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--panel);
-  font-variant-numeric: tabular-nums;
-  font-size: 1rem;
-}
-
-caption {
-  text-align: left;
-  padding-bottom: 0.6rem;
-  color: var(--text-svag);
-  font-size: 0.9rem;
-}
-
-th, td {
-  padding: 0.6rem 0.75rem;
-  border-bottom: 1px solid var(--linje);
-  text-align: right;
-}
-
-th:first-child,
-td:first-child { text-align: left; }
-
-thead th {
-  font-family: Archivo, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 0.9rem;
-  border-bottom: 2px solid var(--text);
-}
-
-tbody tr:last-child td { border-bottom: none; }
-
-/* ---------------------------------------------
-   Om datan
-   --------------------------------------------- */
-dl { margin: 0; }
-
-dt {
-  font-family: Archivo, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 0.95rem;
-  margin-top: 1.1rem;
-}
-
-dd {
-  margin: 0.2rem 0 0;
-  max-width: 62ch;
-  color: var(--text-svag);
-}
 
 a {
-  color: var(--inslappta);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+    color: inherit;
+    text-decoration: none;
 }
 
-a:focus-visible,
-:focus-visible {
-  outline: 2px solid var(--gjorda);
-  outline-offset: 2px;
-}
 
-/* ---------------------------------------------
-   Fot
-   --------------------------------------------- */
-.fot {
-  border-top: 1px solid var(--linje);
-  padding-top: 1.25rem;
-  color: var(--text-svag);
-  font-size: 0.9rem;
-}
 
-.fot p { margin: 0; }
 /* =========================================
-   BACK TO PORTFOLIO
+   NAVIGATION
 ========================================= */
 
 .project-nav {
-    width: 100%;
-    padding: 30px 8vw;
 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 20;
+
+    padding: 30px 4.5vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: #ffffff;
+
 }
 
-.back-link {
+
+.project-nav a,
+.project-nav span {
+
     font-family: "DM Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
 
-    color: rgba(0, 0, 0, 0.75);
-    text-decoration: none;
+    font-size: 10px;
 
-    transition: opacity 0.25s ease;
+    letter-spacing: 0.12em;
+
 }
 
-.back-link:hover {
-    opacity: 0.55;
+
+.project-nav a {
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
 }
 
-@media (max-width: 700px) {
-    .project-nav {
-        padding: 22px;
-    }
 
-    .back-link {
-        font-size: 9px;
-    }
+.project-nav a:hover {
+
+    opacity: 0.6;
+
+    transform: translateX(-4px);
+
 }
-.project-footer {
+
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    position: relative;
+
     width: 100%;
-    padding: 30px 8vw;
 
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    height: 92vh;
+
+    min-height: 650px;
+
+    padding: 0 4.5vw 7vh;
+
+    background-image: url("arsenal-team.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(20, 9, 8, 0.65) 0%,
+            rgba(20, 9, 8, 0.27) 45%,
+            rgba(20, 9, 8, 0.10) 100%
+        ),
+
+        linear-gradient(
+            0deg,
+            rgba(20, 9, 8, 0.48) 0%,
+            transparent 55%
+        );
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #ffffff;
+
+}
+
+
+.eyebrow,
+.section-label {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.14em;
+
+    font-weight: 400;
+
+}
+
+
+.eyebrow {
+
+    margin-bottom: 22px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+}
+
+
+.hero h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(4.8rem, 10vw, 10rem);
+
+    font-weight: 500;
+
+    letter-spacing: -0.055em;
+
+    line-height: 0.82;
+
+}
+
+
+.hero h1 em {
+
+    display: block;
+
+    font-weight: 500;
+
+    font-style: italic;
+
+}
+
+
+.hero-bottom {
+
+    position: absolute;
+
+    z-index: 2;
+
+    right: 4.5vw;
+
+    bottom: 7vh;
 
     text-align: right;
+
+    color: #ffffff;
+
 }
 
+
+.hero-bottom p {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.13em;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* =========================================
+   PROJECT INTRO
+========================================= */
+
+.project-intro {
+
+    padding: 145px 4.5vw 155px;
+
+    background: var(--cream);
+
+    display: grid;
+
+    grid-template-columns: 1.25fr 0.75fr;
+
+    gap: 10vw;
+
+}
+
+
+.section-label {
+
+    color: rgba(21, 19, 19, 0.62);
+
+}
+
+
+.intro-left h2 {
+
+    margin-top: 32px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3.8rem, 6.5vw, 7rem);
+
+    font-weight: 500;
+
+    letter-spacing: -0.055em;
+
+    line-height: 0.96;
+
+}
+
+
+.intro-left h2 em {
+
+    color: var(--burgundy);
+
+    font-weight: 500;
+
+}
+
+
+.intro-right {
+
+    padding-top: 48px;
+
+    align-self: center;
+
+}
+
+
+.intro-right p {
+
+    margin-bottom: 25px;
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+
+    color: var(--text-soft);
+
+}
+
+
+.intro-right .intro-lead {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.65rem;
+
+    line-height: 1.35;
+
+    color: var(--text);
+
+}
+
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 60px;
+
+    margin-bottom: 65px;
+
+}
+
+
+.section-heading h2 {
+
+    margin-top: 18px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3.3rem, 5.5vw, 6rem);
+
+    font-weight: 500;
+
+    letter-spacing: -0.05em;
+
+    line-height: 0.95;
+
+}
+
+
+.section-heading h2 em {
+
+    display: block;
+
+    color: var(--burgundy);
+
+    font-weight: 500;
+
+}
+
+
+.chart-description {
+
+    max-width: 360px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+
+    color: var(--text-soft);
+
+}
+
+
+
+/* =========================================
+   CHART SECTION
+========================================= */
+
+.chart-section {
+
+    padding: 130px 4.5vw;
+
+    background: var(--paper);
+
+}
+
+
+.chart-card {
+
+    padding: 35px 40px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+}
+
+
+.chart-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.chart-top > p {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.12em;
+
+    color: var(--text-soft);
+
+}
+
+
+
+/* =========================================
+   LEGEND
+========================================= */
+
+.legend {
+
+    display: flex;
+
+    gap: 28px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.05em;
+
+}
+
+
+.legend-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+}
+
+
+.legend-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+}
+
+
+.legend-dot.red {
+    background: var(--arsenal-red);
+}
+
+
+.legend-dot.grey {
+    background: var(--arsenal-grey);
+}
+
+
+
+/* =========================================
+   CHART
+========================================= */
+
+.chart-wrapper {
+
+    position: relative;
+
+    height: 520px;
+
+    margin-top: 30px;
+
+}
+
+
+
+/* =========================================
+   CHART INFO
+========================================= */
+
+.chart-info {
+
+    margin-top: 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.chart-info p {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.06em;
+
+    line-height: 1.6;
+
+    color: var(--text-soft);
+
+}
+
+
+.chart-info a {
+
+    color: var(--text);
+
+    border-bottom: 1px solid var(--text);
+
+    transition: opacity 0.2s ease;
+
+}
+
+
+.chart-info a:hover {
+    opacity: 0.5;
+}
+
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-section {
+
+    padding: 135px 4.5vw;
+
+    background: var(--cream);
+
+}
+
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-variant-numeric: tabular-nums;
+
+}
+
+
+caption {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    overflow: hidden;
+
+}
+
+
+th,
+td {
+
+    padding: 25px 12px;
+
+    border-bottom: 1px solid var(--line);
+
+    text-align: left;
+
+}
+
+
+thead th {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+    color: var(--text-soft);
+
+}
+
+
+tbody td {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.25rem;
+
+}
+
+
+tbody tr {
+
+    transition: background 0.25s ease;
+
+}
+
+
+tbody tr:hover {
+
+    background: rgba(91, 24, 36, 0.055);
+
+}
+
+
+
+/* =========================================
+   TOOLS
+========================================= */
+
+.tools-section {
+
+    padding: 70px 4.5vw 100px;
+
+    background: var(--cream);
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.tools {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+}
+
+
+.tools span {
+
+    padding: 12px 19px;
+
+    border: 1px solid rgba(21, 19, 19, 0.22);
+
+    border-radius: 100px;
+
+    font-size: 0.8rem;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+.tools span:hover {
+
+    background: var(--burgundy);
+
+    color: #ffffff;
+
+    border-color: var(--burgundy);
+
+}
+
+
+
+/* =========================================
+   BACK TO SELECTED WORK
+========================================= */
+
+.next-project {
+
+    min-height: 440px;
+
+    padding: 90px 4.5vw;
+
+    background: var(--burgundy);
+
+    color: var(--cream);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    transition: background 0.3s ease;
+
+}
+
+
+.next-project:hover {
+
+    background: var(--burgundy-dark);
+
+}
+
+
+.next-project .section-label {
+
+    color: rgba(255, 255, 255, 0.65);
+
+}
+
+
+.next-project h2 {
+
+    margin-top: 20px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(4rem, 8vw, 8rem);
+
+    font-weight: 500;
+
+    letter-spacing: -0.055em;
+
+    line-height: 0.9;
+
+}
+
+
+.next-project h2 em {
+
+    font-weight: 500;
+
+    font-style: italic;
+
+}
+
+
+.next-arrow {
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(4rem, 8vw, 8rem);
+
+    font-weight: 200;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.next-project:hover .next-arrow {
+
+    transform: translate(8px, -8px);
+
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.project-footer {
+
+    padding: 34px 4.5vw;
+
+    background: var(--burgundy-dark);
+
+    color: rgba(255, 255, 255, 0.75);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.project-footer p {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+
+/* =========================================
+   MOBILE
+   EXACT SAME COMPOSITION AS DESKTOP
+   ONLY SCALED DOWN
+========================================= */
+
 @media (max-width: 700px) {
-    .project-footer {
-        padding: 22px;
+
+
+    /* =====================================
+       NAVIGATION
+    ====================================== */
+
+    .project-nav {
+
+        padding: 16px 4.5vw;
+
     }
+
+
+    .project-nav a,
+    .project-nav span {
+
+        font-size: 6px;
+
+        letter-spacing: 0.12em;
+
+    }
+
+
+
+    /* =====================================
+       HERO
+       SAME COMPOSITION AS DESKTOP
+    ====================================== */
+
+    .hero {
+
+        height: 92vh;
+
+        min-height: 500px;
+
+        padding:
+            0 4.5vw 7vh;
+
+        /* same image position */
+        background-position: center;
+
+    }
+
+
+    /* same overlay as desktop */
+
+    .hero-overlay {
+
+        background:
+
+            linear-gradient(
+                90deg,
+                rgba(20, 9, 8, 0.65) 0%,
+                rgba(20, 9, 8, 0.27) 45%,
+                rgba(20, 9, 8, 0.10) 100%
+            ),
+
+            linear-gradient(
+                0deg,
+                rgba(20, 9, 8, 0.48) 0%,
+                transparent 55%
+            );
+
+    }
+
+
+    .eyebrow,
+    .section-label {
+
+        font-size: 6px;
+
+        letter-spacing: 0.14em;
+
+    }
+
+
+    .eyebrow {
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 10vw;
+
+        line-height: 0.82;
+
+        letter-spacing: -0.055em;
+
+    }
+
+
+    /* keep bottom text */
+
+    .hero-bottom {
+
+        display: block;
+
+        right: 4.5vw;
+
+        bottom: 7vh;
+
+    }
+
+
+    .hero-bottom p {
+
+        font-size: 5px;
+
+        line-height: 1.8;
+
+        letter-spacing: 0.13em;
+
+    }
+
+
+
+    /* =====================================
+       PROJECT INTRO
+       SAME TWO COLUMNS
+    ====================================== */
+
+    .project-intro {
+
+        padding:
+            70px 4.5vw
+            75px;
+
+        display: grid;
+
+        grid-template-columns:
+            1.25fr 0.75fr;
+
+        gap: 10vw;
+
+    }
+
+
+    .intro-left h2 {
+
+        margin-top: 16px;
+
+        font-size: 6.5vw;
+
+        line-height: 0.96;
+
+    }
+
+
+    .intro-right {
+
+        padding-top: 24px;
+
+        align-self: center;
+
+    }
+
+
+    .intro-right .intro-lead {
+
+        font-size: 10px;
+
+        line-height: 1.35;
+
+    }
+
+
+    .intro-right p {
+
+        margin-bottom: 12px;
+
+        font-size: 6px;
+
+        line-height: 1.75;
+
+    }
+
+
+
+    /* =====================================
+       SECTION HEADINGS
+       SAME SIDE-BY-SIDE LAYOUT
+    ====================================== */
+
+    .section-heading {
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: flex-end;
+
+        gap: 25px;
+
+        margin-bottom: 35px;
+
+    }
+
+
+    .section-heading > div {
+
+        min-width: 0;
+
+    }
+
+
+    .section-heading h2 {
+
+        margin-top: 10px;
+
+        font-size: 5.5vw;
+
+        line-height: 0.95;
+
+    }
+
+
+    .chart-description {
+
+        max-width: 130px;
+
+        margin-top: 0;
+
+        font-size: 6px;
+
+        line-height: 1.65;
+
+    }
+
+
+
+    /* =====================================
+       CHART SECTION
+    ====================================== */
+
+    .chart-section {
+
+        padding:
+            70px 4.5vw;
+
+    }
+
+
+    .chart-card {
+
+        width: 100%;
+
+        padding:
+            18px 20px;
+
+    }
+
+
+
+    /* =====================================
+       CHART TOP
+       SAME SIDE-BY-SIDE LAYOUT
+    ====================================== */
+
+    .chart-top {
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        padding-bottom: 16px;
+
+    }
+
+
+    .chart-top > p {
+
+        margin-bottom: 0;
+
+        font-size: 5px;
+
+    }
+
+
+    .legend {
+
+        display: flex;
+
+        flex-wrap: nowrap;
+
+        gap: 12px;
+
+        font-size: 5px;
+
+    }
+
+
+    .legend-item {
+
+        gap: 5px;
+
+    }
+
+
+    .legend-dot {
+
+        width: 5px;
+
+        height: 5px;
+
+    }
+
+
+
+    /* =====================================
+       CHART
+    ====================================== */
+
+    .chart-wrapper {
+
+        width: 100%;
+
+        height: 260px;
+
+        margin-top: 18px;
+
+    }
+
+
+
+    /* =====================================
+       CHART INFO
+       SAME SIDE-BY-SIDE LAYOUT
+    ====================================== */
+
+    .chart-info {
+
+        margin-top: 14px;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+    }
+
+
+    .chart-info p {
+
+        flex: 1;
+
+        font-size: 5px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .chart-info p + p {
+
+        margin-top: 0;
+
+        text-align: right;
+
+    }
+
+
+
+    /* =====================================
+       TABLE SECTION
+    ====================================== */
+
+    .table-section {
+
+        padding:
+            70px 4.5vw;
+
+    }
+
+
+    .table-wrapper {
+
+        width: 100%;
+
+        margin-top: 0;
+
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+
+    }
+
+
+    /*
+       Table keeps desktop structure.
+       Horizontal scroll only prevents
+       the data from becoming unreadable.
+    */
+
+    table {
+
+        min-width: 520px;
+
+    }
+
+
+    th,
+    td {
+
+        padding:
+            14px 9px;
+
+        white-space: nowrap;
+
+    }
+
+
+    thead th {
+
+        font-size: 6px;
+
+    }
+
+
+    tbody td {
+
+        font-size: 0.8rem;
+
+    }
+
+
+
+    /* =====================================
+       TOOLS
+       SAME LAYOUT
+    ====================================== */
+
+    .tools-section {
+
+        padding:
+            45px 4.5vw
+            60px;
+
+    }
+
+
+    .tools {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 5px;
+
+        margin-top: 16px;
+
+    }
+
+
+    .tools span {
+
+        padding:
+            6px 9px;
+
+        font-size: 6px;
+
+    }
+
+
+
+    /* =====================================
+       BACK TO SELECTED WORK
+       SAME SIDE-BY-SIDE COMPOSITION
+    ====================================== */
+
+    .next-project {
+
+        min-height: 240px;
+
+        padding:
+            50px 4.5vw;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+    }
+
+
+    .next-project h2 {
+
+        margin-top: 10px;
+
+        font-size: 8vw;
+
+        line-height: 0.9;
+
+    }
+
+
+    .next-arrow {
+
+        font-size: 8vw;
+
+    }
+
+
+
+    /* =====================================
+       FOOTER
+       SAME LAYOUT
+    ====================================== */
+
+    .project-footer {
+
+        padding:
+            18px 4.5vw;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        gap: 15px;
+
+    }
+
+
+    .project-footer p {
+
+        font-size: 5px;
+
+        letter-spacing: 0.1em;
+
+    }
+
+
+    .project-footer p:last-child {
+
+        display: block;
+
+        text-align: right;
+
+    }
+
+}
+
+
+
+/* =========================================
+   VERY SMALL PHONES
+   STILL SAME COMPOSITION
+========================================= */
+
+@media (max-width: 380px) {
+
+
+    .project-nav a,
+    .project-nav span {
+
+        font-size: 5px;
+
+    }
+
+
+    .hero {
+
+        min-height: 470px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 10vw;
+
+    }
+
+
+    .project-intro {
+
+        gap: 7vw;
+
+    }
+
+
+    .intro-right .intro-lead {
+
+        font-size: 9px;
+
+    }
+
+
+    .intro-right p {
+
+        font-size: 5.5px;
+
+    }
+
+
+    .chart-description {
+
+        max-width: 115px;
+
+        font-size: 5.5px;
+
+    }
+
+
+    .chart-card {
+
+        padding:
+            15px 14px;
+
+    }
+
+
+    .chart-wrapper {
+
+        height: 230px;
+
+    }
+
+
+    .legend {
+
+        gap: 8px;
+
+        font-size: 4.5px;
+
+    }
+
+
+    .chart-info p {
+
+        font-size: 4.5px;
+
+    }
+
+
+    .next-project {
+
+        min-height: 220px;
+
+    }
+
 }

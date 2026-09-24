@@ -1,198 +1,962 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* =========================================
+   WEATHER × WINE
+   EMMA LUNDSTRÖM PORTFOLIO
+========================================= */
+
+:root {
+
+    --cream: #f3ede3;
+    --paper: #f8f4ed;
+
+    --burgundy: #5b1824;
+    --burgundy-dark: #48121c;
+
+    --text: #151313;
+    --text-soft: rgba(21, 19, 19, 0.62);
+
+    --line: rgba(21, 19, 19, 0.14);
+
+    --nav-height: 76px;
+
 }
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: auto;
+}
+
 
 body {
-  background: #100b09;
-  color: #f5eee8;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
+
+    background: var(--cream);
+
+    color: var(--text);
+
+    font-family: "Manrope", sans-serif;
+
+    font-weight: 300;
+
+    overflow-x: hidden;
+
 }
 
-/* =========================================
-   MAIN
-========================================= */
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 90px 40px 120px;
-  text-align: center;
+/* Locks the page before the user
+   clicks Find My Wine */
+
+body.page-locked {
+
+    height: 100vh;
+
+    overflow: hidden;
+
 }
 
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+
 /* =========================================
-   INTRO
+   NAVIGATION
 ========================================= */
+
+.project-nav {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--nav-height);
+
+    padding: 0 4.5vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    z-index: 1000;
+
+    background: var(--cream);
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.back-link,
+.project-name {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 0.11em;
+
+}
+
+
+.back-link {
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.back-link:hover {
+
+    opacity: 0.5;
+
+    transform: translateX(-4px);
+
+}
+
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    position: relative;
+
+    height: calc(100vh - var(--nav-height));
+
+    min-height: 600px;
+
+    margin-top: var(--nav-height);
+
+    padding: 50px 4.5vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--cream);
+
+    overflow: hidden;
+
+}
+
+
+/* Large subtle WINE in background */
+
+.hero::before {
+
+    content: "WINE";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -51%);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(14rem, 31vw, 35rem);
+
+    font-style: italic;
+
+    line-height: 1;
+
+    color: rgba(91, 24, 36, 0.035);
+
+    pointer-events: none;
+
+    white-space: nowrap;
+
+}
+
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1100px, 100%);
+
+    text-align: center;
+
+}
+
+
+.eyebrow,
+.section-label {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 0.14em;
+
+    font-weight: 400;
+
+}
+
 
 .eyebrow {
-  font-size: 11px;
-  letter-spacing: 4px;
-  opacity: 0.45;
-  margin-bottom: 28px;
+
+    margin-bottom: 28px;
+
+    color: var(--text-soft);
+
 }
 
-h1 {
-  font-family: Georgia, serif;
-  font-size: clamp(58px, 8vw, 100px);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -4px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.hero h1 {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(5.5rem, 10vw, 10rem);
+
+    font-weight: 500;
+
+    line-height: 0.84;
+
+    letter-spacing: -0.055em;
+
 }
 
-.intro {
-  font-size: 18px;
-  opacity: 0.55;
-  margin-top: 28px;
-  text-align: center;
+
+.hero h1 em {
+
+    display: block;
+
+    color: var(--burgundy);
+
+    font-style: italic;
+
+    font-weight: 500;
+
 }
+
+
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.hero-description {
+
+    margin-top: 32px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.4rem;
+
+    font-style: italic;
+
+    color: var(--text-soft);
+
+}
+
+
 
 /* =========================================
    BUTTON
 ========================================= */
 
-button {
-  margin-top: 38px;
-  background: #f5eee8;
-  color: #100b09;
-  border: none;
-  padding: 16px 26px;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  border-radius: 30px;
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+#wineButton {
+
+    margin-top: 38px;
+
+    padding: 14px 25px;
+
+    border: 1px solid var(--burgundy);
+
+    border-radius: 100px;
+
+    background: transparent;
+
+    color: var(--burgundy);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+
 }
 
-button:hover {
-  transform: translateY(-3px);
-  opacity: 0.9;
+
+#wineButton:hover {
+
+    background: var(--burgundy);
+
+    color: var(--cream);
+
+    transform: translateY(-2px);
+
 }
+
+
+#wineButton:disabled {
+
+    cursor: wait;
+
+    opacity: 0.6;
+
+}
+
+
 
 /* =========================================
-   RESULT
+   HERO BOTTOM
+========================================= */
+
+.hero-bottom {
+
+    position: absolute;
+
+    left: 4.5vw;
+    right: 4.5vw;
+
+    bottom: 28px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.1em;
+
+    color: var(--text-soft);
+
+}
+
+
+
+/* =========================================
+   HIDDEN PROJECT CONTENT
+========================================= */
+
+/*
+   Everything below the hero is completely
+   hidden before Find My Wine is clicked.
+*/
+
+.project-content {
+
+    display: none;
+
+}
+
+
+.project-content.is-visible {
+
+    display: block;
+
+}
+
+
+
+/* =========================================
+   RESULT SECTION
 ========================================= */
 
 .result {
-  display: none;
-  margin-top: 100px;
+
+    min-height: 100vh;
+
+    padding: 70px 4.5vw 110px;
+
+    background: var(--paper);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
 }
 
-#weather {
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  opacity: 0.45;
-  margin-bottom: 45px;
-}
+
 
 /* =========================================
    WINE CARD
 ========================================= */
 
 .wine-card {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  align-items: center;
-  gap: 80px;
-  max-width: 900px;
+
+    position: relative;
+
+    width: min(1180px, 100%);
+
+    min-height: 650px;
+
+    margin: 0 auto;
+
+    padding: 110px 65px 55px;
+
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    overflow: hidden;
+
 }
+
+
+
+/* =========================================
+   WEATHER BAR
+========================================= */
+
+.weather-inside {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    min-height: 78px;
+
+    padding: 0 34px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.result-label,
+#weather {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.09em;
+
+    text-transform: uppercase;
+
+    color: var(--text-soft);
+
+}
+
+
 
 /* =========================================
    BOTTLE
 ========================================= */
 
 .bottle-wrapper {
-  height: 440px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+
+    position: relative;
+
+    height: 470px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
 }
 
-/* subtle glow behind bottle */
 
-.bottle-wrapper::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.035);
-  filter: blur(40px);
+.bottle-circle {
+
+    position: absolute;
+
+    width: 390px;
+    height: 390px;
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
 }
+
 
 .bottle-wrapper img {
-  position: relative;
-  max-width: 260px;
-  max-height: 420px;
-  object-fit: contain;
 
-  opacity: 0;
-  transform: translateY(35px) scale(0.96);
+    position: relative;
 
-  animation: bottleReveal 0.9s ease forwards;
+    z-index: 2;
+
+    max-width: 270px;
+    max-height: 450px;
+
+    object-fit: contain;
+
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(0.96);
+
+    animation:
+        bottleReveal
+        0.9s
+        ease
+        forwards;
+
 }
 
+
+
 /* =========================================
-   WINE INFO
+   WINE INFORMATION
 ========================================= */
 
 .wine-info {
-  max-width: 430px;
 
-  opacity: 0;
-  transform: translateY(25px);
+    max-width: 500px;
 
-  animation: textReveal 0.8s ease 0.45s forwards;
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    animation:
+        textReveal
+        0.8s
+        ease
+        0.35s
+        forwards;
+
 }
+
 
 .wine-label {
-  font-size: 10px;
-  letter-spacing: 4px;
-  opacity: 0.4;
-  margin-bottom: 18px;
+
+    margin-bottom: 20px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+
+    color: var(--burgundy);
+
 }
+
+
+
+/* Wine name */
 
 #wine {
-  font-family: Georgia, serif;
-  font-size: clamp(38px, 5vw, 62px);
-  line-height: 0.98;
-  font-weight: 400;
-  letter-spacing: -2px;
-  margin-bottom: 22px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3.4rem, 5vw, 5rem);
+
+    font-weight: 500;
+
+    line-height: 0.96;
+
+    letter-spacing: -0.045em;
+
+    color: var(--text);
+
 }
+
+
+
+/* Country / region / wine type */
 
 #wineDetails {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  opacity: 0.45;
-  margin-bottom: 28px;
+
+    margin-top: 24px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+    color: var(--text-soft);
+
 }
+
+
+
+/* Recommendation explanation */
 
 #reason {
-  font-family: Georgia, serif;
-  font-size: 20px;
-  line-height: 1.5;
-  font-style: italic;
-  opacity: 0.7;
+
+    max-width: 440px;
+
+    margin-top: 35px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.5rem;
+
+    font-style: italic;
+
+    line-height: 1.45;
+
+    color: var(--text-soft);
+
 }
 
+
+
+/* Wine region */
+
 #wineRegion {
-  margin-top: 32px;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  opacity: 0.35;
-  line-height: 1.6;
+
+    margin-top: 35px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid var(--line);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.08em;
+
+    line-height: 1.7;
+
+    text-transform: uppercase;
+
+    color: var(--text-soft);
+
 }
+
+
+
+/* =========================================
+   PROJECT INFO
+========================================= */
+
+.case-info {
+
+    padding: 145px 4.5vw 155px;
+
+    background: var(--cream);
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 10vw;
+
+}
+
+
+.section-label {
+
+    color: var(--text-soft);
+
+}
+
+
+.case-left h2 {
+
+    margin-top: 30px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(4rem, 7vw, 7rem);
+
+    font-weight: 500;
+
+    line-height: 0.92;
+
+    letter-spacing: -0.055em;
+
+}
+
+
+.case-left h2 em {
+
+    color: var(--burgundy);
+
+    font-style: italic;
+
+    font-weight: 500;
+
+}
+
+
+.case-right {
+
+    align-self: center;
+
+}
+
+
+.case-right p {
+
+    margin-bottom: 25px;
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+
+    color: var(--text-soft);
+
+}
+
+
+.case-right .case-lead {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.65rem;
+
+    line-height: 1.35;
+
+    color: var(--text);
+
+}
+
+
+
+/* =========================================
+   TOOLS
+========================================= */
+
+.tools-section {
+
+    padding: 70px 4.5vw 100px;
+
+    background: var(--cream);
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.tools {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+}
+
+
+.tools span {
+
+    padding: 12px 19px;
+
+    border: 1px solid rgba(21, 19, 19, 0.22);
+
+    border-radius: 100px;
+
+    font-size: 0.8rem;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+.tools span:hover {
+
+    background: var(--burgundy);
+
+    color: #ffffff;
+
+    border-color: var(--burgundy);
+
+}
+
+
+
+/* =========================================
+   BACK TO WORK
+========================================= */
+
+.next-project {
+
+    min-height: 440px;
+
+    padding: 90px 4.5vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: var(--burgundy);
+
+    color: var(--cream);
+
+    transition: background 0.3s ease;
+
+}
+
+
+.next-project:hover {
+
+    background: var(--burgundy-dark);
+
+}
+
+
+.next-project .section-label {
+
+    color: rgba(255, 255, 255, 0.65);
+
+}
+
+
+.next-project h2 {
+
+    margin-top: 20px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(4rem, 8vw, 8rem);
+
+    font-weight: 500;
+
+    letter-spacing: -0.055em;
+
+    line-height: 0.9;
+
+}
+
+
+.next-project h2 em {
+
+    font-style: italic;
+
+    font-weight: 500;
+
+}
+
+
+.next-arrow {
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(4rem, 8vw, 8rem);
+
+    font-weight: 200;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.next-project:hover .next-arrow {
+
+    transform: translate(8px, -8px);
+
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.project-footer {
+
+    padding: 34px 4.5vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: var(--burgundy-dark);
+
+    color: rgba(255, 255, 255, 0.75);
+
+}
+
+
+.project-footer p {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.1em;
+
+}
+
+
 
 /* =========================================
    ANIMATIONS
@@ -200,127 +964,553 @@ button:hover {
 
 @keyframes bottleReveal {
 
-  from {
-    opacity: 0;
-    transform: translateY(35px) scale(0.96);
-  }
+    from {
 
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.96);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
 
 }
+
 
 @keyframes textReveal {
 
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
+    from {
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
 
 }
+
+
 
 /* =========================================
    MOBILE
+   SAME COMPOSITION AS DESKTOP
+   ONLY SCALED DOWN
 ========================================= */
 
 @media (max-width: 700px) {
 
-  .container {
-    padding: 60px 24px 80px;
-  }
-
-  h1 {
-    font-size: 58px;
-    letter-spacing: -3px;
-  }
-
-  .result {
-    margin-top: 80px;
-  }
-
-  .wine-card {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    text-align: center;
-  }
-
-  .bottle-wrapper {
-    height: 330px;
-  }
-
-  .bottle-wrapper img {
-    max-height: 320px;
-  }
-
-  .wine-info {
-    max-width: 100%;
-  }
-
-  #wine {
-    font-size: 45px;
-  }
-
-  #reason {
-    font-size: 18px;
-  }
-
-}
-/* =========================================
-   BACK TO PORTFOLIO
-========================================= */
-
-.project-nav {
-    width: 100%;
-    padding: 30px 8vw;
-
-    border-bottom: 1px solid rgba(242, 240, 235, 0.12);
-}
-
-.back-link {
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-
-    color: rgba(242, 240, 235, 0.8);
-    text-decoration: none;
-
-    transition: opacity 0.25s ease;
-}
-
-.back-link:hover {
-    opacity: 0.55;
-}
-
-@media (max-width: 700px) {
-    .project-nav {
-        padding: 22px;
+    :root {
+        --nav-height: 68px;
     }
 
-    .back-link {
+
+    /* =====================================
+       NAVIGATION
+    ====================================== */
+
+    .project-nav {
+        padding: 0 4.5vw;
+    }
+
+    .back-link,
+    .project-name {
+        font-size: 6px;
+        letter-spacing: 0.11em;
+    }
+
+
+    /* =====================================
+       HERO
+       SAME COMPOSITION AS DESKTOP
+    ====================================== */
+
+    .hero {
+        height: calc(100vh - var(--nav-height));
+        min-height: 500px;
+
+        margin-top: var(--nav-height);
+
+        padding: 30px 4.5vw;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* same background word */
+
+    .hero::before {
+        font-size: 31vw;
+    }
+
+
+    .hero-content {
+        width: min(1100px, 100%);
+
+        text-align: center;
+    }
+
+
+    .eyebrow,
+    .section-label {
+        font-size: 6px;
+        letter-spacing: 0.14em;
+    }
+
+
+    .eyebrow {
+        margin-bottom: 14px;
+    }
+
+
+    .hero h1 {
+        max-width: 100%;
+
+        font-size: 10vw;
+
+        line-height: 0.84;
+        letter-spacing: -0.055em;
+    }
+
+
+    .hero-description {
+        margin-top: 16px;
+
+        font-size: 10px;
+    }
+
+
+    #wineButton {
+        margin-top: 20px;
+
+        padding: 8px 14px;
+
+        font-size: 6px;
+    }
+
+
+    .hero-bottom {
+        left: 4.5vw;
+        right: 4.5vw;
+
+        bottom: 18px;
+
+        font-size: 5px;
+    }
+
+
+    /* =====================================
+       RESULT
+       SAME COMPOSITION
+    ====================================== */
+
+    .result {
+        min-height: 100vh;
+
+        padding:
+            45px
+            4.5vw
+            65px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* =====================================
+       WINE CARD
+       KEEP TWO COLUMNS
+    ====================================== */
+
+    .wine-card {
+        width: min(1180px, 100%);
+
+        min-height: 360px;
+
+        margin: 0 auto;
+
+        padding:
+            65px
+            28px
+            28px;
+
+        display: grid;
+
+        grid-template-columns:
+            0.9fr 1.1fr;
+
+        align-items: center;
+
+        gap: 35px;
+    }
+
+
+    /* =====================================
+       WEATHER BAR
+       KEEP HORIZONTAL
+    ====================================== */
+
+    .weather-inside {
+        min-height: 45px;
+
+        padding:
+            0 16px;
+
+        display: flex;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 15px;
+    }
+
+
+    .result-label,
+    #weather {
+        font-size: 5px;
+
+        letter-spacing: 0.09em;
+    }
+
+
+    /* =====================================
+       BOTTLE
+    ====================================== */
+
+    .bottle-wrapper {
+        height: 250px;
+    }
+
+
+    .bottle-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+
+    .bottle-wrapper img {
+        max-width: 140px;
+        max-height: 235px;
+    }
+
+
+    /* =====================================
+       WINE INFORMATION
+       SAME RIGHT-HAND POSITION
+    ====================================== */
+
+    .wine-info {
+        max-width: 500px;
+
+        text-align: left;
+    }
+
+
+    .wine-label {
+        margin-bottom: 10px;
+
+        font-size: 6px;
+    }
+
+
+    #wine {
+        font-size: 5vw;
+
+        line-height: 0.96;
+    }
+
+
+    #wineDetails {
+        margin-top: 12px;
+
+        font-size: 5px;
+
+        line-height: 1.6;
+    }
+
+
+    #reason {
+        max-width: 100%;
+
+        margin-top: 18px;
+
+        font-size: 9px;
+
+        line-height: 1.45;
+    }
+
+
+    #wineRegion {
+        margin-top: 18px;
+
+        padding-top: 11px;
+
+        font-size: 5px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       PROJECT INFO
+       KEEP TWO COLUMNS
+    ====================================== */
+
+    .case-info {
+        padding:
+            70px
+            4.5vw
+            75px;
+
+        display: grid;
+
+        grid-template-columns:
+            1.2fr 0.8fr;
+
+        gap: 10vw;
+    }
+
+
+    .case-left h2 {
+        margin-top: 14px;
+
+        font-size: 7vw;
+
+        line-height: 0.92;
+    }
+
+
+    .case-right {
+        align-self: center;
+
+        margin-top: 0;
+    }
+
+
+    .case-right p {
+        margin-bottom: 12px;
+
+        font-size: 6px;
+
+        line-height: 1.75;
+    }
+
+
+    .case-right .case-lead {
+        font-size: 10px;
+
+        line-height: 1.35;
+    }
+
+
+    /* =====================================
+       TOOLS
+       SAME COMPOSITION
+    ====================================== */
+
+    .tools-section {
+        padding:
+            40px
+            4.5vw
+            55px;
+    }
+
+
+    .tools {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 5px;
+
+        margin-top: 16px;
+    }
+
+
+    .tools span {
+        padding:
+            6px
+            9px;
+
+        font-size: 6px;
+    }
+
+
+    /* =====================================
+       BACK TO WORK
+       SAME SIDE-BY-SIDE COMPOSITION
+    ====================================== */
+
+    .next-project {
+        min-height: 240px;
+
+        padding:
+            50px
+            4.5vw;
+
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .next-project h2 {
+        margin-top: 10px;
+
+        font-size: 8vw;
+
+        line-height: 0.9;
+    }
+
+
+    .next-arrow {
+        font-size: 8vw;
+    }
+
+
+    /* =====================================
+       FOOTER
+       SAME COMPOSITION
+    ====================================== */
+
+    .project-footer {
+        padding:
+            18px
+            4.5vw;
+
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 15px;
+    }
+
+
+    .project-footer p {
+        font-size: 5px;
+
+        letter-spacing: 0.1em;
+    }
+
+
+    .project-footer p:last-child {
+        text-align: right;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   STILL SAME COMPOSITION
+========================================= */
+
+@media (max-width: 380px) {
+
+    .back-link,
+    .project-name {
+        font-size: 5px;
+    }
+
+
+    .hero {
+        min-height: 470px;
+    }
+
+
+    .hero h1 {
+        font-size: 10vw;
+    }
+
+
+    .hero-description {
         font-size: 9px;
     }
-}
-.project-footer {
-    display: none;
-    width: 100%;
-    padding: 30px 8vw;
-    border-top: 1px solid rgba(242, 240, 235, 0.12);
-    text-align: right;
-}
 
-.project-footer.show {
-    display: block;
-}
 
-@media (max-width: 700px) {
-    .project-footer {
-        padding: 22px;
+    .wine-card {
+        min-height: 330px;
+
+        padding:
+            60px
+            20px
+            24px;
+
+        gap: 25px;
     }
+
+
+    .bottle-wrapper {
+        height: 220px;
+    }
+
+
+    .bottle-circle {
+        width: 175px;
+        height: 175px;
+    }
+
+
+    .bottle-wrapper img {
+        max-width: 120px;
+        max-height: 205px;
+    }
+
+
+    #wine {
+        font-size: 4.8vw;
+    }
+
+
+    #reason {
+        font-size: 8px;
+    }
+
+
+    .case-info {
+        gap: 7vw;
+    }
+
+
+    .case-right .case-lead {
+        font-size: 9px;
+    }
+
+
+    .case-right p {
+        font-size: 5.5px;
+    }
+
+
+    .next-project {
+        min-height: 220px;
+    }
+
 }

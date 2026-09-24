@@ -1,6 +1,22 @@
 /* =========================================
-   SCRAPING PROJECT
-   EMMA LUNDSTRÖM
+   WEB SCRAPING
+========================================= */
+
+:root {
+    --cream: #f3ede3;
+    --paper: #f8f4ed;
+    --burgundy: #5b1824;
+    --burgundy-dark: #48121c;
+    --black: #121212;
+    --text: #151313;
+    --text-soft: rgba(21, 19, 19, 0.60);
+    --line: rgba(21, 19, 19, 0.14);
+    --nav-height: 76px;
+}
+
+
+/* =========================================
+   RESET
 ========================================= */
 
 * {
@@ -14,10 +30,22 @@ html {
 }
 
 body {
-    background: #080808;
-    color: #f2f0eb;
+    background: var(--cream);
+    color: var(--text);
+
     font-family: "Manrope", sans-serif;
     font-weight: 300;
+
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
 }
 
 
@@ -26,32 +54,55 @@ body {
 ========================================= */
 
 .project-nav {
-    position: absolute;
+    position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
-    padding: 30px 42px;
+    height: var(--nav-height);
+
+    padding: 0 4.5vw;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    z-index: 1000;
+
+    background: var(--cream);
+
+    border-bottom: 1px solid var(--line);
+
     font-family: "DM Mono", monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-
-    z-index: 10;
+    font-size: 10px;
+    letter-spacing: 0.1em;
 }
 
-.project-nav a {
-    color: #f2f0eb;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
+.back-link {
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
 }
 
-.project-nav a:hover {
+.back-link:hover {
     opacity: 0.5;
+    transform: translateX(-4px);
+}
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+.label,
+.section-label {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+    letter-spacing: 0.12em;
+
+    color: var(--text-soft);
 }
 
 
@@ -60,222 +111,1270 @@ body {
 ========================================= */
 
 .hero {
-    min-height: 100vh;
-    padding: 150px 42px 45px;
+    position: relative;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    min-height: calc(100vh - var(--nav-height));
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: var(--nav-height);
+
+    padding: 7vw 4.5vw 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 0.82fr;
+
+    gap: 8vw;
+
+    align-items: center;
+
+    background: var(--cream);
 }
 
-.label,
-.section-number {
-    font-family: "DM Mono", monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    opacity: 0.55;
+
+/* HERO TEXT */
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
-    font-size: clamp(55px, 8vw, 125px);
-    font-weight: 300;
-    line-height: 0.95;
-    letter-spacing: -0.055em;
-    max-width: 1200px;
+    margin-top: 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(6rem, 10vw, 10rem);
+    font-weight: 500;
+
+    line-height: 0.82;
+    letter-spacing: -0.06em;
 }
 
 .hero h1 em {
-    font-family: "Playfair Display", serif;
+    display: block;
+
+    color: var(--burgundy);
+
+    font-style: italic;
     font-weight: 500;
 }
 
-.hero-info {
+.hero-description {
+    margin-top: 42px;
+
+    color: var(--text-soft);
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   TERMINAL
+========================================= */
+
+.terminal {
+    width: 100%;
+    max-width: 540px;
+
+    justify-self: end;
+
+    background: var(--black);
+    color: #f5f1eb;
+
+    box-shadow:
+        0 30px 70px rgba(30, 15, 18, 0.13);
+}
+
+
+/* TERMINAL HEADER */
+
+.terminal-top {
+    min-height: 52px;
+
+    padding: 0 20px;
+
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.10);
+
     font-family: "DM Mono", monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    opacity: 0.6;
+
+    font-size: 9px;
+    letter-spacing: 0.08em;
+
+    color: rgba(255, 255, 255, 0.45);
 }
 
 
-/* =========================================
-   PROJECT INTRO
-========================================= */
+/* DOTS */
 
-.project-intro {
-    padding: 140px 42px;
-
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+.terminal-dots {
+    display: flex;
+    gap: 7px;
 }
 
-.intro-content {
-    max-width: 800px;
-}
+.terminal-dots span {
+    width: 7px;
+    height: 7px;
 
-.intro-content h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(42px, 5vw, 75px);
-    font-weight: 500;
-    line-height: 1.05;
-    margin-bottom: 50px;
-}
+    border-radius: 50%;
 
-.intro-content p {
-    font-size: 18px;
-    line-height: 1.8;
-    opacity: 0.75;
-    max-width: 650px;
-    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.30);
 }
 
 
-/* =========================================
-   DATA
-========================================= */
+/* TERMINAL CONTENT */
 
-.data-section {
-    padding: 140px 42px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
+.terminal-content {
+    min-height: 380px;
 
-.data-section > h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(45px, 6vw, 85px);
-    font-weight: 500;
-    margin: 50px 0 80px;
-}
-
-.data-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.data-grid div {
-    min-height: 220px;
-    padding: 25px 20px;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 35px;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
 
-.data-grid div:last-child {
-    border-right: none;
-}
+    gap: 20px;
 
-.data-grid span {
     font-family: "DM Mono", monospace;
-    font-size: 10px;
-    opacity: 0.45;
+
+    font-size: 11px;
+    line-height: 1.5;
 }
 
-.data-grid h3 {
-    font-size: 18px;
+.terminal-line {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    opacity: 0;
+
+    transform: translateY(6px);
+
+    animation:
+        terminalReveal
+        0.45s
+        ease
+        forwards;
+}
+
+.terminal-muted {
+    margin-right: auto;
+
+    color: rgba(255, 255, 255, 0.38);
+}
+
+.terminal-success {
+    color: #ffffff;
+}
+
+
+/* TERMINAL ANIMATION */
+
+.terminal-delay-1 {
+    animation-delay: 0.35s;
+}
+
+.terminal-delay-2 {
+    animation-delay: 0.55s;
+}
+
+.terminal-delay-3 {
+    animation-delay: 0.75s;
+}
+
+.terminal-delay-4 {
+    animation-delay: 0.95s;
+}
+
+.terminal-delay-5 {
+    animation-delay: 1.15s;
+}
+
+.terminal-delay-6 {
+    animation-delay: 1.4s;
+}
+
+@keyframes terminalReveal {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* TERMINAL RESULT */
+
+.terminal-result {
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    display: flex;
+
+    gap: 12px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    opacity: 0;
+
+    transform: translateY(6px);
+
+    animation:
+        terminalReveal
+        0.45s
+        ease
+        forwards;
+}
+
+.terminal-result strong {
+    color: #ffffff;
     font-weight: 400;
 }
 
 
 /* =========================================
-   RESULT
+   HERO BOTTOM
 ========================================= */
 
-.result-section {
-    min-height: 75vh;
-    padding: 140px 42px;
+.hero-bottom {
+    position: absolute;
+
+    left: 4.5vw;
+    right: 4.5vw;
+    bottom: 25px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+    letter-spacing: 0.1em;
+
+    color: var(--text-soft);
+}
+
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.process-section {
+    position: relative;
+
+    padding: 100px 4.5vw 110px;
+
+    background: var(--burgundy);
+    color: var(--cream);
+
+    overflow: hidden;
+}
+
+
+/* SUBTLE BACKGROUND GRID */
+
+.process-section::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 48px 48px;
+}
+
+.process-section .section-label {
+    position: relative;
+
+    z-index: 2;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* REMOVE 01 / 02 / 03 */
+
+.process-number {
+    display: none;
+}
+
+
+/* =========================================
+   PROCESS FLOW
+========================================= */
+
+.process-flow {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        80px
+        minmax(0, 1fr)
+        80px
+        minmax(0, 1fr);
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   PROCESS CARDS
+========================================= */
+
+.process-item {
+    position: relative;
+
+    min-width: 0;
+    min-height: 290px;
+
+    padding: 32px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+
+    justify-content: flex-end;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.result-section h2 {
+.process-item:hover {
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border-color:
+        rgba(255, 255, 255, 0.45);
+
+    transform: translateY(-6px);
+}
+
+
+/* TOP DOT */
+
+.process-item::before {
+    content: "";
+
+    position: absolute;
+
+    top: 28px;
+    left: 28px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.60);
+}
+
+
+/* TOP LINE */
+
+.process-item::after {
+    content: "";
+
+    position: absolute;
+
+    top: 31px;
+    left: 48px;
+    right: 28px;
+
+    height: 1px;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+}
+
+
+/* TITLE */
+
+.process-item h2 {
     font-family: "Playfair Display", serif;
-    font-size: clamp(55px, 7vw, 100px);
+
+    font-size: clamp(2.4rem, 3.8vw, 4rem);
+
     font-weight: 500;
-    margin: 40px 0;
+
+    line-height: 0.95;
+    letter-spacing: -0.045em;
 }
 
-.result-section > p:not(.section-number) {
-    max-width: 650px;
-    font-size: 18px;
-    line-height: 1.8;
-    opacity: 0.7;
-}
 
-.data-link {
-    display: inline-block;
-    margin-top: 45px;
+/* DETAIL */
 
-    color: #f2f0eb;
-    text-decoration: none;
+.process-item p {
+    margin-top: 12px;
 
     font-family: "DM Mono", monospace;
-    font-size: 12px;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+    letter-spacing: 0.11em;
+
     text-transform: uppercase;
-    letter-spacing: 0.08em;
 
-    border-bottom: 1px solid #f2f0eb;
-    padding-bottom: 6px;
-
-    transition: opacity 0.3s ease;
+    color:
+        rgba(255, 255, 255, 0.55);
 }
 
-.data-link:hover {
+
+/* =========================================
+   PROCESS ARROWS
+========================================= */
+
+.process-arrow {
+    position: relative;
+
+    width: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: transparent;
+}
+
+.process-arrow::before {
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+
+    height: 1px;
+
+    background:
+        rgba(255, 255, 255, 0.40);
+}
+
+.process-arrow::after {
+    content: "→";
+
+    position: absolute;
+
+    right: 5px;
+
+    color:
+        rgba(255, 255, 255, 0.70);
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   DATASET
+========================================= */
+
+.dataset-section {
+    padding: 130px 4.5vw 140px;
+
+    background: var(--paper);
+}
+
+
+/* DATASET HEADING */
+
+.dataset-heading {
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 60px;
+}
+
+.dataset-heading h2 {
+    margin-top: 20px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(4.5rem, 8vw, 8rem);
+    font-weight: 500;
+
+    line-height: 0.88;
+    letter-spacing: -0.055em;
+}
+
+.dataset-heading h2 em {
+    display: block;
+
+    color: var(--burgundy);
+
+    font-style: italic;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   DATASET BUTTON
+========================================= */
+
+.dataset-toggle {
+    min-width: 220px;
+
+    padding: 16px 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+
+    background: transparent;
+    color: var(--text);
+
+    border:
+        1px solid rgba(21, 19, 19, 0.30);
+
+    border-radius: 100px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+    letter-spacing: 0.09em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.dataset-toggle:hover {
+    background: var(--burgundy);
+
+    color: #ffffff;
+
+    border-color: var(--burgundy);
+
+    transform: translateY(-2px);
+}
+
+.button-arrow {
+    font-size: 14px;
+}
+
+
+/* =========================================
+   HIDDEN DATASET
+========================================= */
+
+.dataset-content[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================
+   DATASET CONTENT
+========================================= */
+
+.dataset-content {
+    width: min(1180px, 100%);
+
+    margin: 80px auto 0;
+}
+
+
+/* =========================================
+   DATASET META
+========================================= */
+
+.dataset-meta {
+    padding: 18px 0;
+
+    display: flex;
+
+    gap: 35px;
+
+    border-top: 1px solid var(--line);
+}
+
+.dataset-meta span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+    letter-spacing: 0.1em;
+
+    color: var(--text-soft);
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-top: 1px solid var(--line);
+
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    font-variant-numeric: tabular-nums;
+}
+
+th,
+td {
+    padding: 20px 18px;
+
+    text-align: left;
+    vertical-align: top;
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+/* COMPANY */
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 28%;
+
+    padding-left: 0;
+}
+
+
+/* ORGANISATION NUMBER */
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 18%;
+}
+
+
+/* PHONE */
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 18%;
+}
+
+
+/* ADDRESS */
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 36%;
+}
+
+
+/* TABLE HEADER */
+
+thead th {
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+    font-weight: 400;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+    color: var(--text-soft);
+}
+
+
+/* TABLE BODY */
+
+tbody td {
+    color:
+        rgba(21, 19, 19, 0.75);
+
+    font-size: 0.86rem;
+    line-height: 1.5;
+
+    overflow-wrap: break-word;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background:
+        rgba(91, 24, 36, 0.045);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.project-footer {
+    padding: 35px 4.5vw;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background: var(--burgundy-dark);
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+    letter-spacing: 0.09em;
+}
+
+.project-footer a {
+    transition: opacity 0.25s ease;
+}
+
+.project-footer a:hover {
     opacity: 0.5;
 }
 
 
 /* =========================================
    MOBILE
+   SAME DESIGN — ONLY SMALLER
 ========================================= */
 
 @media (max-width: 700px) {
 
-    .project-nav {
-        padding: 24px 20px;
+    :root {
+        --nav-height: 66px;
     }
+
+
+    /* NAV */
+
+    .project-nav {
+        padding: 0 20px;
+
+        font-size: 7px;
+    }
+
+
+    /* =====================================
+       HERO
+       SAME TWO-COLUMN DESIGN
+    ====================================== */
 
     .hero {
-        padding: 130px 20px 30px;
+        min-height: calc(100svh - var(--nav-height));
+
+        margin-top: var(--nav-height);
+
+        padding:
+            45px
+            20px
+            55px;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 0.82fr);
+
+        gap: 18px;
+
+        align-items: center;
     }
+
+
+    .label,
+    .section-label {
+        font-size: 7px;
+    }
+
 
     .hero h1 {
-        font-size: 14vw;
+        margin-top: 14px;
+
+        font-size:
+            clamp(
+                2.8rem,
+                13vw,
+                4.2rem
+            );
+
+        line-height: 0.84;
     }
 
-    .project-intro {
-        padding: 90px 20px;
-        grid-template-columns: 1fr;
-        gap: 45px;
+
+    .hero-description {
+        max-width: 150px;
+
+        margin-top: 20px;
+
+        font-size: 0.68rem;
+
+        line-height: 1.5;
     }
 
-    .data-section {
-        padding: 90px 20px;
+
+    /* TERMINAL */
+
+    .terminal {
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+        box-shadow:
+            0 14px 30px
+            rgba(30, 15, 18, 0.12);
     }
 
-    .data-grid {
-        grid-template-columns: 1fr;
+
+    .terminal-top {
+        min-height: 32px;
+
+        padding: 0 9px;
+
+        font-size: 5px;
     }
 
-    .data-grid div {
-        min-height: 140px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    .terminal-dots {
+        gap: 4px;
     }
 
-    .result-section {
-        padding: 100px 20px;
+
+    .terminal-dots span {
+        width: 4px;
+        height: 4px;
     }
+
+
+    .terminal-content {
+        min-height: 230px;
+
+        padding: 15px 10px;
+
+        gap: 11px;
+
+        font-size: 5.5px;
+
+        line-height: 1.4;
+    }
+
+
+    .terminal-line {
+        gap: 5px;
+    }
+
+
+    .terminal-result {
+        padding-top: 12px;
+
+        gap: 6px;
+    }
+
+
+    .hero-bottom {
+        left: 20px;
+        right: 20px;
+        bottom: 18px;
+
+        font-size: 5px;
+    }
+
+
+    /* =====================================
+       PROCESS
+       SAME HORIZONTAL DESIGN
+    ====================================== */
+
+    .process-section {
+        padding:
+            65px
+            20px
+            75px;
+    }
+
+
+    .process-section::before {
+        background-size:
+            34px 34px;
+    }
+
+
+    .process-flow {
+        margin-top: 35px;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            24px
+            minmax(0, 1fr)
+            24px
+            minmax(0, 1fr);
+
+        align-items: stretch;
+    }
+
+
+    .process-item {
+        min-height: 155px;
+
+        padding: 12px 9px;
+    }
+
+
+    .process-item::before {
+        top: 13px;
+        left: 9px;
+
+        width: 4px;
+        height: 4px;
+    }
+
+
+    .process-item::after {
+        top: 14.5px;
+
+        left: 19px;
+        right: 9px;
+    }
+
+
+    .process-item h2 {
+        font-size:
+            clamp(
+                1.05rem,
+                5vw,
+                1.5rem
+            );
+
+        line-height: 0.95;
+    }
+
+
+    .process-item p {
+        margin-top: 6px;
+
+        font-size: 5px;
+
+        letter-spacing: 0.06em;
+    }
+
+
+    /* HORIZONTAL ARROWS */
+
+    .process-arrow {
+        width: 24px;
+        height: auto;
+    }
+
+
+    .process-arrow::before {
+        left: 3px;
+        right: 3px;
+
+        width: auto;
+        height: 1px;
+    }
+
+
+    .process-arrow::after {
+        content: "→";
+
+        right: -1px;
+
+        bottom: auto;
+
+        font-size: 9px;
+    }
+
+
+    /* =====================================
+       DATASET
+       SAME STRUCTURE
+    ====================================== */
+
+    .dataset-section {
+        padding:
+            75px
+            20px
+            90px;
+    }
+
+
+    .dataset-heading {
+        display: flex;
+
+        justify-content: space-between;
+        align-items: flex-end;
+
+        gap: 15px;
+    }
+
+
+    .dataset-heading > div {
+        min-width: 0;
+    }
+
+
+    .dataset-heading h2 {
+        margin-top: 12px;
+
+        font-size:
+            clamp(
+                2.8rem,
+                13vw,
+                4rem
+            );
+    }
+
+
+    .dataset-toggle {
+        width: auto;
+        min-width: 125px;
+
+        margin: 0;
+
+        padding: 11px 12px;
+
+        gap: 12px;
+
+        flex-shrink: 0;
+
+        font-size: 5.5px;
+    }
+
+
+    .button-arrow {
+        font-size: 10px;
+    }
+
+
+    .dataset-content {
+        margin-top: 45px;
+    }
+
+
+    .dataset-meta {
+        gap: 12px;
+
+        flex-wrap: nowrap;
+    }
+
+
+    .dataset-meta span {
+        font-size: 5.5px;
+    }
+
+
+    /* TABLE
+       SAME TABLE — SCROLLABLE IF NEEDED */
+
+    table {
+        min-width: 650px;
+    }
+
+
+    th,
+    td {
+        padding:
+            15px
+            12px;
+    }
+
+
+    thead th {
+        font-size: 6px;
+    }
+
+
+    tbody td {
+        font-size: 0.72rem;
+    }
+
+
+    th:first-child,
+    td:first-child {
+        padding-left: 0;
+    }
+
+
+    /* =====================================
+       FOOTER
+    ====================================== */
+
+    .project-footer {
+        padding: 24px 20px;
+
+        font-size: 6px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .project-nav {
+        font-size: 6px;
+    }
+
+
+    .hero {
+        gap: 12px;
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+
+
+    .hero-description {
+        font-size: 0.62rem;
+    }
+
+
+    .terminal-content {
+        min-height: 210px;
+
+        padding: 13px 8px;
+
+        font-size: 5px;
+    }
+
+
+    .process-section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .process-flow {
+        grid-template-columns:
+            minmax(0, 1fr)
+            18px
+            minmax(0, 1fr)
+            18px
+            minmax(0, 1fr);
+    }
+
+
+    .process-arrow {
+        width: 18px;
+    }
+
+
+    .process-item {
+        min-height: 145px;
+
+        padding: 10px 7px;
+    }
+
+
+    .process-item h2 {
+        font-size: 0.95rem;
+    }
+
+
+    .process-item p {
+        font-size: 4.5px;
+    }
+
+
+    .process-item::before {
+        left: 7px;
+    }
+
+
+    .process-item::after {
+        left: 17px;
+        right: 7px;
+    }
+
+
+    .dataset-heading {
+        gap: 10px;
+    }
+
+
+    .dataset-toggle {
+        min-width: 110px;
+
+        padding: 10px;
+
+        font-size: 5px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .terminal-line,
+    .terminal-result {
+        opacity: 1;
+
+        transform: none;
+
+        animation: none;
+    }
+
 }

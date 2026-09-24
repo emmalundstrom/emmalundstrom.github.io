@@ -1,73 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>What's Your Wine?</title>
+    <title>Weather × Wine — Emma Lundström</title>
 
-  <link rel="stylesheet" href="style.css">
+    <meta
+        name="description"
+        content="A weather-powered wine recommendation experiment using live data from Stockholm."
+    >
+
+    <!-- PORTFOLIO FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
 
-  <nav class="project-nav">
-    <a href="javascript:history.back()" class="back-link">
-        ← BACK TO PORTFOLIO
-    </a>
-</nav>
+<body class="page-locked">
 
-  <main class="container">
 
-    <p class="eyebrow">WEATHER × WINE</p>
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
 
-    <h1>What's your<br> wine today?</h1>
+    <nav class="project-nav">
 
-    <p class="intro">
-      Let the weather decide.
-    </p>
+        <a
+    href="../"
+    class="back-link"
+    onclick="history.back(); return false;"
+>
+    ← BACK TO WORK
+</a>
 
-    <button id="wineButton">
-      Find my wine →
-    </button>
+        <span class="project-name">
+            WEATHER × WINE · 2026
+        </span>
 
-   <section id="result" class="result">
+    </nav>
 
-  <p id="weather"></p>
 
-  <div class="wine-card">
 
-    <div class="bottle-wrapper">
-      <img id="wineImage" src="" alt="Wine bottle">
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    WEATHER API × WINE RECOMMENDATION
+                </p>
+
+                <h1>
+                    What's your
+                    <em>wine today?</em>
+                </h1>
+
+                <p class="hero-description">
+                    Let the weather decide.
+                </p>
+
+                <button id="wineButton">
+                    FIND MY WINE →
+                </button>
+
+            </div>
+
+
+            <div class="hero-bottom">
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             HIDDEN CONTENT
+             Everything below stays hidden until click
+        ========================================== -->
+
+        <div id="projectContent" class="project-content">
+
+
+            <!-- =========================================
+                 RESULT
+            ========================================== -->
+
+            <section id="result" class="result">
+
+                <div class="wine-card">
+
+
+                    <!-- WEATHER -->
+
+                    <div class="weather-inside">
+
+                        <span class="result-label">
+                            CURRENT WEATHER
+                        </span>
+
+                        <p id="weather"></p>
+
+                    </div>
+
+
+
+                    <!-- BOTTLE -->
+
+                    <div class="bottle-wrapper">
+
+                        <div class="bottle-circle"></div>
+
+                        <img
+                            id="wineImage"
+                            src=""
+                            alt="Recommended wine bottle"
+                        >
+
+                    </div>
+
+
+
+                    <!-- WINE INFO -->
+
+                    <div class="wine-info">
+
+                        <p class="wine-label">
+                            TODAY'S PICK
+                        </p>
+
+                        <h3 id="wine"></h3>
+
+                        <p id="wineDetails"></p>
+
+                        <p id="reason"></p>
+
+                        <p id="wineRegion"></p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 THE PROJECT
+            ========================================== -->
+
+            <section class="case-info">
+
+                <div class="case-left">
+
+                    <p class="section-label">
+                        THE PROJECT
+                    </p>
+
+                    <h2>
+                        Weather
+                        <br>
+                        meets
+                        <em>wine.</em>
+                    </h2>
+
+                </div>
+
+
+                <div class="case-right">
+
+                    <p class="case-lead">
+                        What if today's weather could choose
+                        your wine for you?
+                    </p>
+
+                    <p>
+                        Weather × Wine is a small API experiment
+                        that turns live weather data from Stockholm
+                        into a wine recommendation.
+                    </p>
+
+                    <p>
+                        The experience combines temperature data
+                        with predefined wine recommendations and
+                        enriches the result with geographic data
+                        about the wine region.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 BUILT WITH
+            ========================================== -->
+
+            <section class="tools-section">
+
+                <p class="section-label">
+                    BUILT WITH
+                </p>
+
+                <div class="tools">
+
+                    <span>Open-Meteo API</span>
+
+                    <span>Wikidata</span>
+
+                    <span>JavaScript</span>
+
+                    <span>API Mashup</span>
+
+                </div>
+
+            </section>
+
+<!-- =========================================
+     BACK TO WORK
+========================================== -->
+
+<a
+    href="../"
+    class="next-project"
+    onclick="history.back(); return false;"
+>
+
+    <div>
+
+        <p class="section-label">
+            BACK TO
+        </p>
+
+        <h2>
+            Selected
+            <em>work.</em>
+        </h2>
+
     </div>
 
-    <div class="wine-info">
+    <span class="next-arrow">
+        ↗
+    </span>
 
-      <p class="wine-label">TONIGHT'S PICK</p>
+</a>
 
-      <h2 id="wine"></h2>
+            
+            <!-- =========================================
+                 FOOTER
+            ========================================== -->
 
-      <p id="wineDetails"></p>
+            <footer class="project-footer">
 
-      <p id="reason"></p>
+                <p>
+                    © 2026 EMMA LUNDSTRÖM
+                </p>
 
-      <p id="wineRegion"></p>
+                <p>
+                    GROWTH MARKETING · STOCKHOLM
+                </p>
 
-    </div>
+            </footer>
 
-  </div>
 
-</section> 
+        </div>
 
-  </main>
+    </main>
 
-  <footer class="project-footer" id="project-footer">
-    <a href="javascript:history.back()" class="back-link">
-        ← BACK TO PORTFOLIO
-    </a>
-</footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>

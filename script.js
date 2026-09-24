@@ -1,254 +1,204 @@
 // =========================================
+// EMMA LUNDSTRÖM — PORTFOLIO
+// =========================================
+
+
+// =========================================
 // DATA LAYER
 // =========================================
 
 window.dataLayer = window.dataLayer || [];
 
+
 // =========================================
-
-// CUSTOM DATA LAYER EVENTS
-
+// NAVIGATION TRACKING
 // =========================================
 
 document.querySelectorAll(".nav-link").forEach((link) => {
 
     link.addEventListener("click", () => {
 
-    window.dataLayer.push({
-
-    event: "portfolio_navigation_click",
-
-    link_name: link.textContent.trim(),
-
-    link_type: "navigation",
-
-    destination: link.getAttribute("href")
-
-});
+        window.dataLayer.push({
+            event: "portfolio_navigation_click",
+            link_name: link.textContent.trim(),
+            link_type: "navigation",
+            destination: link.getAttribute("href")
+        });
 
     });
 
 });
 
-const linkedinLinks = document.querySelectorAll(".linkedin-link");
 
-linkedinLinks.forEach((link) => {
+// =========================================
+// LINKEDIN TRACKING
+// =========================================
+
+document.querySelectorAll(".linkedin-link").forEach((link) => {
 
     link.addEventListener("click", () => {
 
         window.dataLayer.push({
-
             event: "portfolio_linkedin_click",
-
             link_name: "LinkedIn"
-
         });
 
     });
 
 });
 
-const contactLinks = document.querySelectorAll(".contact-links a");
 
-contactLinks.forEach((link) => {
+// =========================================
+// CONTACT TRACKING
+// =========================================
+
+document.querySelectorAll(".contact-links a").forEach((link) => {
 
     link.addEventListener("click", () => {
 
         window.dataLayer.push({
-
             event: "portfolio_contact_click",
-
             link_name: link.textContent.trim()
-
         });
 
     });
 
 });
 
-/* =========================================
 
-   EMMA LUNDSTRÖM
+// =========================================
+// SELECTED WORK SLIDER
+// =========================================
 
-   PORTFOLIO INTERACTIONS
+const projectSlider =
+    document.querySelector(".project-slider");
 
-========================================= */
+const previousButton =
+    document.querySelector(".slider-prev");
 
-/* =========================================
+const nextButton =
+    document.querySelector(".slider-next");
 
-   PARALLAX IMAGES
 
-========================================= */
+// Calculate how far one card should move
 
-const parallaxImages = document.querySelectorAll(".parallax-image");
+function getCardStep() {
 
-function updateParallax() {
+    if (!projectSlider) return 0;
 
-    parallaxImages.forEach((image) => {
+    const card =
+        projectSlider.querySelector(".project-card");
 
-        const container = image.closest(".parallax-container");
+    if (!card) return 0;
 
-        if (!container) return;
+    const sliderStyles =
+        window.getComputedStyle(projectSlider);
 
-        const rect = container.getBoundingClientRect();
+    const gap =
+        parseFloat(sliderStyles.gap) || 0;
 
-        const windowHeight = window.innerHeight;
+    return card.getBoundingClientRect().width + gap;
 
-        if (rect.bottom > 0 && rect.top < windowHeight) {
+}
 
-            const progress =
 
-                (rect.top + rect.height / 2 - windowHeight / 2)
+// =========================================
+// NEXT PROJECT
+// =========================================
 
-                / windowHeight;
+if (nextButton && projectSlider) {
 
-            const movement = progress * -180;
+    nextButton.addEventListener("click", () => {
 
-            image.style.transform =
-
-                `translate3d(0, ${movement}px, 0)`;
-
-        }
+        projectSlider.scrollBy({
+            left: getCardStep(),
+            behavior: "smooth"
+        });
 
     });
 
 }
 
-/* =========================================
 
-   HERO SCROLL EFFECT
+// =========================================
+// PREVIOUS PROJECT
+// =========================================
 
-========================================= */
+if (previousButton && projectSlider) {
 
-const hero = document.querySelector(".hero");
+    previousButton.addEventListener("click", () => {
 
-const heroContent = document.querySelector(".hero-content");
+        projectSlider.scrollBy({
+            left: -getCardStep(),
+            behavior: "smooth"
+        });
 
-const heroStars = document.querySelector(".stars");
-const aboutStars = document.querySelector(".stars-about");
-const contactStars = document.querySelector(".stars-contact");
-const insightsStars = document.querySelector(".stars-insights");
-
-function updateHero() {
-
-    if (!hero) return;
-
-    const scrollPosition = window.scrollY;
-
-    const heroHeight = hero.offsetHeight;
-
-    const progress =
-
-        Math.min(scrollPosition / heroHeight, 1);
-
-    /*
-
-        Text slowly moves upward
-
-        when the user scrolls.
-
-    */
-
-    if (heroContent) {
-
-        heroContent.style.transform =
-
-            `translate3d(0, ${progress * -80}px, 0)`;
-
-        heroContent.style.opacity =
-
-            1 - progress * 0.7;
-
-    }
-
-    /*
-
-        Stars move slightly slower
-
-        to create depth.
-
-    */
-
-    if (heroStars) {
-
-        heroStars.style.transform =
-
-            `translate3d(0, ${progress * 60}px, 0)`;
-
-        heroStars.style.opacity =
-
-            0.8 - progress * 0.4;
-
-    }
+    });
 
 }
 
-/* =========================================
 
-   SCROLL EVENT
+// =========================================
+// PROJECT CLICK TRACKING
+// + REMEMBER SCROLL POSITION
+// =========================================
 
-========================================= */
+document.querySelectorAll(".project-card").forEach((project) => {
 
-function updatePage() {
+    project.addEventListener("click", () => {
 
-    updateParallax();
+        const title =
+            project.querySelector("h3");
 
-    updateHero();
+        // Save exact position on portfolio
+        sessionStorage.setItem(
+            "portfolioScrollPosition",
+            window.scrollY
+        );
 
-}
+        // Track project click
+        window.dataLayer.push({
+            event: "portfolio_project_click",
+            project_name:
+                title ? title.textContent.trim() : "Unknown",
+            destination:
+                project.getAttribute("href")
+        });
 
-window.addEventListener(
+    });
 
-    "scroll",
+});
 
-    updatePage,
 
-    { passive: true }
+// =========================================
+// RESTORE SCROLL POSITION
+// =========================================
 
-);
+window.addEventListener("pageshow", () => {
 
-window.addEventListener(
+    const savedPosition =
+        sessionStorage.getItem("portfolioScrollPosition");
 
-    "resize",
+    if (savedPosition !== null) {
 
-    updatePage
+        // Temporarily disable smooth scrolling
+        const previousScrollBehavior =
+            document.documentElement.style.scrollBehavior;
 
-);
+        document.documentElement.style.scrollBehavior = "auto";
 
-/* Initial position */
+        window.scrollTo(
+            0,
+            Number(savedPosition)
+        );
 
-updatePage();
-/* =========================================
-   SECTION STAR MOVEMENT
-========================================= */
+        document.documentElement.style.scrollBehavior =
+            previousScrollBehavior;
 
-function updateSectionStars() {
+        sessionStorage.removeItem(
+            "portfolioScrollPosition"
+        );
 
-    const scrollPosition = window.scrollY;
-
-    if (aboutStars) {
-        aboutStars.style.transform =
-            `translate3d(0, ${scrollPosition * 0.015}px, 0)`;
     }
 
-    if (contactStars) {
-        contactStars.style.transform =
-            `translate3d(0, ${scrollPosition * 0.025}px, 0)`;
-    }
-
-        if (insightsStars) {
-        insightsStars.style.transform =
-            `translate3d(0, ${scrollPosition * 0.02}px, 0)`;
-    }
-}
-
-
-/* Update page */
-
-function updatePage() {
-
-    updateParallax();
-    updateHero();
-    updateSectionStars();
-
-}
+});

@@ -2,107 +2,327 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Global Data — Emma Lundström</title>
 
+    <meta
+        name="description"
+        content="An interactive country explorer using live global data."
+    >
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
         rel="stylesheet"
     >
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
 
     <nav class="project-nav">
-        <a href="javascript:history.back()" class="back-link">
-    ← BACK TO PORTFOLIO
-       </a>
 
-        <span>GLOBAL DATA / 2026</span>
+        <a
+            href="javascript:history.back()"
+            class="back-link"
+        >
+            ← BACK TO WORK
+        </a>
+
+        <span class="project-name">
+            GLOBAL DATA · 2026
+        </span>
+
     </nav>
 
 
-    <!-- HERO -->
 
-    <header class="project-hero">
-
-        <p class="eyebrow">
-            API · DATA · INTERACTIVE
-        </p>
-
-        <h1>
-            Global
-            <em>Data.</em>
-        </h1>
-
-        <p class="project-intro">
-            Explore countries through live data.
-            Select a country to discover its population,
-            currency, region and capital.
-        </p>
-
-        <span class="scroll-text">
-            EXPLORE THE DATA ↓
-        </span>
-
-    </header>
+    <main>
 
 
-    <!-- DATA EXPLORER -->
+        <!-- =========================================
+             FULLSCREEN HERO
+        ========================================== -->
 
-    <main class="data-section">
-
-
-        <!-- COUNTRY SELECTOR -->
-
-        <div class="country-selector">
-
-            <label for="country-select">
-                SELECT COUNTRY
-            </label>
-
-            <select id="country-select">
-
-                <option value="" selected disabled>Choose a country</option>
-                <option value="SE">Sweden</option>
-                <option value="NO">Norway</option>
-                <option value="DK">Denmark</option>
-                <option value="FI">Finland</option>
-                <option value="DE">Germany</option>
-                <option value="FR">France</option>
-                <option value="GB">United Kingdom</option>
-                <option value="US">United States</option>
-                <option value="CA">Canada</option>
-                <option value="AU">Australia</option>
-                <option value="JP">Japan</option>
-                <option value="SG">Singapore</option>
-                <option value="IN">India</option>
-                <option value="BR">Brazil</option>
-                <option value="ZA">South Africa</option>
-
-            </select>
-
-        </div>
+        <header class="project-hero">
 
 
-        <!-- COUNTRY -->
+            <!-- BACKGROUND IMAGE -->
+
+            <img
+                class="hero-background"
+                src="images/global-hero.jpg"
+                alt="Aerial view of the Maldives"
+            >
+
+
+            <!-- OVERLAY -->
+
+            <div class="hero-overlay"></div>
+
+
+
+            <!-- HERO TEXT -->
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    COUNTRY API × LIVE DATA
+                </p>
+
+
+                <h1>
+
+                    Global
+
+                    <em>Data.</em>
+
+                </h1>
+
+
+                <p class="project-intro">
+
+                    Explore countries through live data.
+                    Select a country to discover its population,
+                    currency, region and capital.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- COORDINATES -->
+
+            <div class="image-coordinate">
+
+                <span>
+                    3.2028° N
+                </span>
+
+                <span>
+                    73.2207° E
+                </span>
+
+            </div>
+
+
+
+            <!-- BOTTOM -->
+
+            <div class="hero-bottom">
+
+            
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =========================================
+             COUNTRY EXPLORER
+        ========================================== -->
+
+        <section
+            class="data-section"
+            id="explore"
+        >
+
+
+            <!-- =========================================
+                 SELECT COUNTRY
+            ========================================== -->
+
+            <div class="country-selector">
+
+                <label for="country-select">
+                    SELECT COUNTRY
+                </label>
+
+
+                <div class="select-wrapper">
+
+                    <select id="country-select">
+
+                        <option
+                            value=""
+                            selected
+                            disabled
+                        >
+                            Choose a country
+                        </option>
+
+
+                        <!-- NORDICS -->
+
+                        <option value="SE">
+                            Sweden
+                        </option>
+
+                        <option value="NO">
+                            Norway
+                        </option>
+
+                        <option value="DK">
+                            Denmark
+                        </option>
+
+                        <option value="FI">
+                            Finland
+                        </option>
+
+
+                        <!-- EUROPE -->
+
+                        <option value="IT">
+                            Italy
+                        </option>
+
+                        <option value="MT">
+                            Malta
+                        </option>
+
+                        <option value="MC">
+                            Monaco
+                        </option>
+
+                        <option value="ES">
+                            Spain
+                        </option>
+
+                        <option value="DE">
+                            Germany
+                        </option>
+
+                        <option value="FR">
+                            France
+                        </option>
+
+                        <option value="GB">
+                            United Kingdom
+                        </option>
+
+
+                        <!-- AMERICAS -->
+
+                        <option value="US">
+                            United States
+                        </option>
+
+                        <option value="CA">
+                            Canada
+                        </option>
+
+                        <option value="BR">
+                            Brazil
+                        </option>
+
+
+                        <!-- ASIA -->
+
+                        <option value="MV">
+                            Maldives
+                        </option>
+
+                        <option value="JP">
+                            Japan
+                        </option>
+
+                        <option value="SG">
+                            Singapore
+                        </option>
+
+                        <option value="IN">
+                            India
+                        </option>
+
+
+                        <!-- OCEANIA -->
+
+                        <option value="AU">
+                            Australia
+                        </option>
+
+
+                        <!-- AFRICA -->
+
+                        <option value="ZA">
+                            South Africa
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+     COUNTRY CARD
+========================================== -->
+
+<section class="country-card">
+
+    <!-- FLAG AS BACKGROUND -->
+
+    <img
+        id="country-flag"
+        class="country-flag"
+        alt=""
+    >
+
+    <!-- SOFT OVERLAY -->
+
+    <div class="flag-overlay"></div>
+
+
+    <!-- CONTENT -->
+
+    <div class="country-card-content">
 
         <div class="country-title">
 
-            <span>SELECTED COUNTRY</span>
+            <div class="country-title-top">
 
-           <h2 id="country-name">
-             Choose a country
-          </h2>
+                <span>
+                    SELECTED COUNTRY
+                </span>
+
+                <span id="country-code">
+                    —
+                </span>
+
+            </div>
+
+
+            <h2 id="country-name">
+                Choose a country
+            </h2>
 
         </div>
 
@@ -113,10 +333,12 @@
 
             <div class="data-item">
 
-                <span>POPULATION</span>
+                <span>
+                    POPULATION
+                </span>
 
                 <strong id="country-population">
-                    -
+                    —
                 </strong>
 
             </div>
@@ -124,10 +346,12 @@
 
             <div class="data-item">
 
-                <span>CURRENCY</span>
+                <span>
+                    CURRENCY
+                </span>
 
                 <strong id="country-currency">
-                    -
+                    —
                 </strong>
 
             </div>
@@ -135,10 +359,12 @@
 
             <div class="data-item">
 
-                <span>REGION</span>
+                <span>
+                    REGION
+                </span>
 
                 <strong id="country-region">
-                    -
+                    —
                 </strong>
 
             </div>
@@ -146,33 +372,190 @@
 
             <div class="data-item">
 
-                <span>CAPITAL</span>
+                <span>
+                    CAPITAL
+                </span>
 
                 <strong id="country-capital">
-                    -
+                    —
                 </strong>
 
             </div>
 
         </div>
 
+    </div>
+
+</section>
+
+
+
+            <!-- API NOTE -->
+
+            <div class="api-note">
+
+                <span class="live-dot"></span>
+
+                LIVE COUNTRY DATA · UPDATED WHEN A COUNTRY IS SELECTED
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             PROJECT INFO
+        ========================================== -->
+
+        <section class="case-info">
+
+
+            <div class="case-left">
+
+                <p class="section-label">
+                    THE PROJECT
+                </p>
+
+
+                <h2>
+
+                    Data made
+
+                    <em>simple.</em>
+
+                </h2>
+
+            </div>
+
+
+
+            <div class="case-right">
+
+                <p class="case-lead">
+
+                    What if global data felt simple
+                    enough to explore?
+
+                </p>
+
+
+                <p>
+
+                    Global Data is an interactive country explorer
+                    that retrieves country information from a live API.
+
+                </p>
+
+
+                <p>
+
+                    By selecting a country, the interface dynamically
+                    updates population, currency, region, capital
+                    and the country's flag.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             TOOLS
+        ========================================== -->
+
+        <section class="tools-section">
+
+            <p class="section-label">
+                BUILT WITH
+            </p>
+
+
+            <div class="tools">
+
+                <span>
+                    Countries API
+                </span>
+
+                <span>
+                    JavaScript
+                </span>
+
+                <span>
+                    Fetch API
+                </span>
+
+                <span>
+                    Live Data
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             BACK TO WORK
+        ========================================== -->
+
+        <a
+            href="javascript:history.back()"
+            class="next-project"
+        >
+
+            <div>
+
+                <p class="section-label">
+                    BACK TO
+                </p>
+
+
+                <h2>
+
+                    Selected
+
+                    <em>work.</em>
+
+                </h2>
+
+            </div>
+
+
+            <span class="next-arrow">
+                ↗
+            </span>
+
+        </a>
+
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <footer class="project-footer">
+
+            <p>
+                © 2026 EMMA LUNDSTRÖM
+            </p>
+
+            <p>
+                GROWTH MARKETING · STOCKHOLM
+            </p>
+
+        </footer>
+
+
     </main>
 
 
-    <!-- FOOTER -->
-
-    <footer>
-
-        <span>© 2026 Emma Lundström</span>
-
-        <a href="javascript:history.back()">
-    ← BACK TO PORTFOLIO
-       </a>
-
-    </footer>
-
-
     <script src="script.js"></script>
+
 
 </body>
 

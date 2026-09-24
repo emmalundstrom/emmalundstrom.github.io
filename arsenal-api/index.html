@@ -1,114 +1,394 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arsenal: Goals Scored and Conceded in the Premier League</title>
-  <meta name="description" content="Stapeldiagram över Arsenals gjorda och insläppta mål i Premier League, säsongerna 2021/22–2025/26.">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Arsenal Goal Trends — Emma Lundström</title>
+
+  <meta
+    name="description"
+    content="A data visualization exploring Arsenal's goals scored and conceded across five Premier League seasons."
+  >
+
+  <!-- Portfolio fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
 
-<nav class="project-nav">
+
+  <!-- =========================================
+       NAVIGATION
+  ========================================== -->
+
+  <nav class="project-nav">
+
     <a href="javascript:history.back()" class="back-link">
-        ← BACK TO PORTFOLIO
+      ← BACK TO WORK
     </a>
-</nav>
 
-  <main class="sida">
+    <span>
+      DATA VISUALIZATION · 2026
+    </span>
 
-    <header class="topp">
-      <h1>Arsenal score more goals than they concede &ndash; but the margin has changed.</h1>
-      <p class="ingress">
-        The diagram compares how many goals Arsenal has scored with how many they have conceded
-        in the Premier League during the five most recent completed seasons. The difference between
-        the bars is the team's goal difference: the higher the red bar and the lower the blue, the
-        stronger the season. The best offensive season was 2023/24 with 91 scored goals, while
-        2025/26, on the other hand, stands out defensively &ndash; 27 goals conceded, fewer than any other team in the league that season.
-      </p>
-    </header>
+  </nav>
 
-    <section class="diagram-sektion" aria-labelledby="diagram-rubrik">
-      <h2 id="diagram-rubrik">Goals Scored and Conceded per Season</h2>
 
-      <div class="diagram-ram">
-        <canvas id="malDiagram" role="img"
-          aria-label="Bar chart showing Arsenal's goals scored and conceded per season in the Premier League 2021/22 to 2025/26. Exact figures are available in the table below the chart."></canvas>
+
+  <main>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="hero">
+
+      <div class="hero-overlay"></div>
+
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          ARSENAL × PREMIER LEAGUE
+        </p>
+
+        <h1>
+          Arsenal
+          <em>Goal Trends.</em>
+        </h1>
+
       </div>
 
-      <p class="bildtext">
-        Unit: number of goals. Each season consists of 38 matches.
-Only Premier League matches are included &ndash; cup matches and European competitions are excluded.
+
+      <div class="hero-bottom">
+
+        <p>
+          DATA VISUALIZATION / CHART.JS
+        </p>
+
+        <p>
+          2021/22 — 2025/26
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROJECT INTRO
+    ========================================== -->
+
+    <section class="project-intro">
+
+      <div class="intro-left">
+
+        <p class="section-label">
+          THE PROJECT
+        </p>
+
+        <h2>
+          Five seasons.
+          <br>
+          Two numbers.
+          <br>
+          <em>One story.</em>
+        </h2>
+
+      </div>
+
+
+      <div class="intro-right">
+
+        <p class="intro-lead">
+          How has Arsenal's performance changed across five Premier League seasons?
+        </p>
+
+        <p>
+          This visualization compares goals scored and goals
+          conceded to explore how the balance between attack
+          and defence has developed over time.
+        </p>
+
+        <p>
+          By placing the two metrics side by side, the data
+          makes it easier to see how Arsenal's attacking
+          output and defensive performance have changed
+          from season to season.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CHART
+    ========================================== -->
+
+    <section class="chart-section">
+
+      <div class="section-heading">
+
+        <div>
+
+          <p class="section-label">
+            THE DATA
+          </p>
+
+          <h2>
+            Goals by
+            <em>season.</em>
+          </h2>
+
+        </div>
+
+
+        <p class="chart-description">
+          Goals scored compared with goals conceded across
+          38 Premier League matches per season.
+        </p>
+
+      </div>
+
+
+
+      <div class="chart-card">
+
+        <div class="chart-top">
+
+          <p>
+            ARSENAL · PREMIER LEAGUE
+          </p>
+
+
+          <div class="legend">
+
+            <div class="legend-item">
+
+              <span class="legend-dot red"></span>
+
+              Goals scored
+
+            </div>
+
+
+            <div class="legend-item">
+
+              <span class="legend-dot grey"></span>
+
+              Goals conceded
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="chart-wrapper">
+
+          <canvas
+            id="malDiagram"
+            role="img"
+            aria-label="Bar chart showing Arsenal's goals scored and conceded in the Premier League from 2021/22 to 2025/26."
+          ></canvas>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="chart-info">
+
+        <p>
+          UNIT — NUMBER OF GOALS · 38 PREMIER LEAGUE MATCHES PER SEASON
+        </p>
+
+
+        <p>
+
+          SOURCE —
+
+          <a
+            href="https://www.premierleague.com/en/clubs/3/arsenal/stats"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PREMIER LEAGUE OFFICIAL STATISTICS ↗
+          </a>
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         TABLE
+    ========================================== -->
+
+    <section class="table-section">
+
+      <div class="section-heading">
+
+        <div>
+
+          <p class="section-label">
+            THE NUMBERS
+          </p>
+
+          <h2>
+            Season by
+            <em>season.</em>
+          </h2>
+
+        </div>
+
+
+        <p class="chart-description">
+          The complete dataset used to build the visualization.
+        </p>
+
+      </div>
+
+
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <caption>
+            Arsenal Premier League performance by season
+          </caption>
+
+
+          <thead>
+
+            <tr>
+              <th>Season</th>
+              <th>Scored</th>
+              <th>Conceded</th>
+              <th>Difference</th>
+              <th>Position</th>
+            </tr>
+
+          </thead>
+
+
+          <tbody id="tabellKropp">
+
+            <!-- Filled automatically by script.js -->
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         TOOLS
+    ========================================== -->
+
+    <section class="tools-section">
+
+      <p class="section-label">
+        BUILT WITH
       </p>
+
+
+      <div class="tools">
+
+        <span>Chart.js</span>
+        <span>JavaScript</span>
+        <span>Data Visualization</span>
+        <span>Premier League Data</span>
+
+      </div>
+
     </section>
 
-    <section class="tabell-sektion" aria-labelledby="tabell-rubrik">
-      <h2 id="tabell-rubrik">Same numbers in table</h2>
-      <p class="hjalptext">
-        The table is available for those who want to read the exact values or use a screen reader.
+
+
+    <!-- =========================================
+         BACK TO WORK
+    ========================================== -->
+
+    <a href="javascript:history.back()" class="next-project">
+
+      <div>
+
+        <p class="section-label">
+          BACK TO
+        </p>
+
+        <h2>
+          Selected
+          <em>work.</em>
+        </h2>
+
+      </div>
+
+
+      <span class="next-arrow">
+        ↗
+      </span>
+
+    </a>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="project-footer">
+
+      <p>
+        © 2026 EMMA LUNDSTRÖM
       </p>
-      <table>
-        <caption>Arsenal in the Premier League, season by season</caption>
-        <thead>
-          <tr>
-            <th scope="col">Season</th>
-            <th scope="col">Goals Scored</th>
-            <th scope="col">Goals Conceded</th>
-            <th scope="col">Goal Difference</th>
-            <th scope="col">Position</th>
-          </tr>
-        </thead>
-        <tbody id="tabellKropp">
-          <!-- Fylls i av script.js -->
-        </tbody>
-      </table>
-    </section>
 
-    <section class="metod" aria-labelledby="metod-rubrik">
-      <h2 id="metod-rubrik">About the Data</h2>
-      <dl>
-        <dt>Time Period</dt>
-        <dd>The seasons 2021/22 to 2025/26, that is five completed seasons. The ongoing season 2026/27 is not included, as it is only partially played and the figures cannot be compared with the others.</dd>
+      <p>
+        GROWTH MARKETING · STOCKHOLM
+      </p>
 
-        <dt>Unit</dt>
-        <dd>Number of goals per season. No averages or percentages.</dd>
-
-        <dt>What is included</dt>
-        <dd>Goals scored = goals Arsenal scored. Goals conceded = goals opponents scored against Arsenal. Own goals are counted to the team that receives the goal, according to Premier League's own statistics.</dd>
-
-        <dt>Limitation</dt>
-        <dd>Only league matches in the Premier League (38 per season). FA Cup, League Cup and Champions League matches are not included.</dd>
-
-        <dt>Source</dt>
-        <dd>
-          Premier Leagues official league tables and club statistics,
-          <a href="https://www.premierleague.com/en/clubs/3/arsenal/stats">premierleague.com</a>.
-          The numbers are checked against the season articles on English Wikipedia.
-        </dd>
-
-        <dt>Retrieved</dt>
-        <dd><time datetime="2026-09-16">16 september 2026</time></dd>
-      </dl>
-    </section>
-
-    <footer class="fot">
-      <p>Data visualization school assignment. The chart was built using Chart.js.</p>
     </footer>
+
 
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  
-<footer class="project-footer">
-    <a href="javascript:history.back()" class="back-link">
-        ← BACK TO PORTFOLIO
-    </a>
-</footer>
 
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Project JavaScript -->
   <script src="script.js"></script>
+
+
 </body>
+
 </html>

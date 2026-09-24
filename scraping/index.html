@@ -1,146 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Web Scraping — Emma Lundström</title>
 
+    <meta
+        name="description"
+        content="A web scraping project built with Node.js and Cheerio."
+    >
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <header class="project-nav">
-        <a href="../index.html">← Back to portfolio</a>
-        <span>Emma Lundström</span>
-    </header>
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <nav class="project-nav">
+
+        <a
+    href="../index.html"
+    class="back-link"
+    onclick="history.back(); return false;"
+>
+    ← BACK TO WORK
+</a>
+
+        <span>
+            WEB SCRAPING · 2026
+        </span>
+
+    </nav>
+
+
 
     <main>
 
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
         <section class="hero">
-            <p class="label">DATA COLLECTION / WEB SCRAPING</p>
 
-            <h1>
-                Turning the web<br>
-                into <em>structured data.</em>
-            </h1>
+            <div class="hero-copy">
 
-            <div class="hero-info">
-                <p>Node.js + Cheerio</p>
-                <p>2026</p>
-            </div>
-        </section>
-
-
-        <section class="project-intro">
-
-            <p class="section-number">01 / THE PROJECT</p>
-
-            <div class="intro-content">
-                <h2>From webpages to usable data.</h2>
-
-                <p>
-                    This project explores how web scraping can be used
-                    to collect and structure publicly available digital data.
+                <p class="label">
+                    NODE.JS × CHEERIO
                 </p>
 
-                <p>
-                    Using Node.js and Cheerio, I built a scraper that visits
-                    multiple search-result pages and extracts company
-                    information into a structured CSV dataset.
+
+                <h1>
+                    Web
+                    <em>Scraping.</em>
+                </h1>
+
+
+                <p class="hero-description">
+                    Turning webpages into structured data.
                 </p>
+
+            </div>
+
+
+
+            <!-- TERMINAL -->
+
+            <div class="terminal">
+
+                <div class="terminal-top">
+
+                    <div class="terminal-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <span>
+                        scraper.js
+                    </span>
+
+                </div>
+
+
+                <div class="terminal-content">
+
+                    <p class="terminal-line">
+                        <span class="terminal-muted">$</span>
+                        node scraper.js
+                    </p>
+
+                    <p class="terminal-line terminal-delay-1">
+                        Fetching page 1
+                        <span class="terminal-success">✓</span>
+                    </p>
+
+                    <p class="terminal-line terminal-delay-2">
+                        Fetching page 2
+                        <span class="terminal-success">✓</span>
+                    </p>
+
+                    <p class="terminal-line terminal-delay-3">
+                        Fetching page 3
+                        <span class="terminal-success">✓</span>
+                    </p>
+
+                    <p class="terminal-line terminal-delay-4">
+                        Fetching page 4
+                        <span class="terminal-success">✓</span>
+                    </p>
+
+                    <p class="terminal-line terminal-delay-5">
+                        Fetching page 5
+                        <span class="terminal-success">✓</span>
+                    </p>
+
+
+                    <div class="terminal-result terminal-delay-6">
+
+                        <span>
+                            →
+                        </span>
+
+                        <strong>
+                            foretag.csv
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="hero-bottom">
+
+                <span>
+                    WEB → DATA
+                </span>
+
+                <span>
+                    5 PAGES
+                </span>
+
             </div>
 
         </section>
 
 
-        <section class="data-section">
 
-            <p class="section-number">02 / THE DATA</p>
+        <!-- =========================================
+             PROCESS
+        ========================================== -->
 
-            <h2>What I collected</h2>
+        <section class="process-section">
 
-            <div class="data-grid">
-
-                <div>
-                    <span>01</span>
-                    <h3>Company name</h3>
-                </div>
-
-                <div>
-                    <span>02</span>
-                    <h3>Organisation number</h3>
-                </div>
-
-                <div>
-                    <span>03</span>
-                    <h3>Phone number</h3>
-                </div>
-
-                <div>
-                    <span>04</span>
-                    <h3>Address</h3>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="result-section">
-
-            <p class="section-number">03 / RESULT</p>
-
-            <h2>The result</h2>
-
-            <p>
-                The collected information was exported to a CSV file,
-                transforming information spread across multiple webpages
-                into a structured dataset ready for further analysis.
+            <p class="section-label">
+                THE PROCESS
             </p>
 
-            <a href="#dataset" class="data-link">
-    View dataset ↓
-</a>
+
+            <div class="process-flow">
+
+
+                <div class="process-item">
+
+                
+
+                    <div>
+
+                        <h2>
+                            Web pages
+                        </h2>
+
+                        <p>
+                            5 pages
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="process-arrow">
+                    →
+                </div>
+
+
+
+                <div class="process-item">
+
+                
+
+                    <div>
+
+                        <h2>
+                            Node.js
+                        </h2>
+
+                        <p>
+                            Cheerio
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="process-arrow">
+                    →
+                </div>
+
+
+
+                <div class="process-item">
+
+                    
+
+                    <div>
+
+                        <h2>
+                            CSV
+                        </h2>
+
+                        <p>
+                            Structured data
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
 
         </section>
 
-        <section class="dataset-section" id="dataset">
 
-    <p class="section-number">04 / DATASET</p>
 
-    <h2>Collected companies</h2>
+        <!-- =========================================
+             DATASET
+        ========================================== -->
 
-    <p>
-        A preview of the structured data collected through
-        the web scraper.
-    </p>
+        <section class="dataset-section">
 
-    <div class="table-wrapper">
-        <table id="data-table">
-            <thead>
-                <tr>
-                    <th>Company</th>
-                    <th>Organisation number</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                </tr>
-            </thead>
 
-            <tbody id="data-body">
-            </tbody>
-        </table>
-    </div>
+            <div class="dataset-heading">
 
-</section>
+                <div>
+
+                    <p class="section-label">
+                        THE RESULT
+                    </p>
+
+
+                    <h2>
+                        The
+                        <em>dataset.</em>
+                    </h2>
+
+                </div>
+
+
+
+                <button
+                    class="dataset-toggle"
+                    id="dataset-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="dataset-content"
+                >
+
+                    <span id="dataset-button-text">
+                        EXPLORE DATASET
+                    </span>
+
+                    <span
+                        class="button-arrow"
+                        id="button-arrow"
+                    >
+                        ↓
+                    </span>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- HIDDEN UNTIL CLICK -->
+
+            <div
+                class="dataset-content"
+                id="dataset-content"
+                hidden
+            >
+
+
+                <div class="dataset-meta">
+
+                    <span>
+                        5 PAGES
+                    </span>
+
+                    <span>
+                        500 MS DELAY
+                    </span>
+
+                    <span>
+                        CSV OUTPUT
+                    </span>
+
+                </div>
+
+
+
+                <div class="table-wrapper">
+
+                    <table id="data-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Company
+                                </th>
+
+                                <th>
+                                    Organisation no.
+                                </th>
+
+                                <th>
+                                    Phone
+                                </th>
+
+                                <th>
+                                    Address
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="data-body"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <footer class="project-footer">
+
+            <span>
+                © 2026 EMMA LUNDSTRÖM
+            </span>
+
+
+            <a
+    href="../index.html"
+    onclick="history.back(); return false;"
+>
+    BACK TO WORK ↗
+</a>
+
+        </footer>
+
 
     </main>
-<script src="script.js"></script>
+
+
+
+    <script src="script.js"></script>
+
 
 </body>
+
 </html>

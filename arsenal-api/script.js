@@ -1,102 +1,471 @@
 /* =========================================================
-   Arsenal: gjorda och insläppta mål i Premier League
-   Data: Premier Leagues officiella tabeller (premierleague.com)
-   Enhet: antal mål (st) per säsong, 38 matcher per säsong
-   ========================================================= */
+   ARSENAL GOAL TRENDS
+   Premier League — 2021/22 to 2025/26
+========================================================= */
 
-/* ---------------------------------------------------------
-   1. Datan
-   Varje objekt är en avslutad säsong. Vill du lägga till en
-   säsong räcker det att skriva en ny rad här - diagrammet och
-   tabellen uppdateras automatiskt.
-   --------------------------------------------------------- */
+
+/* =========================================
+   DATA
+========================================= */
+
 const sasonger = [
-  { sasong: "2021/22", gjorda: 61, inslappta: 48, placering: 5 },
-  { sasong: "2022/23", gjorda: 88, inslappta: 43, placering: 2 },
-  { sasong: "2023/24", gjorda: 91, inslappta: 29, placering: 2 },
-  { sasong: "2024/25", gjorda: 69, inslappta: 34, placering: 2 },
-  { sasong: "2025/26", gjorda: 71, inslappta: 27, placering: 1 }
+
+  {
+    sasong: "2021/22",
+    gjorda: 61,
+    inslappta: 48,
+    placering: 5
+  },
+
+  {
+    sasong: "2022/23",
+    gjorda: 88,
+    inslappta: 43,
+    placering: 2
+  },
+
+  {
+    sasong: "2023/24",
+    gjorda: 91,
+    inslappta: 29,
+    placering: 2
+  },
+
+  {
+    sasong: "2024/25",
+    gjorda: 69,
+    inslappta: 34,
+    placering: 2
+  },
+
+  {
+    sasong: "2025/26",
+    gjorda: 71,
+    inslappta: 27,
+    placering: 1
+  }
+
 ];
 
-/* ---------------------------------------------------------
-   2. Tabellen under diagrammet
-   --------------------------------------------------------- */
+
+
+/* =========================================
+   TABLE
+========================================= */
+
 function ritaTabell(data) {
+
   const kropp = document.getElementById("tabellKropp");
+
+
   kropp.innerHTML = data.map(rad => {
+
     const skillnad = rad.gjorda - rad.inslappta;
+
+
     return `
+
       <tr>
-        <th scope="row">${rad.sasong}</th>
+
+        <td>${rad.sasong}</td>
+
         <td>${rad.gjorda}</td>
+
         <td>${rad.inslappta}</td>
+
         <td>+${skillnad}</td>
+
         <td>${rad.placering}</td>
-      </tr>`;
+
+      </tr>
+
+    `;
+
   }).join("");
+
 }
 
-/* ---------------------------------------------------------
-   3. Diagrammet
-   --------------------------------------------------------- */
+
+
+/* =========================================
+   VALUE LABELS
+   Shows the exact number above each bar
+========================================= */
+
+const valueLabels = {
+
+  id: "valueLabels",
+
+
+  afterDatasetsDraw(chart) {
+
+    const { ctx } = chart;
+
+
+    ctx.save();
+
+
+    ctx.fillStyle = "#171717";
+
+    ctx.textAlign = "center";
+
+    ctx.textBaseline = "bottom";
+
+    ctx.font = '500 12px "DM Mono"';
+
+
+    chart.data.datasets.forEach((dataset, datasetIndex) => {
+
+      const meta = chart.getDatasetMeta(datasetIndex);
+
+
+      meta.data.forEach((bar, index) => {
+
+        const value = dataset.data[index];
+
+
+        ctx.fillText(
+
+          value,
+
+          bar.x,
+
+          bar.y - 9
+
+        );
+
+      });
+
+    });
+
+
+    ctx.restore();
+
+  }
+
+};
+
+
+
+/* =========================================
+   CHART
+========================================= */
+
 function ritaDiagram(data) {
-  const yta = document.getElementById("malDiagram");
 
-  new Chart(yta, {
+  const canvas = document.getElementById("malDiagram");
+
+
+  new Chart(canvas, {
+
     type: "bar",
+
+
     data: {
+
       labels: data.map(d => d.sasong),
+
+
       datasets: [
+
         {
+
           label: "Goals scored",
+
           data: data.map(d => d.gjorda),
-          backgroundColor: "#db0007",
-          borderRadius: 2,
-          maxBarThickness: 44
+
+          backgroundColor: "#DB0007",
+
+          borderColor: "#DB0007",
+
+          borderWidth: 0,
+
+          borderRadius: 3,
+
+          maxBarThickness: 56,
+
+          categoryPercentage: 0.68,
+
+          barPercentage: 0.82
+
         },
+
+
         {
+
           label: "Goals conceded",
+
           data: data.map(d => d.inslappta),
-          backgroundColor: "#2f4a63",
-          borderRadius: 2,
-          maxBarThickness: 44
+
+          backgroundColor: "#666666",
+
+          borderColor: "#666666",
+
+          borderWidth: 0,
+
+          borderRadius: 3,
+
+          maxBarThickness: 56,
+
+          categoryPercentage: 0.68,
+
+          barPercentage: 0.82
+
         }
+
       ]
+
     },
+
+
+
     options: {
+
       responsive: true,
+
       maintainAspectRatio: false,
-      font: { family: "Archivo, Arial, sans-serif" },
-      scales: {
-        y: {
-          beginAtZero: true, // y-axeln börjar på noll så staplarna inte överdriver skillnader
-          title: { display: true, text: "Number of goals (st)" },
-          ticks: { stepSize: 20 },
-          grid: { color: "#e6e3dd" }
-        },
-        x: {
-          title: { display: true, text: "Season" },
-          grid: { display: false }
+
+
+      layout: {
+
+        padding: {
+
+          top: 25,
+
+          right: 10,
+
+          left: 5,
+
+          bottom: 0
+
         }
+
       },
+
+
+      interaction: {
+
+        intersect: false,
+
+        mode: "index"
+
+      },
+
+
+
       plugins: {
+
+
+        /* We use our own legend above the chart */
+
         legend: {
-          position: "top",
-          align: "start",
-          labels: { boxWidth: 12, boxHeight: 12 }
+
+          display: false
+
         },
+
+
+        /* Tooltip when hovering */
+
         tooltip: {
+
+          backgroundColor: "#171717",
+
+          titleColor: "#FFFAF3",
+
+          bodyColor: "#FFFAF3",
+
+          borderColor: "rgba(255,255,255,0.15)",
+
+          borderWidth: 1,
+
+          padding: 14,
+
+          cornerRadius: 3,
+
+          displayColors: true,
+
+
+          titleFont: {
+
+            family: "DM Mono",
+
+            size: 11,
+
+            weight: "400"
+
+          },
+
+
+          bodyFont: {
+
+            family: "Manrope",
+
+            size: 13
+
+          },
+
+
           callbacks: {
-            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y} goals`
+
+            label: context =>
+
+              ` ${context.dataset.label}: ${context.parsed.y} goals`
+
           }
+
         }
+
+      },
+
+
+
+      scales: {
+
+
+        /* =========================================
+           X AXIS
+        ========================================= */
+
+        x: {
+
+          border: {
+
+            display: false
+
+          },
+
+
+          grid: {
+
+            display: false
+
+          },
+
+
+          ticks: {
+
+            color: "#353535",
+
+            padding: 14,
+
+
+            font: {
+
+              family: "DM Mono",
+
+              size: 11,
+
+              weight: "400"
+
+            }
+
+          }
+
+        },
+
+
+
+        /* =========================================
+           Y AXIS
+        ========================================= */
+
+        y: {
+
+          beginAtZero: true,
+
+          max: 100,
+
+
+          border: {
+
+            display: false
+
+          },
+
+
+          grid: {
+
+            color: "rgba(23, 23, 23, 0.12)",
+
+            lineWidth: 1,
+
+            drawTicks: false
+
+          },
+
+
+          ticks: {
+
+            stepSize: 20,
+
+            padding: 14,
+
+            color: "rgba(23, 23, 23, 0.60)",
+
+
+            font: {
+
+              family: "DM Mono",
+
+              size: 10
+
+            }
+
+          },
+
+
+          title: {
+
+            display: true,
+
+            text: "GOALS",
+
+            color: "rgba(23, 23, 23, 0.55)",
+
+
+            font: {
+
+              family: "DM Mono",
+
+              size: 9,
+
+              weight: "400"
+
+            },
+
+
+            padding: {
+
+              bottom: 12
+
+            }
+
+          }
+
+        }
+
       }
-    }
+
+    },
+
+
+    plugins: [
+
+      valueLabels
+
+    ]
+
   });
+
 }
 
-/* ---------------------------------------------------------
-   4. Kör igång
-   --------------------------------------------------------- */
+
+
+/* =========================================
+   START
+========================================= */
+
 ritaDiagram(sasonger);
+
 ritaTabell(sasonger);
