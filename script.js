@@ -202,3 +202,39 @@ window.addEventListener("pageshow", () => {
     }
 
 });
+/* =========================================
+   PROJECT CLICKS — GTM / GA4
+========================================= */
+
+document.querySelectorAll(".project-card").forEach((project) => {
+
+    project.addEventListener("click", function () {
+
+        let projectName = "Unknown";
+
+        if (project.classList.contains("project-arsenal")) {
+            projectName = "Arsenal";
+        }
+
+        if (project.classList.contains("project-wine")) {
+            projectName = "Weather × Wine";
+        }
+
+        if (project.classList.contains("project-global")) {
+            projectName = "Global Data";
+        }
+
+        if (project.classList.contains("project-scraping")) {
+            projectName = "Scraping";
+        }
+
+        window.dataLayer = window.dataLayer || [];
+
+        window.dataLayer.push({
+            event: "portfolio_project_click",
+            project_name: projectName
+        });
+
+    });
+
+});
