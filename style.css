@@ -1515,3 +1515,47 @@ footer {
     }
 
 }
+/* =========================================
+   CONTACT ARROWS
+========================================= */
+
+.arrow-up {
+    position: relative;
+    display: inline-block;
+
+    width: 11px;
+    height: 11px;
+
+    flex-shrink: 0;
+}
+
+.arrow-up::before {
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+    height: 1px;
+
+    background: currentColor;
+
+    top: 5px;
+    left: 0;
+
+    transform: rotate(-45deg);
+}
+
+.arrow-up::after {
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    border-top: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+
+    top: 0;
+    right: 0;
+}

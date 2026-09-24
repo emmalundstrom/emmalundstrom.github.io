@@ -1519,3 +1519,42 @@ tbody tr:hover {
     }
 
 }
+/* =========================================
+   BACK TO WORK ARROW
+========================================= */
+
+.css-arrow {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+}
+
+.css-arrow::before {
+    content: "";
+    position: absolute;
+
+    width: 30px;
+    height: 2px;
+
+    background: currentColor;
+
+    top: 13px;
+    left: 0;
+
+    transform: rotate(-45deg);
+}
+
+.css-arrow::after {
+    content: "";
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+
+    top: 0;
+    right: 0;
+}
