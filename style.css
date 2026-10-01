@@ -670,39 +670,20 @@ a {
 
 
 .about-photo {
-
-    min-height: 420px;
-
+    height: 420px;
     overflow: hidden;
 }
 
-
-.about-photo-placeholder {
-
+.about-image {
     width: 100%;
     height: 100%;
 
-    display: flex;
+    display: block;
 
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #d6c8b7,
-            #aabcb6
-        );
-
-    color:
-        rgba(255,255,255,0.8);
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 9px;
-
-    letter-spacing: 0.15em;
+    object-fit: cover;
+    object-position: center center;
 }
+
 
 
 .about-copy {
@@ -1268,16 +1249,17 @@ footer {
     }
 
 
-    .about-photo {
+   .about-photo {
+    height: 240px;
+}
 
-        min-height: 240px;
-    }
+.about-image {
+    width: 100%;
+    height: 100%;
 
-
-    .about-photo-placeholder {
-
-        font-size: 5px;
-    }
+    object-fit: cover;
+    object-position: center center;
+}
 
 
     .about-copy {
