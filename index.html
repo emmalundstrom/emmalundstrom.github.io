@@ -60,12 +60,14 @@
 
     <section class="hero">
 
-        <video
+      <video
+    id="heroVideo"
     class="hero-video"
     autoplay
     muted
     loop
     playsinline
+    webkit-playsinline
     preload="auto"
     poster="assets/solnedgang-poster.jpg"
 >
@@ -489,6 +491,24 @@ I enjoy combining creativity with data, testing ideas and finding out what actua
 
 
     <script src="script.js"></script>
+<script>
+    const heroVideo = document.getElementById("heroVideo");
+
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+
+    const startHeroVideo = () => {
+        heroVideo.play().catch(() => {});
+    };
+
+    if (heroVideo.readyState >= 2) {
+        startHeroVideo();
+    } else {
+        heroVideo.addEventListener("canplay", startHeroVideo, { once: true });
+    }
+
+    document.addEventListener("touchstart", startHeroVideo, { once: true });
+</script>
 
 </body>
 

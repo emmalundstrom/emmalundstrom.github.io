@@ -663,21 +663,21 @@ a {
     grid-template-columns:
         0.7fr 1.25fr 0.8fr;
 
+    min-height: 420px;
+
     background: var(--cream-light);
 }
 
 
-/*
-   Bildens format styrs av aspect-ratio.
-   Därför blir det samma format på desktop
-   och mobil, bara mindre.
-*/
+/* PHOTO COLUMN */
 
 .about-photo {
 
-    width: 100%;
+    padding: 55px 0;
 
-    aspect-ratio: 0.7 / 1;
+    display: flex;
+
+    align-items: center;
 
     overflow: hidden;
 }
@@ -686,15 +686,16 @@ a {
 .about-image {
 
     width: 100%;
-    height: 100%;
+    aspect-ratio: 0.7 / 1;
 
     display: block;
 
     object-fit: cover;
-
     object-position: center center;
 }
 
+
+/* ABOUT COPY */
 
 .about-copy {
 
@@ -736,15 +737,12 @@ a {
 
     margin: 55px 0;
 
-    padding:
-        0 35px;
+    padding: 0 35px;
 
     border-left:
         1px solid
         rgba(24,22,20,0.15);
 }
-
-
 /* =========================================
    SKILLS
 ========================================= */
@@ -1230,72 +1228,81 @@ footer {
 
 
     /* =====================================
-       ABOUT
-       SAME FORMAT — ONLY SMALLER
-    ====================================== */
+   ABOUT
+   SAME DESIGN — SCALED DOWN
+====================================== */
 
-    .about-section {
+.about-section {
 
-        width:
-            calc(100% - 6vw);
+    width: calc(100% - 6vw);
 
-        grid-template-columns:
-            0.7fr
-            1.25fr
-            0.8fr;
-    }
+    grid-template-columns:
+        0.7fr
+        1.25fr
+        0.8fr;
 
-
-    /*
-       VIKTIGT:
-       ingen height sätts på .about-photo här.
-       Desktopens aspect-ratio används även
-       på mobilen.
-    */
+    min-height: 240px;
+}
 
 
-    .about-copy {
+.about-photo {
 
-        padding:
-            28px
-            20px;
-    }
+    padding: 28px 0;
 
+    display: flex;
 
-    .about-copy h2 {
-
-        margin-top: 10px;
-
-        font-size: 4vw;
-
-        line-height: 0.95;
-    }
+    align-items: center;
+}
 
 
-    .about-text {
+.about-image {
 
-        margin-top: 12px;
+    width: 100%;
+    aspect-ratio: 0.7 / 1;
 
-        font-size: 6px;
-
-        line-height: 1.7;
-    }
-
-
-    .about-skills {
-
-        margin:
-            28px 0;
-
-        padding:
-            0 15px;
-
-        border-left:
-            1px solid
-            rgba(24,22,20,0.15);
-    }
+    object-fit: cover;
+    object-position: center center;
+}
 
 
+.about-copy {
+
+    padding:
+        28px
+        20px;
+}
+
+
+.about-copy h2 {
+
+    margin-top: 10px;
+
+    font-size: 4vw;
+
+    line-height: 0.95;
+}
+
+
+.about-text {
+
+    margin-top: 12px;
+
+    font-size: 6px;
+
+    line-height: 1.7;
+}
+
+
+.about-skills {
+
+    margin: 28px 0;
+
+    padding: 0 15px;
+
+    border-left:
+        1px solid
+        rgba(24,22,20,0.15);
+}
     /* =====================================
        SKILLS
     ====================================== */
