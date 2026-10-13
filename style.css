@@ -1292,6 +1292,414 @@ footer {
     }
 }
 
+/* =========================================
+   EMMA LUNDSTRÖM — MOBILE PORTFOLIO
+   EDITORIAL MOBILE EXPERIENCE
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================
+       GENERAL
+    ====================================== */
+
+    .small-label {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        line-height: 1.6;
+    }
+
+
+    /* =====================================
+       HERO
+    ====================================== */
+
+    .hero {
+        height: 100svh;
+        min-height: 580px;
+        max-height: 950px;
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-video {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center 60%;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(15, 10, 8, 0.15) 0%,
+            rgba(15, 10, 8, 0.05) 40%,
+            rgba(15, 10, 8, 0.48) 100%
+        );
+    }
+
+
+    /* =====================================
+       NAVIGATION
+    ====================================== */
+
+    .navbar {
+        padding: 28px 6%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .nav-small {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav-link {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+    }
+
+
+    /* =====================================
+       HERO NAME
+    ====================================== */
+
+    .hero-title {
+        left: 6%;
+        right: 6%;
+        bottom: 65px;
+    }
+
+    .hero-title h1 {
+        font-size: clamp(49px, 12.5vw, 78px);
+
+        line-height: 0.9;
+        letter-spacing: -0.055em;
+
+        overflow-wrap: normal;
+    }
+
+
+    /* =====================================
+       INTRO
+    ====================================== */
+
+    .intro-section {
+        width: 88%;
+
+        padding: 100px 0 115px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 35px;
+    }
+
+    .intro-left {
+        width: 100%;
+    }
+
+    .intro-left .small-label {
+        margin-bottom: 25px;
+    }
+
+    .intro-left h2 {
+        font-size: clamp(42px, 11vw, 60px);
+        line-height: 1.05;
+    }
+
+    .intro-right {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .intro-right p {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+
+    /* =====================================
+       SELECTED WORK
+    ====================================== */
+
+    .work-section {
+        width: 88%;
+        padding-bottom: 110px;
+    }
+
+    .work-heading {
+        margin-bottom: 25px;
+        font-size: 10px;
+    }
+
+    .project-showcase {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Project rows become vertical */
+
+    .project-row {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* All project cards */
+
+    .showcase-project,
+    .project-arsenal,
+    .project-scraping,
+    .project-row .showcase-project {
+        width: 100%;
+
+        aspect-ratio: auto;
+        min-height: 350px;
+    }
+
+    /* Individual card heights */
+
+    .project-arsenal {
+        min-height: 420px;
+    }
+
+    .project-wine,
+    .project-global,
+    .project-aroma {
+        min-height: 360px;
+    }
+
+    .project-scraping {
+        min-height: 340px;
+    }
+
+    .project-coming-soon {
+        min-height: 300px;
+    }
+
+
+    /* =====================================
+       PROJECT IMAGES
+    ====================================== */
+
+    .showcase-image {
+        width: 100%;
+        height: 100%;
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .arsenal-image {
+        background-position: center;
+    }
+
+    .wine-image {
+        background-position: center;
+    }
+
+    .global-image {
+        background-position: center;
+    }
+
+    .scraping-image {
+        background-position: center;
+    }
+
+    .aroma-image {
+        background-position: center 60%;
+    }
+
+
+    /* =====================================
+       PROJECT CONTENT
+    ====================================== */
+
+    .showcase-content {
+        top: 30px;
+        left: 28px;
+        right: 22px;
+    }
+
+    .showcase-content h3,
+    .project-row .showcase-content h3,
+    .project-aroma .showcase-content h3,
+    .project-coming-soon .showcase-content h3 {
+        font-size: clamp(36px, 10vw, 48px);
+        line-height: 1;
+    }
+
+    .showcase-content p {
+        margin-top: 14px;
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .view-project {
+        margin-top: 22px;
+        font-size: 10px;
+    }
+
+    .project-side-text {
+        right: 20px;
+        bottom: 20px;
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+
+    /* =====================================
+       ABOUT
+    ====================================== */
+
+    .about-section {
+        width: 88%;
+
+        display: flex;
+        flex-direction: column;
+
+        min-height: auto;
+
+        margin-bottom: 80px;
+    }
+
+    .about-photo {
+        width: 100%;
+        padding: 0;
+    }
+
+    .about-image {
+        width: 100%;
+        height: 420px;
+
+        aspect-ratio: auto;
+
+        object-fit: cover;
+        object-position: center 30%;
+    }
+
+    .about-copy {
+        padding: 45px 25px 35px;
+    }
+
+    .about-copy h2 {
+        margin-top: 18px;
+
+        font-size: clamp(38px, 10vw, 48px);
+        line-height: 1.05;
+    }
+
+    .about-text {
+        margin-top: 25px;
+
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+
+    /* =====================================
+       SKILLS & INTERESTS
+    ====================================== */
+
+    .about-skills {
+        margin: 0;
+        padding: 10px 25px 45px;
+
+        border-left: none;
+    }
+
+    .skills {
+        margin-top: 20px;
+        gap: 9px;
+    }
+
+    .skills span {
+        padding: 10px 14px;
+
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+
+    /* =====================================
+       CONTACT
+    ====================================== */
+
+    .contact-section {
+        min-height: 550px;
+
+        padding: 85px 6%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 50px;
+    }
+
+    .contact-left .small-label {
+        margin-bottom: 25px;
+    }
+
+    .contact-left h2 {
+        font-size: clamp(50px, 12vw, 75px);
+        line-height: 0.95;
+    }
+
+    .contact-links {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .contact-links a {
+        width: 100%;
+        min-height: 55px;
+
+        padding: 17px 20px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================
+       FOOTER
+    ====================================== */
+
+    footer {
+        padding: 30px 6%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+}
+
 
 /* =========================================
    VERY SMALL PHONES
@@ -1299,53 +1707,31 @@ footer {
 
 @media (max-width: 380px) {
 
-    .nav-menu {
-        gap: 9px;
-    }
-
-    .nav-small,
-    .nav-link {
-        font-size: 5px;
-    }
-
     .hero-title h1 {
+        font-size: 12vw;
+    }
+
+    .intro-left h2 {
+        font-size: 10vw;
+    }
+
+    .showcase-content h3,
+    .project-row .showcase-content h3 {
         font-size: 9vw;
     }
 
-    .hero-statement p {
-        font-size: 4.5px;
-    }
-
-    .intro-right p {
-        font-size: 8px;
-    }
-
-    .showcase-content {
-        top: 2.8vw;
-        left: 3vw;
-    }
-
-    .project-row .showcase-content h3 {
-        font-size: 4.5vw;
-    }
-
     .about-copy {
-        padding: 22px 14px;
+        padding-inline: 20px;
     }
 
     .about-skills {
-        padding: 0 10px;
+        padding-inline: 20px;
     }
 
-    .contact-section {
-        gap: 15px;
+    .contact-left h2 {
+        font-size: 11vw;
     }
 
-    .contact-links a {
-        min-width: 70px;
-
-        padding: 7px 8px;
-    }
 }
 
 

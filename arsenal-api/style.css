@@ -1419,106 +1419,412 @@ tbody tr:hover {
 
 }
 
+/* =========================================
+   ARSENAL GOAL TRENDS — MOBILE DESIGN
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================
+       GENERAL
+    ====================================== */
+
+    .section-label,
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+    }
+
+
+    /* =====================================
+       NAVIGATION
+    ====================================== */
+
+    .project-nav {
+        padding: 26px 6%;
+        gap: 15px;
+    }
+
+    .project-nav a,
+    .project-nav span {
+        font-size: 9px;
+        letter-spacing: 0.07em;
+        line-height: 1.5;
+    }
+
+    .project-nav span {
+        text-align: right;
+    }
+
+
+    /* =====================================
+       HERO
+    ====================================== */
+
+    .hero {
+        height: 90svh;
+        min-height: 580px;
+
+        padding: 0 6% 100px;
+
+        background-position: center;
+
+        align-items: flex-end;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(20, 9, 8, 0.15) 0%,
+                rgba(20, 9, 8, 0.25) 35%,
+                rgba(20, 9, 8, 0.78) 100%
+            );
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .eyebrow {
+        margin-bottom: 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(56px, 14vw, 85px);
+        line-height: 0.95;
+        letter-spacing: -0.055em;
+    }
+
+    .hero h1 em {
+        display: block;
+    }
+
+    .hero-bottom {
+        left: 6%;
+        right: 6%;
+        bottom: 28px;
+
+        text-align: left;
+    }
+
+    .hero-bottom p {
+        font-size: 9px;
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       PROJECT INTRO
+    ====================================== */
+
+    .project-intro {
+        padding: 95px 6% 105px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 45px;
+    }
+
+    .intro-left h2 {
+        margin-top: 25px;
+
+        font-size: clamp(43px, 11vw, 65px);
+        line-height: 1.05;
+    }
+
+    .intro-right {
+        padding-top: 0;
+        align-self: stretch;
+    }
+
+    .intro-right .intro-lead {
+        font-size: 26px;
+        line-height: 1.35;
+
+        margin-bottom: 30px;
+    }
+
+    .intro-right p {
+        font-size: 16px;
+        line-height: 1.75;
+
+        margin-bottom: 22px;
+    }
+
+    .intro-right p:last-child {
+        margin-bottom: 0;
+    }
+
+
+    /* =====================================
+       SECTION HEADINGS
+    ====================================== */
+
+    .section-heading {
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        gap: 25px;
+
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        margin-top: 20px;
+
+        font-size: clamp(48px, 12vw, 70px);
+        line-height: 1;
+    }
+
+    .chart-description {
+        max-width: 100%;
+
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       CHART SECTION
+    ====================================== */
+
+    .chart-section {
+        padding: 90px 6% 100px;
+    }
+
+    .chart-card {
+        padding: 24px 0 24px 20px;
+
+        overflow: hidden;
+    }
+
+    .chart-top {
+        padding-right: 20px;
+        padding-bottom: 22px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .chart-top > p {
+        font-size: 10px;
+        letter-spacing: 0.08em;
+    }
+
+    .legend {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 15px 22px;
+
+        font-size: 10px;
+    }
+
+    .legend-item {
+        gap: 8px;
+    }
+
+    .legend-dot {
+        width: 9px;
+        height: 9px;
+    }
+
+
+    /* =====================================
+       CHART — HORIZONTAL SCROLL
+    ====================================== */
+
+    .chart-wrapper {
+        position: relative;
+
+        width: 100%;
+        height: 390px;
+
+        margin-top: 25px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .chart-wrapper canvas {
+        min-width: 650px;
+    }
+
+
+    /* =====================================
+       CHART INFO
+    ====================================== */
+
+    .chart-info {
+        margin-top: 25px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .chart-info p {
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       TABLE SECTION
+    ====================================== */
+
+    .table-section {
+        padding: 95px 6% 70px;
+    }
+
+    .table-wrapper {
+        width: 100%;
+
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        margin-top: 5px;
+    }
+
+    table {
+        min-width: 580px;
+    }
+
+    th,
+    td {
+        padding: 20px 15px;
+
+        white-space: nowrap;
+    }
+
+    thead th {
+        font-size: 10px;
+    }
+
+    tbody td {
+        font-size: 18px;
+    }
+
+
+    /* =====================================
+       BUILT WITH — BELOW TABLE
+    ====================================== */
+
+    .tools-section {
+        padding: 0 6% 100px;
+
+        background: var(--cream);
+
+        border-top: none;
+    }
+
+    .tools {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        margin-top: 20px;
+    }
+
+    .tools span {
+        padding: 10px 15px;
+
+        font-size: 12px;
+        border-radius: 100px;
+    }
+
+
+    /* =====================================
+       BACK TO SELECTED WORK
+    ====================================== */
+
+    .next-project {
+        min-height: 340px;
+
+        padding: 65px 6%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .next-project h2 {
+        margin-top: 20px;
+
+        font-size: clamp(48px, 12vw, 70px);
+        line-height: 0.95;
+    }
+
+    .next-arrow {
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================
+       FOOTER
+    ====================================== */
+
+    .project-footer {
+        padding: 30px 6%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .project-footer p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+}
 
 
 /* =========================================
    VERY SMALL PHONES
-   STILL SAME COMPOSITION
 ========================================= */
 
 @media (max-width: 380px) {
 
-
-    .project-nav a,
-    .project-nav span {
-
-        font-size: 5px;
-
-    }
-
-
-    .hero {
-
-        min-height: 470px;
-
-    }
-
-
     .hero h1 {
-
-        font-size: 10vw;
-
+        font-size: 13vw;
     }
 
-
-    .project-intro {
-
-        gap: 7vw;
-
+    .intro-left h2 {
+        font-size: 10.5vw;
     }
 
-
-    .intro-right .intro-lead {
-
-        font-size: 9px;
-
+    .section-heading h2 {
+        font-size: 11vw;
     }
-
-
-    .intro-right p {
-
-        font-size: 5.5px;
-
-    }
-
-
-    .chart-description {
-
-        max-width: 115px;
-
-        font-size: 5.5px;
-
-    }
-
 
     .chart-card {
-
-        padding:
-            15px 14px;
-
+        padding-left: 14px;
     }
 
-
-    .chart-wrapper {
-
-        height: 230px;
-
-    }
-
-
-    .legend {
-
-        gap: 8px;
-
-        font-size: 4.5px;
-
-    }
-
-
-    .chart-info p {
-
-        font-size: 4.5px;
-
-    }
-
-
-    .next-project {
-
-        min-height: 220px;
-
+    .next-project h2 {
+        font-size: 11vw;
     }
 
 }
+
+
 /* =========================================
    BACK TO WORK ARROW
 ========================================= */
@@ -1557,4 +1863,32 @@ tbody tr:hover {
 
     top: 0;
     right: 0;
+}
+
+/* =========================================
+   RESPONSIVE CHART CONTAINER
+========================================= */
+
+/* Desktop */
+
+.chart-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .chart-inner {
+        width: 650px;
+        height: 100%;
+    }
+
+    .chart-wrapper canvas {
+        min-width: 0;
+    }
+
 }

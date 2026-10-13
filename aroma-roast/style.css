@@ -540,75 +540,367 @@ em {
     padding-block: 2vw;
 }
 
-
 /* =========================================
-   MOBILE
-   SAME LAYOUT — SCALED DOWN
+   AROMA ROAST — MOBILE DESIGN
+   EDITORIAL MOBILE EXPERIENCE
 ========================================= */
 
 @media (max-width: 650px) {
 
+    /* =====================================
+       GENERAL
+    ====================================== */
+
     .wrap {
-        width: 94%;
+        width: 88%;
+        margin-inline: auto;
     }
 
     .section-padded {
-        padding-block: 5vw;
+        padding-block: 65px;
     }
 
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        margin-bottom: 22px;
+    }
+
+
+    /* =====================================
+       NAVIGATION
+    ====================================== */
+
     .site-header {
-        min-height: 8vw;
+        min-height: 75px;
+        gap: 12px;
+        font-size: 9px;
+    }
+
+    .site-header span {
+        text-align: right;
+        font-size: 8px;
+    }
+
+    .back-link {
+        font-size: 9px;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+
+
+    /* =====================================
+       HERO
+    ====================================== */
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 30px;
+        padding-bottom: 0;
+    }
+
+    .hero-copy {
+        width: 100%;
+    }
+
+    .hero-logo {
+        width: 100%;
+        max-width: 340px;
+        margin-inline: auto;
+        margin-bottom: 22px;
     }
 
     .hero-description {
-        font-size: 2.2vw;
+        font-size: 20px;
+        line-height: 1.3;
+        margin-bottom: 25px;
     }
 
-    .display-title,
-    .campaign-results h2,
-    .takeaways h2 {
-        font-size: 4vw;
+    .hero-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-size: 9px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        aspect-ratio: 1 / 1.05;
+        margin-bottom: 35px;
+    }
+
+    .hero-visual img {
+        object-position: center 65%;
+    }
+
+
+    /* =====================================
+       THE CHALLENGE
+    ====================================== */
+
+    .challenge-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px;
+    }
+
+    .display-title {
+        font-size: clamp(32px, 9vw, 42px);
+        line-height: 1.07;
+        letter-spacing: -0.025em;
+        margin-bottom: 0;
     }
 
     .challenge-copy {
-        font-size: 1.1vw;
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .challenge-copy p {
+        margin-bottom: 18px;
+    }
+
+    .challenge-copy p:last-child {
+        margin-bottom: 0;
+    }
+
+
+    /* =====================================
+       THE STRATEGY
+    ====================================== */
+
+    .strategy {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 40px;
     }
 
     .strategy h2 {
-        font-size: 3vw;
+        font-size: clamp(36px, 10vw, 46px);
+        line-height: 1.1;
+        margin-bottom: 35px;
+    }
+
+    .funnel-image {
+        width: 100%;
+        max-width: 360px;
+        margin-inline: auto;
+        margin-top: 0;
+    }
+
+    .funnel-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .strategy-stages {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .strategy-stage {
+        padding-bottom: 25px;
     }
 
     .strategy-stage h3 {
-        font-size: 2vw;
+        font-size: 24px;
+        margin-bottom: 10px;
     }
 
     .strategy-stage p {
-        font-size: 1vw;
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+
+    /* =====================================
+       CAMPAIGN RESULTS
+    ====================================== */
+
+    .campaign-results h2 {
+        font-size: clamp(36px, 10vw, 46px);
+        line-height: 1.1;
+        margin-bottom: 35px;
+    }
+
+    .kpi-image {
+        width: 100%;
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    .kpi-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .campaign-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-top: 30px;
+        font-size: 10px;
+        text-align: center;
+    }
+
+
+    /* =====================================
+       OUR BEST ADS
+    ====================================== */
+
+    .best-ads {
+        overflow: hidden;
+    }
+
+    .best-ads-heading {
+        margin-bottom: 35px;
     }
 
     .best-ads h2 {
-        font-size: 3.5vw;
+        font-size: clamp(36px, 10vw, 46px);
+        margin-bottom: 22px;
     }
 
     .best-ads-intro {
-        font-size: 0.95vw;
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+
+    /* =====================================
+       MOBILE CAROUSEL
+    ====================================== */
+
+    .creative-carousel {
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .creative-viewport {
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        border-radius: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .creative-track {
+        display: flex;
+        gap: 14px;
+    }
+
+    .creative-card {
+        flex: 0 0 100%;
+        min-width: 0;
+        scroll-snap-align: start;
+        border-radius: 8px;
+    }
+
+    .creative-card-image {
+        width: 100%;
+        aspect-ratio: 1 / 1.05;
+        padding: 20px;
+    }
+
+    .creative-card-image img {
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .creative-card-info {
+        padding: 22px 24px 28px;
     }
 
     .creative-card-info h3 {
-        font-size: 1.5vw;
+        font-size: 25px;
+        margin-bottom: 12px;
     }
 
     .creative-card-info p {
-        font-size: 0.9vw;
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 3px 0;
+    }
+
+    .creative-highlight {
+        margin-top: 16px;
+        font-size: 10px;
+    }
+
+    .creative-next {
+        top: 38%;
+        right: -10px;
+        width: 46px;
+        height: 46px;
+        font-size: 24px;
+    }
+
+
+    /* =====================================
+       KEY TAKEAWAYS
+    ====================================== */
+
+    .takeaways {
+        padding-block: 75px;
+    }
+
+    .takeaways h2 {
+        font-size: clamp(38px, 11vw, 50px);
+        line-height: 1.1;
+        margin-bottom: 40px;
+    }
+
+    .takeaway-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+        margin-top: 0;
+    }
+
+    .takeaway-grid article {
+        max-width: 100%;
     }
 
     .takeaway-grid h3 {
-        font-size: 1.8vw;
+        font-size: 24px;
+        margin-bottom: 12px;
     }
 
     .takeaway-grid p {
-        font-size: 1vw;
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.65;
     }
+
+
+    /* =====================================
+       FOOTER
+    ====================================== */
+
+    .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        padding-block: 30px;
+        font-size: 10px;
+    }
+
 }
 
 
@@ -622,4 +914,139 @@ em {
     .creative-viewport {
         scroll-behavior: auto;
     }
+}/* =========================================
+   KPI HIERARCHY — RESPONSIVE
+========================================= */
+
+/* Desktop: visa originalbilden */
+
+.kpi-desktop {
+    display: block;
+}
+
+/* Desktop: dölj mobilversionen */
+
+.kpi-mobile {
+    display: none;
+}
+
+
+/* =========================================
+   KPI HIERARCHY — MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    /* Dölj originalbilden */
+
+    .kpi-desktop {
+        display: none;
+    }
+
+    /* Visa mobilversionen */
+
+    .kpi-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        gap: 5px;
+
+        margin: 30px auto 0;
+    }
+
+
+    /* ALLA KPI-NIVÅER */
+
+    .kpi-level {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 16px 8px;
+
+        border-radius: 10px;
+
+        font-family: "Roboto", sans-serif;
+        line-height: 1.4;
+    }
+
+
+    /* KPI RUBRIKER */
+
+    .kpi-label {
+        display: block;
+
+        font-size: 10px;
+        font-weight: 700;
+
+        margin-bottom: 6px;
+
+        letter-spacing: 0.03em;
+    }
+
+
+    /* KPI SIFFROR */
+
+    .kpi-level strong {
+        display: block;
+
+        font-size: 14px;
+        font-weight: 700;
+
+        line-height: 1.45;
+    }
+
+
+    /* =====================================
+       LEVEL 1 — PURCHASES
+    ====================================== */
+
+    .kpi-purchases {
+        width: 48%;
+
+        background: #1A0089;
+        color: white;
+    }
+
+
+    /* =====================================
+       LEVEL 2 — CPA / ROAS
+    ====================================== */
+
+    .kpi-roas {
+        width: 65%;
+
+        background: #8640E8;
+        color: white;
+    }
+
+
+    /* =====================================
+       LEVEL 3 — CTR / CPC
+    ====================================== */
+
+    .kpi-clicks {
+        width: 82%;
+
+        background: #F49BA5;
+        color: #1A0089;
+    }
+
+
+    /* =====================================
+       LEVEL 4 — REACH / CPM
+    ====================================== */
+
+    .kpi-reach {
+        width: 100%;
+
+        background: #FF843B;
+        color: #1A0089;
+    }
+
 }

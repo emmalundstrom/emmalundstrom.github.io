@@ -1306,75 +1306,420 @@ a {
 
 }
 
-
 /* =========================================
-   VERY SMALL PHONES
-   SAME COMPOSITION
+   GLOBAL DATA — MOBILE DESIGN
+   EDITORIAL MOBILE EXPERIENCE
 ========================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 700px) {
+
+    :root {
+        --nav-height: 70px;
+    }
+
+
+    /* =====================================
+       NAVIGATION
+    ====================================== */
+
+    .project-nav {
+        height: var(--nav-height);
+        padding: 0 6%;
+        gap: 12px;
+    }
 
     .back-link,
     .project-name {
-        font-size: 5px;
+        font-size: 9px;
+        letter-spacing: 0.07em;
+        line-height: 1.4;
     }
 
+    .project-name {
+        text-align: right;
+    }
+
+
+    /* =====================================
+       HERO
+    ====================================== */
 
     .project-hero {
-        min-height: 470px;
+        height: calc(100svh - var(--nav-height));
+        min-height: 550px;
+
+        margin-top: var(--nav-height);
+
+        padding: 50px 6%;
+
+        display: flex;
+        align-items: center;
     }
 
+    .hero-background {
+        object-position: center;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(8, 15, 20, 0.25) 0%,
+            rgba(8, 15, 20, 0.45) 45%,
+            rgba(8, 15, 20, 0.7) 100%
+        );
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .eyebrow {
+        margin-bottom: 25px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+    }
+
+    .project-hero h1 {
+        font-size: clamp(70px, 18vw, 105px);
+        line-height: 0.9;
+        letter-spacing: -0.065em;
+    }
 
     .project-intro {
-        max-width: 190px;
-
-        font-size: 5.5px;
-    }
-
-
-    .country-card,
-    .country-card-content {
-        min-height: 300px;
-    }
-
-
-    .country-card-content {
-        padding: 20px;
-    }
-
-
-    .data-grid {
+        max-width: 330px;
         margin-top: 32px;
+
+        font-size: 16px;
+        line-height: 1.65;
     }
 
 
-    .data-item {
-        min-height: 58px;
-    }
+    /* =====================================
+       COORDINATES
+    ====================================== */
 
-
-    .data-item strong {
-        font-size: 3.3vw;
-    }
-
-
-    .case-info {
-        gap: 7vw;
-    }
-
-
-    .case-right .case-lead {
+    .image-coordinate {
+        top: 25px;
+        right: 6%;
+        gap: 5px;
         font-size: 9px;
     }
 
 
-    .case-right p {
-        font-size: 5.5px;
+    /* =====================================
+       COUNTRY SECTION
+    ====================================== */
+
+    .data-section {
+        padding: 75px 6% 90px;
     }
 
 
+    /* =====================================
+       COUNTRY SELECTOR
+    ====================================== */
+
+    .country-selector {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .country-selector label {
+        margin-bottom: 15px;
+        font-size: 11px;
+    }
+
+    #country-select {
+        width: 100%;
+
+        padding: 20px 50px 20px 18px;
+
+        font-size: 16px;
+
+        background: var(--cream);
+    }
+
+    .select-wrapper::after {
+        right: 20px;
+        font-size: 16px;
+    }
+
+
+    /* =====================================
+       COUNTRY CARD
+    ====================================== */
+
+    .country-card {
+        width: 100%;
+        min-height: 510px;
+    }
+
+    .country-card-content {
+        min-height: 510px;
+
+        padding: 30px 24px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+    /* =====================================
+       FLAG
+    ====================================== */
+
+    .country-flag {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    .flag-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(243, 237, 227, 0.92) 0%,
+            rgba(243, 237, 227, 0.85) 55%,
+            rgba(243, 237, 227, 0.75) 100%
+        );
+    }
+
+
+    /* =====================================
+       COUNTRY TITLE
+    ====================================== */
+
+    .country-title-top {
+        gap: 15px;
+        margin-bottom: 22px;
+    }
+
+    .country-title-top span {
+        font-size: 10px;
+    }
+
+    .country-title h2 {
+        max-width: 100%;
+
+        font-size: clamp(42px, 12vw, 70px);
+
+        line-height: 1;
+        letter-spacing: -0.055em;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =====================================
+       DATA GRID
+    ====================================== */
+
+    .data-grid {
+        width: 100%;
+
+        margin-top: 70px;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .data-item {
+        min-height: 125px;
+
+        padding: 20px 10px 20px 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .data-item:nth-child(even) {
+        padding-left: 15px;
+    }
+
+    .data-item span {
+        font-size: 10px;
+        letter-spacing: 0.08em;
+    }
+
+    .data-item strong {
+        margin-top: 16px;
+
+        font-size: clamp(18px, 5vw, 27px);
+
+        line-height: 1.15;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================
+       API NOTE
+    ====================================== */
+
+    .api-note {
+        margin-top: 20px;
+
+        gap: 10px;
+
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .live-dot {
+        width: 7px;
+        height: 7px;
+    }
+
+
+    /* =====================================
+       PROJECT INFO
+    ====================================== */
+
+    .case-info {
+        padding: 100px 6%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    .section-label {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+    }
+
+    .case-left h2 {
+        margin-top: 25px;
+
+        font-size: clamp(55px, 13vw, 80px);
+
+        line-height: 0.95;
+    }
+
+    .case-right {
+        align-self: stretch;
+    }
+
+    .case-right .case-lead {
+        font-size: 26px;
+        line-height: 1.35;
+        margin-bottom: 30px;
+    }
+
+    .case-right p {
+        margin-bottom: 22px;
+
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+
+    /* =====================================
+       BUILT WITH
+    ====================================== */
+
+    .tools-section {
+        padding: 65px 6% 90px;
+    }
+
+    .tools {
+        margin-top: 25px;
+        gap: 10px;
+    }
+
+    .tools span {
+        padding: 12px 17px;
+        font-size: 13px;
+    }
+
+
+    /* =====================================
+       BACK TO WORK
+    ====================================== */
+
     .next-project {
-        min-height: 210px;
+        min-height: 340px;
+
+        padding: 65px 6%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .next-project h2 {
+        margin-top: 20px;
+
+        font-size: clamp(48px, 12vw, 70px);
+
+        line-height: 0.95;
+    }
+
+    .next-arrow {
+        flex-shrink: 0;
+    }
+
+    .css-arrow {
+        width: 28px;
+        height: 28px;
+    }
+
+
+    /* =====================================
+       FOOTER
+    ====================================== */
+
+    .project-footer {
+        padding: 30px 6%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .project-footer p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .project-hero h1 {
+        font-size: 17vw;
+    }
+
+    .country-card-content {
+        padding: 25px 18px;
+    }
+
+    .country-title h2 {
+        font-size: 11vw;
+    }
+
+    .data-item strong {
+        font-size: 18px;
+    }
+
+    .case-left h2 {
+        font-size: 13vw;
+    }
+
+    .next-project h2 {
+        font-size: 11vw;
     }
 
 }
@@ -1433,4 +1778,58 @@ a {
 
     top: 0;
     right: 0;
+} 
+/* =========================================
+   GLOBAL DATA — BUILT WITH MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* PROJECT DESCRIPTION */
+
+    .case-info {
+        padding-bottom: 0;
+    }
+
+    .case-right p:last-child {
+        margin-bottom: 0;
+    }
+
+
+    /* BUILT WITH */
+
+    .tools-section {
+        padding: 35px 6% 90px;
+
+        background: var(--cream);
+
+        border-top: none;
+    }
+
+    .tools-section .section-label {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        margin-bottom: 18px;
+    }
+
+    .tools {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        margin-top: 0;
+    }
+
+    .tools span {
+        padding: 10px 15px;
+
+        font-size: 12px;
+
+        border: 1px solid rgba(21, 19, 19, 0.22);
+        border-radius: 100px;
+
+        background: transparent;
+    }
+
 }
