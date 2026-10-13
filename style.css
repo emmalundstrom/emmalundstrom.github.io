@@ -931,7 +931,7 @@ footer {
 
         left: 6%;
         right: 6%;
-        bottom: 145px;
+        bottom: 105px;
 
         z-index: 2;
     }
@@ -1300,7 +1300,7 @@ footer {
     /* HERO */
 
     .hero-title {
-        bottom: 135px;
+        bottom: 95px;
     }
 
     .hero-title h1 {
