@@ -4,7 +4,6 @@
 ========================================= */
 
 :root {
-
     --cream: #f3ede3;
     --paper: #f8f4ed;
 
@@ -18,7 +17,6 @@
 
     --arsenal-red: #DB0007;
     --arsenal-grey: #77736f;
-
 }
 
 
@@ -32,26 +30,19 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
     background: var(--cream);
-
     color: var(--text);
 
     font-family: "Manrope", sans-serif;
-
     font-weight: 300;
 
     overflow-x: hidden;
-
 }
-
 
 a {
     color: inherit;
@@ -59,412 +50,287 @@ a {
 }
 
 
-
 /* =========================================
-   NAVIGATION
+   NAVIGATION — DESKTOP
 ========================================= */
 
 .project-nav {
-
     position: absolute;
 
     top: 0;
     left: 0;
 
     width: 100%;
-
     z-index: 20;
 
     padding: 30px 4.5vw;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
     color: #ffffff;
-
 }
-
 
 .project-nav a,
 .project-nav span {
-
     font-family: "DM Mono", monospace;
 
     font-size: 10px;
-
     letter-spacing: 0.12em;
-
 }
 
-
 .project-nav a {
-
     transition:
         opacity 0.25s ease,
         transform 0.25s ease;
-
 }
-
 
 .project-nav a:hover {
-
     opacity: 0.6;
-
     transform: translateX(-4px);
-
 }
-
 
 
 /* =========================================
-   HERO
+   HERO — DESKTOP
 ========================================= */
 
 .hero {
-
     position: relative;
 
     width: 100%;
 
     height: 92vh;
-
     min-height: 650px;
 
     padding: 0 4.5vw 7vh;
 
     background-image: url("arsenal-team.jpg");
-
     background-size: cover;
-
     background-position: center;
 
     display: flex;
-
     align-items: flex-end;
 
     overflow: hidden;
-
 }
 
-
 .hero-overlay {
-
     position: absolute;
-
     inset: 0;
 
     background:
-
         linear-gradient(
             90deg,
             rgba(20, 9, 8, 0.65) 0%,
             rgba(20, 9, 8, 0.27) 45%,
             rgba(20, 9, 8, 0.10) 100%
         ),
-
         linear-gradient(
             0deg,
             rgba(20, 9, 8, 0.48) 0%,
             transparent 55%
         );
-
 }
 
-
 .hero-content {
-
     position: relative;
-
     z-index: 2;
 
     color: #ffffff;
-
 }
-
 
 .eyebrow,
 .section-label {
-
     font-family: "DM Mono", monospace;
 
     font-size: 10px;
-
     letter-spacing: 0.14em;
-
     font-weight: 400;
-
 }
 
-
 .eyebrow {
-
     margin-bottom: 22px;
 
     color: rgba(255, 255, 255, 0.8);
-
 }
 
-
 .hero h1 {
-
     font-family: "Playfair Display", serif;
 
     font-size: clamp(4.8rem, 10vw, 10rem);
-
     font-weight: 500;
 
     letter-spacing: -0.055em;
-
     line-height: 0.82;
-
 }
 
-
 .hero h1 em {
-
     display: block;
 
     font-weight: 500;
-
     font-style: italic;
-
 }
 
-
 .hero-bottom {
-
     position: absolute;
 
     z-index: 2;
 
     right: 4.5vw;
-
     bottom: 7vh;
 
     text-align: right;
-
     color: #ffffff;
-
 }
 
-
 .hero-bottom p {
-
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     letter-spacing: 0.13em;
-
     line-height: 1.8;
-
 }
 
 
-
 /* =========================================
-   PROJECT INTRO
+   PROJECT INTRO — DESKTOP
 ========================================= */
 
 .project-intro {
-
     padding: 145px 4.5vw 155px;
 
     background: var(--cream);
 
     display: grid;
-
     grid-template-columns: 1.25fr 0.75fr;
 
     gap: 10vw;
-
 }
-
 
 .section-label {
-
     color: rgba(21, 19, 19, 0.62);
-
 }
 
-
 .intro-left h2 {
-
     margin-top: 32px;
 
     font-family: "Playfair Display", serif;
 
     font-size: clamp(3.8rem, 6.5vw, 7rem);
-
     font-weight: 500;
 
     letter-spacing: -0.055em;
-
     line-height: 0.96;
-
 }
-
 
 .intro-left h2 em {
-
     color: var(--burgundy);
-
     font-weight: 500;
-
 }
-
 
 .intro-right {
-
     padding-top: 48px;
-
     align-self: center;
-
 }
 
-
 .intro-right p {
-
     margin-bottom: 25px;
 
     font-size: 1rem;
-
     line-height: 1.75;
 
     color: var(--text-soft);
-
 }
 
-
 .intro-right .intro-lead {
-
     font-family: "Playfair Display", serif;
 
     font-size: 1.65rem;
-
     line-height: 1.35;
 
     color: var(--text);
-
 }
-
 
 
 /* =========================================
-   SECTION HEADINGS
+   SECTION HEADINGS — DESKTOP
 ========================================= */
 
 .section-heading {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-end;
 
     gap: 60px;
-
     margin-bottom: 65px;
-
 }
 
-
 .section-heading h2 {
-
     margin-top: 18px;
 
     font-family: "Playfair Display", serif;
 
     font-size: clamp(3.3rem, 5.5vw, 6rem);
-
     font-weight: 500;
 
     letter-spacing: -0.05em;
-
     line-height: 0.95;
-
 }
 
-
 .section-heading h2 em {
-
     display: block;
 
     color: var(--burgundy);
-
     font-weight: 500;
-
 }
 
-
 .chart-description {
-
     max-width: 360px;
 
     font-size: 0.95rem;
-
     line-height: 1.75;
 
     color: var(--text-soft);
-
 }
-
 
 
 /* =========================================
-   CHART SECTION
+   CHART SECTION — DESKTOP
 ========================================= */
 
 .chart-section {
-
     padding: 130px 4.5vw;
 
     background: var(--paper);
-
 }
 
-
 .chart-card {
-
     padding: 35px 40px;
 
     background: #ffffff;
-
     border: 1px solid var(--line);
-
 }
 
-
 .chart-top {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
     padding-bottom: 30px;
 
     border-bottom: 1px solid var(--line);
-
 }
 
-
 .chart-top > p {
-
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     letter-spacing: 0.12em;
 
     color: var(--text-soft);
-
 }
-
 
 
 /* =========================================
@@ -472,67 +338,55 @@ a {
 ========================================= */
 
 .legend {
-
     display: flex;
-
     gap: 28px;
 
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     letter-spacing: 0.05em;
-
 }
 
-
 .legend-item {
-
     display: flex;
-
     align-items: center;
 
     gap: 9px;
-
 }
 
-
 .legend-dot {
-
     width: 8px;
-
     height: 8px;
 
     border-radius: 50%;
-
 }
-
 
 .legend-dot.red {
     background: var(--arsenal-red);
 }
-
 
 .legend-dot.grey {
     background: var(--arsenal-grey);
 }
 
 
-
 /* =========================================
-   CHART
+   CHART — DESKTOP
 ========================================= */
 
 .chart-wrapper {
-
     position: relative;
 
     height: 520px;
-
     margin-top: 30px;
-
 }
 
+.chart-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
 
 
 /* =========================================
@@ -540,185 +394,127 @@ a {
 ========================================= */
 
 .chart-info {
-
     margin-top: 22px;
 
     display: flex;
-
     justify-content: space-between;
 
     gap: 30px;
-
 }
 
-
 .chart-info p {
-
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     letter-spacing: 0.06em;
-
     line-height: 1.6;
 
     color: var(--text-soft);
-
 }
 
-
 .chart-info a {
-
     color: var(--text);
 
     border-bottom: 1px solid var(--text);
 
     transition: opacity 0.2s ease;
-
 }
-
 
 .chart-info a:hover {
     opacity: 0.5;
 }
 
 
-
 /* =========================================
-   TABLE
+   TABLE — DESKTOP
 ========================================= */
 
 .table-section {
-
     padding: 135px 4.5vw;
 
     background: var(--cream);
-
 }
 
-
 .table-wrapper {
-
     width: 100%;
-
     overflow-x: auto;
 
     border-top: 1px solid var(--line);
-
 }
 
-
 table {
-
     width: 100%;
-
     border-collapse: collapse;
 
     font-variant-numeric: tabular-nums;
-
 }
 
-
 caption {
-
     position: absolute;
 
     width: 1px;
-
     height: 1px;
 
     overflow: hidden;
-
 }
-
 
 th,
 td {
-
     padding: 25px 12px;
 
     border-bottom: 1px solid var(--line);
-
     text-align: left;
-
 }
 
-
 thead th {
-
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     font-weight: 400;
 
     letter-spacing: 0.1em;
-
     text-transform: uppercase;
 
     color: var(--text-soft);
-
 }
-
 
 tbody td {
-
     font-family: "Playfair Display", serif;
-
     font-size: 1.25rem;
-
 }
-
 
 tbody tr {
-
     transition: background 0.25s ease;
-
 }
-
 
 tbody tr:hover {
-
     background: rgba(91, 24, 36, 0.055);
-
 }
-
 
 
 /* =========================================
-   TOOLS
+   TOOLS — DESKTOP
 ========================================= */
 
 .tools-section {
-
     padding: 70px 4.5vw 100px;
 
     background: var(--cream);
-
     border-top: 1px solid var(--line);
-
 }
 
-
 .tools {
-
     display: flex;
-
     flex-wrap: wrap;
 
     gap: 10px;
-
     margin-top: 30px;
-
 }
 
-
 .tools span {
-
     padding: 12px 19px;
 
     border: 1px solid rgba(21, 19, 19, 0.22);
-
     border-radius: 100px;
 
     font-size: 0.8rem;
@@ -727,722 +523,158 @@ tbody tr:hover {
         background 0.25s ease,
         color 0.25s ease,
         border-color 0.25s ease;
-
 }
 
-
 .tools span:hover {
-
     background: var(--burgundy);
 
     color: #ffffff;
-
     border-color: var(--burgundy);
-
 }
 
 
-
 /* =========================================
-   BACK TO SELECTED WORK
+   BACK TO SELECTED WORK — DESKTOP
 ========================================= */
 
 .next-project {
-
     min-height: 440px;
 
     padding: 90px 4.5vw;
 
     background: var(--burgundy);
-
     color: var(--cream);
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
     transition: background 0.3s ease;
-
 }
-
 
 .next-project:hover {
-
     background: var(--burgundy-dark);
-
 }
-
 
 .next-project .section-label {
-
     color: rgba(255, 255, 255, 0.65);
-
 }
 
-
 .next-project h2 {
-
     margin-top: 20px;
 
     font-family: "Playfair Display", serif;
 
     font-size: clamp(4rem, 8vw, 8rem);
-
     font-weight: 500;
 
     letter-spacing: -0.055em;
-
     line-height: 0.9;
-
 }
-
 
 .next-project h2 em {
-
     font-weight: 500;
-
     font-style: italic;
-
 }
 
-
 .next-arrow {
-
     font-family: "Manrope", sans-serif;
 
     font-size: clamp(4rem, 8vw, 8rem);
-
     font-weight: 200;
 
     transition: transform 0.3s ease;
-
 }
-
 
 .next-project:hover .next-arrow {
-
     transform: translate(8px, -8px);
-
 }
-
 
 
 /* =========================================
-   FOOTER
+   CSS ARROW
+========================================= */
+
+.css-arrow {
+    position: relative;
+
+    display: inline-block;
+
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+}
+
+.css-arrow::before {
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+    height: 2px;
+
+    background: currentColor;
+
+    top: 13px;
+    left: 0;
+
+    transform: rotate(-45deg);
+}
+
+.css-arrow::after {
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+
+    top: 0;
+    right: 0;
+}
+
+
+/* =========================================
+   FOOTER — DESKTOP
 ========================================= */
 
 .project-footer {
-
     padding: 34px 4.5vw;
 
     background: var(--burgundy-dark);
-
     color: rgba(255, 255, 255, 0.75);
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
 }
 
-
 .project-footer p {
-
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     letter-spacing: 0.1em;
-
 }
 
 
-
 /* =========================================
-   MOBILE
-   EXACT SAME COMPOSITION AS DESKTOP
-   ONLY SCALED DOWN
+   MOBILE DESIGN
+   ARSENAL GOAL TRENDS
 ========================================= */
 
 @media (max-width: 700px) {
-
 
     /* =====================================
        NAVIGATION
     ====================================== */
 
     .project-nav {
-
-        padding: 16px 4.5vw;
-
-    }
-
-
-    .project-nav a,
-    .project-nav span {
-
-        font-size: 6px;
-
-        letter-spacing: 0.12em;
-
-    }
-
-
-
-    /* =====================================
-       HERO
-       SAME COMPOSITION AS DESKTOP
-    ====================================== */
-
-    .hero {
-
-        height: 92vh;
-
-        min-height: 500px;
-
-        padding:
-            0 4.5vw 7vh;
-
-        /* same image position */
-        background-position: center;
-
-    }
-
-
-    /* same overlay as desktop */
-
-    .hero-overlay {
-
-        background:
-
-            linear-gradient(
-                90deg,
-                rgba(20, 9, 8, 0.65) 0%,
-                rgba(20, 9, 8, 0.27) 45%,
-                rgba(20, 9, 8, 0.10) 100%
-            ),
-
-            linear-gradient(
-                0deg,
-                rgba(20, 9, 8, 0.48) 0%,
-                transparent 55%
-            );
-
-    }
-
-
-    .eyebrow,
-    .section-label {
-
-        font-size: 6px;
-
-        letter-spacing: 0.14em;
-
-    }
-
-
-    .eyebrow {
-
-        margin-bottom: 12px;
-
-    }
-
-
-    .hero h1 {
-
-        font-size: 10vw;
-
-        line-height: 0.82;
-
-        letter-spacing: -0.055em;
-
-    }
-
-
-    /* keep bottom text */
-
-    .hero-bottom {
-
-        display: block;
-
-        right: 4.5vw;
-
-        bottom: 7vh;
-
-    }
-
-
-    .hero-bottom p {
-
-        font-size: 5px;
-
-        line-height: 1.8;
-
-        letter-spacing: 0.13em;
-
-    }
-
-
-
-    /* =====================================
-       PROJECT INTRO
-       SAME TWO COLUMNS
-    ====================================== */
-
-    .project-intro {
-
-        padding:
-            70px 4.5vw
-            75px;
-
-        display: grid;
-
-        grid-template-columns:
-            1.25fr 0.75fr;
-
-        gap: 10vw;
-
-    }
-
-
-    .intro-left h2 {
-
-        margin-top: 16px;
-
-        font-size: 6.5vw;
-
-        line-height: 0.96;
-
-    }
-
-
-    .intro-right {
-
-        padding-top: 24px;
-
-        align-self: center;
-
-    }
-
-
-    .intro-right .intro-lead {
-
-        font-size: 10px;
-
-        line-height: 1.35;
-
-    }
-
-
-    .intro-right p {
-
-        margin-bottom: 12px;
-
-        font-size: 6px;
-
-        line-height: 1.75;
-
-    }
-
-
-
-    /* =====================================
-       SECTION HEADINGS
-       SAME SIDE-BY-SIDE LAYOUT
-    ====================================== */
-
-    .section-heading {
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: flex-end;
-
-        gap: 25px;
-
-        margin-bottom: 35px;
-
-    }
-
-
-    .section-heading > div {
-
-        min-width: 0;
-
-    }
-
-
-    .section-heading h2 {
-
-        margin-top: 10px;
-
-        font-size: 5.5vw;
-
-        line-height: 0.95;
-
-    }
-
-
-    .chart-description {
-
-        max-width: 130px;
-
-        margin-top: 0;
-
-        font-size: 6px;
-
-        line-height: 1.65;
-
-    }
-
-
-
-    /* =====================================
-       CHART SECTION
-    ====================================== */
-
-    .chart-section {
-
-        padding:
-            70px 4.5vw;
-
-    }
-
-
-    .chart-card {
-
-        width: 100%;
-
-        padding:
-            18px 20px;
-
-    }
-
-
-
-    /* =====================================
-       CHART TOP
-       SAME SIDE-BY-SIDE LAYOUT
-    ====================================== */
-
-    .chart-top {
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: center;
-
-        padding-bottom: 16px;
-
-    }
-
-
-    .chart-top > p {
-
-        margin-bottom: 0;
-
-        font-size: 5px;
-
-    }
-
-
-    .legend {
-
-        display: flex;
-
-        flex-wrap: nowrap;
-
+        padding: 25px 6%;
         gap: 12px;
-
-        font-size: 5px;
-
-    }
-
-
-    .legend-item {
-
-        gap: 5px;
-
-    }
-
-
-    .legend-dot {
-
-        width: 5px;
-
-        height: 5px;
-
-    }
-
-
-
-    /* =====================================
-       CHART
-    ====================================== */
-
-    .chart-wrapper {
-
-        width: 100%;
-
-        height: 260px;
-
-        margin-top: 18px;
-
-    }
-
-
-
-    /* =====================================
-       CHART INFO
-       SAME SIDE-BY-SIDE LAYOUT
-    ====================================== */
-
-    .chart-info {
-
-        margin-top: 14px;
-
-        display: flex;
-
-        justify-content: space-between;
-
-        gap: 15px;
-
-    }
-
-
-    .chart-info p {
-
-        flex: 1;
-
-        font-size: 5px;
-
-        line-height: 1.6;
-
-    }
-
-
-    .chart-info p + p {
-
-        margin-top: 0;
-
-        text-align: right;
-
-    }
-
-
-
-    /* =====================================
-       TABLE SECTION
-    ====================================== */
-
-    .table-section {
-
-        padding:
-            70px 4.5vw;
-
-    }
-
-
-    .table-wrapper {
-
-        width: 100%;
-
-        margin-top: 0;
-
-        overflow-x: auto;
-
-        -webkit-overflow-scrolling: touch;
-
-    }
-
-
-    /*
-       Table keeps desktop structure.
-       Horizontal scroll only prevents
-       the data from becoming unreadable.
-    */
-
-    table {
-
-        min-width: 520px;
-
-    }
-
-
-    th,
-    td {
-
-        padding:
-            14px 9px;
-
-        white-space: nowrap;
-
-    }
-
-
-    thead th {
-
-        font-size: 6px;
-
-    }
-
-
-    tbody td {
-
-        font-size: 0.8rem;
-
-    }
-
-
-
-    /* =====================================
-       TOOLS
-       SAME LAYOUT
-    ====================================== */
-
-    .tools-section {
-
-        padding:
-            45px 4.5vw
-            60px;
-
-    }
-
-
-    .tools {
-
-        display: flex;
-
-        flex-wrap: wrap;
-
-        gap: 5px;
-
-        margin-top: 16px;
-
-    }
-
-
-    .tools span {
-
-        padding:
-            6px 9px;
-
-        font-size: 6px;
-
-    }
-
-
-
-    /* =====================================
-       BACK TO SELECTED WORK
-       SAME SIDE-BY-SIDE COMPOSITION
-    ====================================== */
-
-    .next-project {
-
-        min-height: 240px;
-
-        padding:
-            50px 4.5vw;
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: center;
-
-    }
-
-
-    .next-project h2 {
-
-        margin-top: 10px;
-
-        font-size: 8vw;
-
-        line-height: 0.9;
-
-    }
-
-
-    .next-arrow {
-
-        font-size: 8vw;
-
-    }
-
-
-
-    /* =====================================
-       FOOTER
-       SAME LAYOUT
-    ====================================== */
-
-    .project-footer {
-
-        padding:
-            18px 4.5vw;
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: center;
-
-        gap: 15px;
-
-    }
-
-
-    .project-footer p {
-
-        font-size: 5px;
-
-        letter-spacing: 0.1em;
-
-    }
-
-
-    .project-footer p:last-child {
-
-        display: block;
-
-        text-align: right;
-
-    }
-
-}
-
-/* =========================================
-   ARSENAL GOAL TRENDS — MOBILE DESIGN
-========================================= */
-
-@media (max-width: 700px) {
-
-    /* =====================================
-       GENERAL
-    ====================================== */
-
-    .section-label,
-    .eyebrow {
-        font-size: 10px;
-        letter-spacing: 0.12em;
-    }
-
-
-    /* =====================================
-       NAVIGATION
-    ====================================== */
-
-    .project-nav {
-        padding: 26px 6%;
-        gap: 15px;
     }
 
     .project-nav a,
@@ -1450,6 +682,16 @@ tbody tr:hover {
         font-size: 9px;
         letter-spacing: 0.07em;
         line-height: 1.5;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+
+        min-height: 44px;
+
+        font-size: 10px;
+        white-space: nowrap;
     }
 
     .project-nav span {
@@ -1473,18 +715,23 @@ tbody tr:hover {
     }
 
     .hero-overlay {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(20, 9, 8, 0.15) 0%,
-                rgba(20, 9, 8, 0.25) 35%,
-                rgba(20, 9, 8, 0.78) 100%
-            );
+        background: linear-gradient(
+            180deg,
+            rgba(20, 9, 8, 0.15) 0%,
+            rgba(20, 9, 8, 0.25) 35%,
+            rgba(20, 9, 8, 0.78) 100%
+        );
     }
 
     .hero-content {
         width: 100%;
         max-width: 100%;
+    }
+
+    .eyebrow,
+    .section-label {
+        font-size: 10px;
+        letter-spacing: 0.12em;
     }
 
     .eyebrow {
@@ -1493,6 +740,7 @@ tbody tr:hover {
 
     .hero h1 {
         font-size: clamp(56px, 14vw, 85px);
+
         line-height: 0.95;
         letter-spacing: -0.055em;
     }
@@ -1568,8 +816,8 @@ tbody tr:hover {
         flex-direction: column;
 
         align-items: flex-start;
-        gap: 25px;
 
+        gap: 25px;
         margin-bottom: 40px;
     }
 
@@ -1655,8 +903,18 @@ tbody tr:hover {
         -webkit-overflow-scrolling: touch;
     }
 
+    .chart-inner {
+        position: relative;
+
+        width: 650px;
+        height: 100%;
+    }
+
     .chart-wrapper canvas {
-        min-width: 650px;
+        display: block;
+
+        width: 100% !important;
+        height: 100% !important;
     }
 
 
@@ -1704,7 +962,6 @@ tbody tr:hover {
     th,
     td {
         padding: 20px 15px;
-
         white-space: nowrap;
     }
 
@@ -1718,14 +975,13 @@ tbody tr:hover {
 
 
     /* =====================================
-       BUILT WITH — BELOW TABLE
+       BUILT WITH
     ====================================== */
 
     .tools-section {
         padding: 0 6% 100px;
 
         background: var(--cream);
-
         border-top: none;
     }
 
@@ -1734,7 +990,6 @@ tbody tr:hover {
         flex-wrap: wrap;
 
         gap: 10px;
-
         margin-top: 20px;
     }
 
@@ -1751,7 +1006,8 @@ tbody tr:hover {
     ====================================== */
 
     .next-project {
-        min-height: 340px;
+        width: 100%;
+        min-height: 350px;
 
         padding: 65px 6%;
 
@@ -1760,17 +1016,39 @@ tbody tr:hover {
         align-items: center;
 
         gap: 15px;
+
+        background: var(--burgundy);
+        color: var(--cream);
+    }
+
+    .next-project > div {
+        min-width: 0;
+    }
+
+    .next-project .section-label {
+        color: rgba(255, 255, 255, 0.7);
+
+        font-size: 10px;
     }
 
     .next-project h2 {
         margin-top: 20px;
 
+        font-family: "Playfair Display", serif;
+
         font-size: clamp(48px, 12vw, 70px);
         line-height: 0.95;
+
+        color: var(--cream);
     }
 
-    .next-arrow {
+    .next-project h2 em {
+        display: block;
+    }
+
+    .next-project .css-arrow {
         flex-shrink: 0;
+        color: var(--cream);
     }
 
 
@@ -1786,6 +1064,9 @@ tbody tr:hover {
         align-items: flex-start;
 
         gap: 12px;
+
+        background: var(--burgundy-dark);
+        color: var(--cream);
     }
 
     .project-footer p {
@@ -1826,69 +1107,17 @@ tbody tr:hover {
 
 
 /* =========================================
-   BACK TO WORK ARROW
+   REDUCED MOTION
 ========================================= */
 
-.css-arrow {
-    position: relative;
-    display: inline-block;
-    width: 28px;
-    height: 28px;
-}
+@media (prefers-reduced-motion: reduce) {
 
-.css-arrow::before {
-    content: "";
-    position: absolute;
-
-    width: 30px;
-    height: 2px;
-
-    background: currentColor;
-
-    top: 13px;
-    left: 0;
-
-    transform: rotate(-45deg);
-}
-
-.css-arrow::after {
-    content: "";
-    position: absolute;
-
-    width: 14px;
-    height: 14px;
-
-    border-top: 2px solid currentColor;
-    border-right: 2px solid currentColor;
-
-    top: 0;
-    right: 0;
-}
-
-/* =========================================
-   RESPONSIVE CHART CONTAINER
-========================================= */
-
-/* Desktop */
-
-.chart-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-
-/* Mobile */
-
-@media (max-width: 700px) {
-
-    .chart-inner {
-        width: 650px;
-        height: 100%;
+    html {
+        scroll-behavior: auto;
     }
 
-    .chart-wrapper canvas {
-        min-width: 0;
+    * {
+        transition-duration: 0.01ms !important;
     }
 
 }

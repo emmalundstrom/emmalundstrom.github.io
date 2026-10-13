@@ -1,5 +1,11 @@
 /* =========================================
-   GLOBAL DATA
+   GLOBAL DATA — EMMA LUNDSTRÖM
+   COMPLETE RESPONSIVE STYLESHEET
+========================================= */
+
+
+/* =========================================
+   VARIABLES
 ========================================= */
 
 :root {
@@ -49,9 +55,14 @@ a {
     text-decoration: none;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
 
 /* =========================================
-   NAVIGATION
+   NAVIGATION — DESKTOP
 ========================================= */
 
 .project-nav {
@@ -72,7 +83,6 @@ a {
     z-index: 1000;
 
     background: var(--cream);
-
     border-bottom: 1px solid var(--line);
 }
 
@@ -85,6 +95,11 @@ a {
 }
 
 .back-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
     transition:
         opacity 0.25s ease,
         transform 0.25s ease;
@@ -97,7 +112,7 @@ a {
 
 
 /* =========================================
-   FULLSCREEN HERO
+   HERO — DESKTOP
 ========================================= */
 
 .project-hero {
@@ -119,13 +134,10 @@ a {
 }
 
 
-/* =========================================
-   HERO IMAGE
-========================================= */
+/* HERO IMAGE */
 
 .hero-background {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
@@ -138,35 +150,28 @@ a {
 }
 
 
-/* =========================================
-   HERO OVERLAY
-========================================= */
+/* HERO OVERLAY */
 
 .hero-overlay {
     position: absolute;
-
     inset: 0;
 
     z-index: 1;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(8, 15, 20, 0.58) 0%,
-            rgba(8, 15, 20, 0.34) 37%,
-            rgba(8, 15, 20, 0.08) 68%,
-            rgba(8, 15, 20, 0.02) 100%
-        );
+    background: linear-gradient(
+        90deg,
+        rgba(8, 15, 20, 0.58) 0%,
+        rgba(8, 15, 20, 0.34) 37%,
+        rgba(8, 15, 20, 0.08) 68%,
+        rgba(8, 15, 20, 0.02) 100%
+    );
 }
 
 
-/* =========================================
-   HERO CONTENT
-========================================= */
+/* HERO CONTENT */
 
 .hero-content {
     position: relative;
-
     z-index: 3;
 
     width: min(720px, 60%);
@@ -184,9 +189,7 @@ a {
 }
 
 
-/* =========================================
-   HERO TITLE
-========================================= */
+/* HERO TITLE */
 
 .project-hero h1 {
     color: #fffaf3;
@@ -210,9 +213,7 @@ a {
 }
 
 
-/* =========================================
-   HERO INTRO
-========================================= */
+/* HERO INTRO */
 
 .project-intro {
     max-width: 460px;
@@ -226,9 +227,7 @@ a {
 }
 
 
-/* =========================================
-   COORDINATES
-========================================= */
+/* COORDINATES */
 
 .image-coordinate {
     position: absolute;
@@ -252,9 +251,7 @@ a {
 }
 
 
-/* =========================================
-   HERO BOTTOM
-========================================= */
+/* HERO BOTTOM */
 
 .hero-bottom {
     position: absolute;
@@ -278,7 +275,7 @@ a {
 
 
 /* =========================================
-   COUNTRY SECTION
+   COUNTRY SECTION — DESKTOP
 ========================================= */
 
 .data-section {
@@ -288,9 +285,7 @@ a {
 }
 
 
-/* =========================================
-   COUNTRY SELECTOR
-========================================= */
+/* COUNTRY SELECTOR */
 
 .country-selector {
     width: min(1180px, 100%);
@@ -349,7 +344,6 @@ a {
     border-radius: 0;
 
     font-family: "Manrope", sans-serif;
-
     font-size: 16px;
 
     cursor: pointer;
@@ -364,7 +358,6 @@ a {
     outline: none;
 
     border-color: var(--burgundy);
-
     background: var(--cream);
 }
 
@@ -389,13 +382,10 @@ a {
 }
 
 
-/* =========================================
-   FLAG — FULL BACKGROUND
-========================================= */
+/* FLAG */
 
 .country-flag {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
@@ -416,41 +406,33 @@ a {
 
 .country-flag.visible {
     opacity: 1;
-
     transform: scale(1);
 }
 
 
-/* =========================================
-   FLAG OVERLAY
-========================================= */
+/* FLAG OVERLAY */
 
 .flag-overlay {
     position: absolute;
-
     inset: 0;
 
     z-index: 1;
 
     pointer-events: none;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(243, 237, 227, 0.95) 0%,
-            rgba(243, 237, 227, 0.89) 45%,
-            rgba(243, 237, 227, 0.52) 100%
-        );
+    background: linear-gradient(
+        90deg,
+        rgba(243, 237, 227, 0.95) 0%,
+        rgba(243, 237, 227, 0.89) 45%,
+        rgba(243, 237, 227, 0.52) 100%
+    );
 }
 
 
-/* =========================================
-   COUNTRY CONTENT
-========================================= */
+/* COUNTRY CONTENT */
 
 .country-card-content {
     position: relative;
-
     z-index: 2;
 
     min-height: 580px;
@@ -463,9 +445,7 @@ a {
 }
 
 
-/* =========================================
-   COUNTRY TITLE
-========================================= */
+/* COUNTRY TITLE */
 
 .country-title {
     width: 100%;
@@ -516,7 +496,6 @@ a {
     margin-top: 90px;
 
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
 
     border-top: 1px solid rgba(21, 19, 19, 0.22);
@@ -613,7 +592,7 @@ a {
 
 
 /* =========================================
-   PROJECT INFO
+   PROJECT INFO — DESKTOP
 ========================================= */
 
 .case-info {
@@ -673,7 +652,7 @@ a {
 
 
 /* =========================================
-   TOOLS
+   TOOLS — DESKTOP
 ========================================= */
 
 .tools-section {
@@ -709,7 +688,6 @@ a {
 
 .tools span:hover {
     background: var(--burgundy);
-
     color: #ffffff;
 
     border-color: var(--burgundy);
@@ -717,7 +695,7 @@ a {
 
 
 /* =========================================
-   BACK TO WORK
+   BACK TO SELECTED WORK — DESKTOP
 ========================================= */
 
 .next-project {
@@ -731,7 +709,6 @@ a {
     align-items: center;
 
     background: var(--burgundy);
-
     color: var(--cream);
 
     transition: background 0.3s ease;
@@ -764,7 +741,6 @@ a {
 
 .next-arrow {
     font-size: clamp(4rem, 8vw, 8rem);
-
     font-weight: 200;
 
     transition: transform 0.3s ease;
@@ -776,14 +752,13 @@ a {
 
 
 /* =========================================
-   FOOTER
+   FOOTER — DESKTOP
 ========================================= */
 
 .project-footer {
     padding: 34px 4.5vw;
 
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 
@@ -801,514 +776,54 @@ a {
 
 
 /* =========================================
-   MOBILE
-   SAME COMPOSITION AS DESKTOP
-   ONLY SCALED DOWN
+   CSS ARROW — ALL SCREENS
 ========================================= */
 
-@media (max-width: 700px) {
+.css-arrow {
+    position: relative;
 
-    :root {
-        --nav-height: 66px;
-    }
+    display: inline-block;
 
+    width: 28px;
+    height: 28px;
 
-    /* =====================================
-       NAVIGATION
-    ====================================== */
-
-    .project-nav {
-        padding: 0 4.5vw;
-    }
-
-    .back-link,
-    .project-name {
-        font-size: 6px;
-        letter-spacing: 0.11em;
-    }
-
-
-    /* =====================================
-       HERO
-       SAME COMPOSITION AS DESKTOP
-    ====================================== */
-
-    .project-hero {
-        height: calc(100vh - var(--nav-height));
-
-        min-height: 500px;
-
-        margin-top: var(--nav-height);
-
-        padding: 5vw 4.5vw;
-
-        display: flex;
-
-        align-items: center;
-    }
-
-
-    .hero-background {
-        object-position: center;
-    }
-
-
-    /* same horizontal overlay as desktop */
-
-    .hero-overlay {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(8, 15, 20, 0.58) 0%,
-                rgba(8, 15, 20, 0.34) 37%,
-                rgba(8, 15, 20, 0.08) 68%,
-                rgba(8, 15, 20, 0.02) 100%
-            );
-    }
-
-
-    /* same content position */
-
-    .hero-content {
-        width: min(720px, 60%);
-
-        padding-bottom: 0;
-    }
-
-
-    .eyebrow {
-        margin-bottom: 12px;
-
-        font-size: 6px;
-    }
-
-
-    .project-hero h1 {
-        font-size: 11vw;
-
-        line-height: 0.80;
-        letter-spacing: -0.065em;
-    }
-
-
-    .project-intro {
-        max-width: 220px;
-
-        margin-top: 20px;
-
-        font-size: 6px;
-        line-height: 1.75;
-    }
-
-
-    /* =====================================
-       COORDINATES
-    ====================================== */
-
-    .image-coordinate {
-        top: 18px;
-        right: 4.5vw;
-
-        gap: 2px;
-
-        font-size: 5px;
-    }
-
-
-    /* =====================================
-       HERO BOTTOM
-    ====================================== */
-
-    .hero-bottom {
-        left: 4.5vw;
-        right: 4.5vw;
-        bottom: 18px;
-
-        font-size: 5px;
-    }
-
-
-    /* =====================================
-       COUNTRY SECTION
-    ====================================== */
-
-    .data-section {
-        padding: 50px 4.5vw 75px;
-    }
-
-
-    /* =====================================
-       COUNTRY SELECTOR
-    ====================================== */
-
-    .country-selector {
-        width: min(1180px, 100%);
-
-        margin: 0 auto 14px;
-    }
-
-
-    .country-selector label {
-        margin-bottom: 7px;
-
-        font-size: 6px;
-    }
-
-
-    #country-select {
-        padding:
-            11px
-            35px
-            11px
-            12px;
-
-        font-size: 9px;
-    }
-
-
-    .select-wrapper::after {
-        right: 12px;
-
-        font-size: 9px;
-    }
-
-
-    /* =====================================
-       COUNTRY CARD
-       SAME COMPOSITION AS DESKTOP
-    ====================================== */
-
-    .country-card {
-        width: min(1180px, 100%);
-
-        min-height: 320px;
-    }
-
-
-    .country-card-content {
-        min-height: 320px;
-
-        padding: 25px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        justify-content: space-between;
-    }
-
-
-    /* =====================================
-       FLAG
-       SAME AS DESKTOP
-    ====================================== */
-
-    .country-flag {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-    }
-
-
-    /* same horizontal cream overlay */
-
-    .flag-overlay {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(243, 237, 227, 0.95) 0%,
-                rgba(243, 237, 227, 0.89) 45%,
-                rgba(243, 237, 227, 0.52) 100%
-            );
-    }
-
-
-    /* =====================================
-       COUNTRY TITLE
-    ====================================== */
-
-    .country-title {
-        width: 100%;
-    }
-
-
-    .country-title-top {
-        gap: 15px;
-
-        margin-bottom: 10px;
-    }
-
-
-    .country-title-top span {
-        font-size: 5px;
-    }
-
-
-    .country-title h2 {
-        max-width: 70%;
-
-        font-size: 8vw;
-
-        line-height: 0.88;
-        letter-spacing: -0.055em;
-    }
-
-
-    /* =====================================
-       DATA GRID
-       KEEP TWO COLUMNS
-    ====================================== */
-
-    .data-grid {
-        width: 67%;
-
-        margin-top: 40px;
-
-        display: grid;
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        border-top:
-            1px solid
-            rgba(21, 19, 19, 0.22);
-    }
-
-
-    .data-item {
-        min-height: 62px;
-
-        padding:
-            10px
-            12px
-            10px
-            0;
-
-        display: flex;
-
-        flex-direction: column;
-
-        justify-content: space-between;
-
-        border-bottom:
-            1px solid
-            rgba(21, 19, 19, 0.22);
-    }
-
-
-    .data-item:nth-child(even) {
-        padding-left: 12px;
-
-        border-left:
-            1px solid
-            rgba(21, 19, 19, 0.22);
-    }
-
-
-    .data-item span {
-        font-size: 5px;
-    }
-
-
-    .data-item strong {
-        margin-top: 8px;
-
-        font-size: 3.5vw;
-
-        line-height: 1.05;
-    }
-
-
-    /* =====================================
-       API NOTE
-    ====================================== */
-
-    .api-note {
-        margin-top: 10px;
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 5px;
-
-        font-size: 5px;
-
-        line-height: 1.5;
-    }
-
-
-    .live-dot {
-        width: 4px;
-        height: 4px;
-    }
-
-
-    /* =====================================
-       SECTION LABEL
-    ====================================== */
-
-    .section-label {
-        font-size: 6px;
-
-        letter-spacing: 0.12em;
-    }
-
-
-    /* =====================================
-       PROJECT INFO
-       KEEP TWO COLUMNS
-    ====================================== */
-
-    .case-info {
-        padding:
-            70px
-            4.5vw
-            75px;
-
-        display: grid;
-
-        grid-template-columns:
-            1.2fr 0.8fr;
-
-        gap: 10vw;
-    }
-
-
-    .case-left h2 {
-        margin-top: 14px;
-
-        font-size: 7vw;
-
-        line-height: 0.92;
-    }
-
-
-    .case-right {
-        align-self: center;
-
-        margin-top: 0;
-    }
-
-
-    .case-right p {
-        margin-bottom: 12px;
-
-        font-size: 6px;
-
-        line-height: 1.75;
-    }
-
-
-    .case-right .case-lead {
-        font-size: 10px;
-
-        line-height: 1.35;
-    }
-
-
-    /* =====================================
-       TOOLS
-       SAME COMPOSITION
-    ====================================== */
-
-    .tools-section {
-        padding:
-            40px
-            4.5vw
-            55px;
-    }
-
-
-    .tools {
-        margin-top: 16px;
-
-        display: flex;
-
-        flex-wrap: wrap;
-
-        gap: 5px;
-    }
-
-
-    .tools span {
-        padding:
-            6px
-            9px;
-
-        font-size: 6px;
-    }
-
-
-    /* =====================================
-       BACK TO WORK
-       SAME SIDE-BY-SIDE DESIGN
-    ====================================== */
-
-    .next-project {
-        min-height: 230px;
-
-        padding:
-            45px
-            4.5vw;
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: center;
-    }
-
-
-    .next-project h2 {
-        margin-top: 10px;
-
-        font-size: 8vw;
-
-        line-height: 0.9;
-    }
-
-
-    .next-arrow {
-        font-size: 8vw;
-    }
-
-
-    /* =====================================
-       FOOTER
-       SAME COMPOSITION
-    ====================================== */
-
-    .project-footer {
-        padding:
-            18px
-            4.5vw;
-
-        display: flex;
-
-        justify-content: space-between;
-
-        align-items: center;
-
-        gap: 15px;
-    }
-
-
-    .project-footer p {
-        font-size: 5px;
-    }
-
-
-    .project-footer p:last-child {
-        text-align: right;
-    }
-
+    flex-shrink: 0;
 }
 
+.css-arrow::before {
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+    height: 2px;
+
+    background: currentColor;
+
+    top: 13px;
+    left: 0;
+
+    transform: rotate(-45deg);
+}
+
+.css-arrow::after {
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+
+    top: 0;
+    right: 0;
+}
+
+
 /* =========================================
-   GLOBAL DATA — MOBILE DESIGN
-   EDITORIAL MOBILE EXPERIENCE
+   MOBILE — GLOBAL DATA
 ========================================= */
 
 @media (max-width: 700px) {
@@ -1324,7 +839,13 @@ a {
 
     .project-nav {
         height: var(--nav-height);
+
         padding: 0 6%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         gap: 12px;
     }
 
@@ -1333,6 +854,26 @@ a {
         font-size: 9px;
         letter-spacing: 0.07em;
         line-height: 1.4;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+
+        min-height: 44px;
+        gap: 9px;
+
+        white-space: nowrap;
+    }
+
+    /* One arrow only, generated by CSS */
+
+    .back-link::before {
+        content: "←";
+
+        font-family: Arial, sans-serif;
+        font-size: 19px;
+        line-height: 1;
     }
 
     .project-name {
@@ -1372,23 +913,27 @@ a {
     .hero-content {
         width: 100%;
         max-width: 100%;
+
         padding-bottom: 20px;
     }
 
     .eyebrow {
         margin-bottom: 25px;
+
         font-size: 10px;
         letter-spacing: 0.12em;
     }
 
     .project-hero h1 {
         font-size: clamp(70px, 18vw, 105px);
+
         line-height: 0.9;
         letter-spacing: -0.065em;
     }
 
     .project-intro {
         max-width: 330px;
+
         margin-top: 32px;
 
         font-size: 16px;
@@ -1403,23 +948,20 @@ a {
     .image-coordinate {
         top: 25px;
         right: 6%;
+
         gap: 5px;
+
         font-size: 9px;
     }
 
 
     /* =====================================
-       COUNTRY SECTION
+       COUNTRY EXPLORER
     ====================================== */
 
     .data-section {
         padding: 75px 6% 90px;
     }
-
-
-    /* =====================================
-       COUNTRY SELECTOR
-    ====================================== */
 
     .country-selector {
         width: 100%;
@@ -1466,11 +1008,6 @@ a {
         justify-content: space-between;
     }
 
-
-    /* =====================================
-       FLAG
-    ====================================== */
-
     .country-flag {
         width: 100%;
         height: 100%;
@@ -1486,11 +1023,6 @@ a {
             rgba(243, 237, 227, 0.75) 100%
         );
     }
-
-
-    /* =====================================
-       COUNTRY TITLE
-    ====================================== */
 
     .country-title-top {
         gap: 15px;
@@ -1514,7 +1046,7 @@ a {
 
 
     /* =====================================
-       DATA GRID
+       COUNTRY DATA GRID
     ====================================== */
 
     .data-grid {
@@ -1576,14 +1108,15 @@ a {
 
 
     /* =====================================
-       PROJECT INFO
+       PROJECT DESCRIPTION
     ====================================== */
 
     .case-info {
-        padding: 100px 6%;
+        padding: 100px 6% 0;
 
         display: flex;
         flex-direction: column;
+
         gap: 45px;
     }
 
@@ -1607,6 +1140,7 @@ a {
     .case-right .case-lead {
         font-size: 26px;
         line-height: 1.35;
+
         margin-bottom: 30px;
     }
 
@@ -1617,56 +1151,104 @@ a {
         line-height: 1.75;
     }
 
+    .case-right p:last-child {
+        margin-bottom: 0;
+    }
+
 
     /* =====================================
        BUILT WITH
+       DIRECTLY BELOW PROJECT DESCRIPTION
     ====================================== */
 
     .tools-section {
-        padding: 65px 6% 90px;
+        padding: 35px 6% 90px;
+
+        background: var(--cream);
+        border-top: none;
+    }
+
+    .tools-section .section-label {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+
+        margin-bottom: 18px;
     }
 
     .tools {
-        margin-top: 25px;
+        display: flex;
+        flex-wrap: wrap;
+
         gap: 10px;
+        margin-top: 0;
     }
 
     .tools span {
-        padding: 12px 17px;
-        font-size: 13px;
+        padding: 10px 15px;
+
+        font-size: 12px;
+
+        border: 1px solid rgba(21, 19, 19, 0.22);
+        border-radius: 100px;
+
+        background: transparent;
     }
 
 
     /* =====================================
-       BACK TO WORK
+       BACK TO SELECTED WORK
     ====================================== */
 
     .next-project {
-        min-height: 340px;
+        position: relative;
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        min-height: 350px;
 
         padding: 65px 6%;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        background: var(--burgundy);
+        color: var(--cream);
+
         gap: 15px;
     }
 
-    .next-project h2 {
-        margin-top: 20px;
+    .next-project > div {
+        position: relative;
+        z-index: 2;
+    }
 
-        font-size: clamp(48px, 12vw, 70px);
+    .next-project .section-label {
+        color: rgba(255, 255, 255, 0.7);
+
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+
+    .next-project h2 {
+        margin: 0;
+
+        font-family: "Playfair Display", serif;
+
+        font-size: clamp(50px, 12vw, 70px);
 
         line-height: 0.95;
+        color: var(--cream);
     }
 
-    .next-arrow {
+    .next-project h2 em {
+        display: block;
+    }
+
+    .next-project .css-arrow {
         flex-shrink: 0;
-    }
-
-    .css-arrow {
-        width: 28px;
-        height: 28px;
+        color: var(--cream);
     }
 
 
@@ -1682,6 +1264,9 @@ a {
         align-items: flex-start;
 
         gap: 12px;
+
+        background: var(--burgundy-dark);
+        color: var(--cream);
     }
 
     .project-footer p {
@@ -1737,99 +1322,6 @@ a {
 
     * {
         transition-duration: 0.01ms !important;
-    }
-
-}
-/* =========================================
-   BACK TO WORK ARROW
-========================================= */
-
-.css-arrow {
-    position: relative;
-    display: inline-block;
-    width: 28px;
-    height: 28px;
-}
-
-.css-arrow::before {
-    content: "";
-    position: absolute;
-
-    width: 30px;
-    height: 2px;
-
-    background: currentColor;
-
-    top: 13px;
-    left: 0;
-
-    transform: rotate(-45deg);
-}
-
-.css-arrow::after {
-    content: "";
-    position: absolute;
-
-    width: 14px;
-    height: 14px;
-
-    border-top: 2px solid currentColor;
-    border-right: 2px solid currentColor;
-
-    top: 0;
-    right: 0;
-} 
-/* =========================================
-   GLOBAL DATA — BUILT WITH MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-    /* PROJECT DESCRIPTION */
-
-    .case-info {
-        padding-bottom: 0;
-    }
-
-    .case-right p:last-child {
-        margin-bottom: 0;
-    }
-
-
-    /* BUILT WITH */
-
-    .tools-section {
-        padding: 35px 6% 90px;
-
-        background: var(--cream);
-
-        border-top: none;
-    }
-
-    .tools-section .section-label {
-        font-size: 10px;
-        letter-spacing: 0.12em;
-        margin-bottom: 18px;
-    }
-
-    .tools {
-        display: flex;
-        flex-wrap: wrap;
-
-        gap: 10px;
-
-        margin-top: 0;
-    }
-
-    .tools span {
-        padding: 10px 15px;
-
-        font-size: 12px;
-
-        border: 1px solid rgba(21, 19, 19, 0.22);
-        border-radius: 100px;
-
-        background: transparent;
     }
 
 }

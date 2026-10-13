@@ -35,9 +35,7 @@ html {
 body {
     background: var(--cream);
     color: var(--ink);
-
     font-family: "Manrope", sans-serif;
-
     overflow-x: hidden;
 }
 
@@ -59,13 +57,11 @@ a {
     min-height: 520px;
 
     overflow: hidden;
-
     background: var(--black);
 }
 
 .hero-video {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
@@ -77,7 +73,6 @@ a {
 
 .hero-overlay {
     position: absolute;
-
     inset: 0;
 
     background: linear-gradient(
@@ -91,37 +86,30 @@ a {
 
 
 /* =========================================
-   NAVIGATION
+   NAVIGATION — DESKTOP
 ========================================= */
 
 .navbar {
     position: absolute;
-
     top: 0;
     left: 0;
 
     width: 100%;
-
     padding: 28px 4vw;
 
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
     z-index: 10;
-
     color: var(--cream-light);
 }
 
 .nav-small,
 .nav-link {
     font-family: "DM Mono", monospace;
-
     font-size: 11px;
-
     letter-spacing: 0.14em;
-
     text-transform: uppercase;
 }
 
@@ -138,7 +126,6 @@ a {
     content: "";
 
     position: absolute;
-
     left: 0;
     bottom: -6px;
 
@@ -146,7 +133,6 @@ a {
     height: 1px;
 
     background: currentColor;
-
     transition: width 0.3s ease;
 }
 
@@ -156,7 +142,7 @@ a {
 
 
 /* =========================================
-   HERO NAME
+   HERO NAME — DESKTOP
 ========================================= */
 
 .hero-title {
@@ -172,11 +158,9 @@ a {
     font-family: "Inter Tight", sans-serif;
 
     font-size: clamp(65px, 9vw, 145px);
-
     font-weight: 200;
 
     line-height: 0.78;
-
     letter-spacing: -0.055em;
 
     color: var(--cream-light);
@@ -196,9 +180,7 @@ a {
     z-index: 2;
 
     display: flex;
-
     align-items: center;
-
     gap: 20px;
 
     color: var(--cream-light);
@@ -215,15 +197,13 @@ a {
     font-family: "DM Mono", monospace;
 
     font-size: 10px;
-
     line-height: 1.65;
-
     letter-spacing: 0.16em;
 }
 
 
 /* =========================================
-   INTRO
+   INTRO — DESKTOP
 ========================================= */
 
 .intro-section {
@@ -233,15 +213,12 @@ a {
     );
 
     margin: 0 auto;
-
     padding: 75px 0 90px;
 
     display: grid;
-
     grid-template-columns: 1.25fr 0.75fr;
 
     gap: 10vw;
-
     align-items: center;
 }
 
@@ -249,7 +226,6 @@ a {
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     letter-spacing: 0.14em;
 
     text-transform: uppercase;
@@ -263,11 +239,9 @@ a {
     font-family: "Playfair Display", serif;
 
     font-size: clamp(55px, 6vw, 94px);
-
     font-weight: 400;
 
     line-height: 0.92;
-
     letter-spacing: -0.05em;
 }
 
@@ -284,13 +258,12 @@ a {
     font-family: "Playfair Display", serif;
 
     font-size: 20px;
-
     line-height: 1.45;
 }
 
 
 /* =========================================
-   WORK
+   WORK — DESKTOP
 ========================================= */
 
 .work-section {
@@ -300,33 +273,25 @@ a {
     );
 
     margin: 0 auto;
-
     padding-bottom: 80px;
 }
-
-
-/* WORK HEADER */
 
 .work-heading {
     margin-bottom: 20px;
 
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     letter-spacing: 0.16em;
 }
 
 .work-heading-left {
     display: flex;
-
     align-items: center;
-
     gap: 20px;
 }
 
@@ -339,29 +304,24 @@ a {
 
 
 /* =========================================
-   PROJECT SHOWCASE
+   PROJECT SHOWCASE — DESKTOP
 ========================================= */
 
 .project-showcase {
     display: flex;
-
     flex-direction: column;
-
     gap: 10px;
 }
 
 .showcase-project {
     position: relative;
-
     display: block;
 
     overflow: hidden;
-
     min-height: 0;
 
     background: var(--black);
 }
-
 
 /* ARSENAL — FULL WIDTH */
 
@@ -369,24 +329,17 @@ a {
     aspect-ratio: 1280 / 480;
 }
 
-
-/* PROJECT ROWS — TWO COLUMNS */
+/* TWO-COLUMN PROJECT ROWS */
 
 .project-row {
     display: grid;
-
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-
     gap: 10px;
 }
-
-
-/* SAME CARD PROPORTIONS ON ALL SCREENS */
 
 .project-row .showcase-project {
     aspect-ratio: 635 / 390;
 }
-
 
 /* SCRAPING — FULL WIDTH */
 
@@ -401,7 +354,6 @@ a {
 
 .showcase-image {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
@@ -414,44 +366,28 @@ a {
         transform 0.8s cubic-bezier(.2,.7,.2,1);
 }
 
-
-/* ARSENAL */
-
 .arsenal-image {
     background-image: url("assets/arsenal.jpg");
-
     background-size: cover;
     background-position: center;
 }
-
-
-/* WEATHER × WINE */
 
 .wine-image {
     background-image: url("assets/wine.jpg");
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
-
-/* GLOBAL DATA */
 
 .global-image {
     background-image: url("assets/globaldata.jpg");
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-
-/* SCRAPING */
-
 .scraping-image {
     background-image: url("assets/scraping.jpg");
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -459,19 +395,15 @@ a {
 
 
 /* =========================================
-   05 AROMA ROAST
+   AROMA ROAST
 ========================================= */
 
 .aroma-image {
     background-image: url("assets/Aroma Roast.png");
-
     background-size: cover;
     background-position: center 60%;
     background-repeat: no-repeat;
 }
-
-
-/* AROMA ROAST OVERLAY */
 
 .project-aroma .showcase-overlay {
     background: linear-gradient(
@@ -484,15 +416,12 @@ a {
 
 
 /* =========================================
-   06 COMING SOON
+   COMING SOON
 ========================================= */
 
 .project-coming-soon {
     background: #541f2b;
 }
-
-
-/* BACKGROUND */
 
 .coming-soon-image {
     background:
@@ -509,9 +438,6 @@ a {
         );
 }
 
-
-/* SOFT OVERLAY */
-
 .coming-soon-overlay {
     background: linear-gradient(
         90deg,
@@ -519,9 +445,6 @@ a {
         rgba(15, 10, 9, 0.02)
     );
 }
-
-
-/* COMING SOON TEXT */
 
 .project-coming-soon .showcase-content,
 .project-coming-soon .project-side-text {
@@ -544,7 +467,6 @@ a {
 
 .showcase-overlay {
     position: absolute;
-
     inset: 0;
 
     background: linear-gradient(
@@ -577,19 +499,16 @@ a {
     left: 42px;
 
     z-index: 2;
-
     color: var(--cream-light);
 }
 
 .showcase-number {
     display: block;
-
     margin-bottom: 22px;
 
     font-family: "DM Mono", monospace;
 
     font-size: 10px;
-
     letter-spacing: 0.1em;
 }
 
@@ -597,11 +516,9 @@ a {
     font-family: "Playfair Display", serif;
 
     font-size: clamp(40px, 4vw, 68px);
-
     font-weight: 400;
 
     line-height: 0.95;
-
     letter-spacing: -0.04em;
 }
 
@@ -611,7 +528,6 @@ a {
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     letter-spacing: 0.12em;
 }
 
@@ -619,7 +535,6 @@ a {
     display: inline-block;
 
     margin-top: 28px;
-
     padding-bottom: 3px;
 
     border-bottom: 1px solid currentColor;
@@ -627,7 +542,6 @@ a {
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     letter-spacing: 0.1em;
 }
 
@@ -640,20 +554,14 @@ a {
     z-index: 2;
 
     text-align: right;
-
     color: var(--cream-light);
 
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
-
     line-height: 1.5;
-
     letter-spacing: 0.16em;
 }
-
-
-/* SCRAPING DARK TEXT */
 
 .project-scraping .showcase-content,
 .project-scraping .project-side-text {
@@ -662,7 +570,7 @@ a {
 
 
 /* =========================================
-   ABOUT
+   ABOUT — DESKTOP
 ========================================= */
 
 .about-section {
@@ -674,40 +582,28 @@ a {
     margin: 0 auto 10px;
 
     display: grid;
-
     grid-template-columns: 0.7fr 1.25fr 0.8fr;
 
     min-height: 420px;
-
     background: var(--cream-light);
 }
-
-
-/* PHOTO COLUMN */
 
 .about-photo {
     padding: 55px 0;
 
     display: flex;
-
     align-items: center;
-
     overflow: hidden;
 }
 
 .about-image {
     width: 100%;
-
     aspect-ratio: 0.7 / 1;
 
     display: block;
-
     object-fit: cover;
     object-position: center center;
 }
-
-
-/* ABOUT COPY */
 
 .about-copy {
     padding: 55px 50px;
@@ -719,21 +615,17 @@ a {
     font-family: "Playfair Display", serif;
 
     font-size: clamp(30px, 4vw, 50px);
-
     font-weight: 400;
 
     line-height: 0.95;
-
     letter-spacing: -0.04em;
 }
 
 .about-text {
     max-width: 550px;
-
     margin-top: 24px;
 
     font-size: 15px;
-
     line-height: 1.7;
 
     color: var(--soft);
@@ -741,7 +633,6 @@ a {
 
 .about-skills {
     margin: 55px 0;
-
     padding: 0 35px;
 
     border-left: 1px solid rgba(24,22,20,0.15);
@@ -756,9 +647,7 @@ a {
     margin-top: 25px;
 
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 8px;
 }
 
@@ -766,7 +655,6 @@ a {
     padding: 8px 13px;
 
     border: 1px solid rgba(24,22,20,0.18);
-
     border-radius: 100px;
 
     font-size: 11px;
@@ -774,18 +662,15 @@ a {
 
 
 /* =========================================
-   CONTACT
+   CONTACT — DESKTOP
 ========================================= */
 
 .contact-section {
     min-height: 400px;
-
     padding: 70px 5vw;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 60px;
@@ -807,11 +692,9 @@ a {
     font-family: "Playfair Display", serif;
 
     font-size: clamp(60px, 7vw, 105px);
-
     font-weight: 400;
 
     line-height: 0.85;
-
     letter-spacing: -0.05em;
 }
 
@@ -821,35 +704,27 @@ a {
 
 .contact-links {
     display: flex;
-
     gap: 12px;
 }
 
 .contact-links a {
     width: 200px;
-
     padding: 14px 17px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     background: var(--burgundy);
-
     color: var(--cream-light);
 
     border: 1px solid rgba(255,255,255,.45);
-
     border-radius: 4px;
 
     font-family: "Inter Tight", sans-serif;
 
     font-size: 11px;
-
     font-weight: 400;
-
     letter-spacing: 0.04em;
 
     transition:
@@ -861,9 +736,7 @@ a {
 
 .contact-links a:hover {
     background: var(--cream-light);
-
     color: var(--burgundy);
-
     border-color: var(--cream-light);
 
     transform: translateY(-2px);
@@ -871,24 +744,21 @@ a {
 
 
 /* =========================================
-   FOOTER
+   FOOTER — DESKTOP
 ========================================= */
 
 footer {
     padding: 28px 5vw;
 
     display: flex;
-
     justify-content: space-between;
 
     background: var(--burgundy);
-
     color: var(--cream-light);
 
     font-family: "DM Mono", monospace;
 
     font-size: 11px;
-
     letter-spacing: 0.1em;
 }
 
@@ -909,7 +779,6 @@ footer {
 
 .arrow-up::before {
     content: "";
-
     position: absolute;
 
     width: 12px;
@@ -925,7 +794,6 @@ footer {
 
 .arrow-up::after {
     content: "";
-
     position: absolute;
 
     width: 6px;
@@ -940,361 +808,8 @@ footer {
 
 
 /* =========================================
-   MOBILE
-   SAME COMPOSITION AS DESKTOP
-   SCALED DOWN
-========================================= */
-
-@media (max-width: 700px) {
-
-    /* HERO */
-
-    .hero {
-        height: 58vh;
-        min-height: 360px;
-    }
-
-    .hero-video {
-        object-position: center 61%;
-    }
-
-
-    /* NAVIGATION */
-
-    .navbar {
-        padding: 16px 4vw;
-    }
-
-    .nav-small,
-    .nav-link {
-        font-size: 6px;
-        letter-spacing: 0.14em;
-    }
-
-    .nav-menu {
-        gap: 12px;
-    }
-
-
-    /* HERO NAME */
-
-    .hero-title {
-        left: 4vw;
-        bottom: 28px;
-    }
-
-    .hero-title h1 {
-        font-size: 9vw;
-        line-height: 0.78;
-        letter-spacing: -0.055em;
-    }
-
-
-    /* HERO STATEMENT */
-
-    .hero-statement {
-        right: 5vw;
-        bottom: 30px;
-        gap: 8px;
-    }
-
-    .statement-line {
-        height: 28px;
-    }
-
-    .hero-statement p {
-        font-size: 5px;
-        line-height: 1.65;
-        letter-spacing: 0.16em;
-    }
-
-
-    /* INTRO */
-
-    .intro-section {
-        width: calc(100% - 8vw);
-
-        padding: 35px 0 45px;
-
-        grid-template-columns: 1.25fr 0.75fr;
-
-        gap: 10vw;
-
-        align-items: center;
-    }
-
-    .small-label {
-        font-size: 5px;
-        letter-spacing: 0.14em;
-    }
-
-    .intro-left .small-label {
-        margin-bottom: 12px;
-    }
-
-    .intro-left h2 {
-        font-size: 6vw;
-        line-height: 0.92;
-    }
-
-    .intro-right {
-        max-width: 430px;
-    }
-
-    .intro-right p {
-        font-size: 9px;
-        line-height: 1.45;
-    }
-
-
-    /* WORK */
-
-    .work-section {
-        width: calc(100% - 6vw);
-
-        padding-bottom: 45px;
-    }
-
-    .work-heading {
-        margin-bottom: 10px;
-
-        font-size: 5px;
-
-        letter-spacing: 0.16em;
-    }
-
-    .work-heading-left {
-        gap: 8px;
-    }
-
-    .work-line {
-        width: 45px;
-    }
-
-
-    /* PROJECT SHOWCASE */
-
-    .project-showcase {
-        gap: 5px;
-    }
-
-    .project-arsenal {
-        aspect-ratio: 1280 / 480;
-        min-height: 0;
-    }
-
-    .project-row {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-
-        gap: 5px;
-    }
-
-    .project-row .showcase-project {
-        aspect-ratio: 635 / 390;
-        min-height: 0;
-    }
-
-    .project-scraping {
-        aspect-ratio: 1280 / 340;
-        min-height: 0;
-    }
-
-
-    /* PROJECT CONTENT */
-
-    .showcase-content {
-        top: 3vw;
-        left: 3.3vw;
-    }
-
-    .showcase-number {
-        margin-bottom: 10px;
-        font-size: 6px;
-    }
-
-    .showcase-content h3 {
-        font-size: 5vw;
-        line-height: 0.95;
-    }
-
-    .project-row .showcase-content h3 {
-        font-size: 4.7vw;
-    }
-
-    .showcase-content p {
-        margin-top: 8px;
-
-        font-size: 5px;
-    }
-
-    .view-project {
-        margin-top: 12px;
-
-        font-size: 5px;
-    }
-
-    .project-side-text {
-        right: 2.2vw;
-        bottom: 2vw;
-
-        font-size: 5px;
-
-        line-height: 1.5;
-    }
-
-
-    /* AROMA ROAST */
-
-    .aroma-image {
-        background-position: center 60%;
-    }
-
-    .project-aroma .showcase-content h3 {
-        font-size: 4.7vw;
-    }
-
-
-    /* COMING SOON */
-
-    .project-coming-soon .showcase-content h3 {
-        font-size: 4.7vw;
-    }
-
-
-    /* ABOUT */
-
-    .about-section {
-        width: calc(100% - 6vw);
-
-        grid-template-columns:
-            0.7fr 1.25fr 0.8fr;
-
-        min-height: 240px;
-    }
-
-    .about-photo {
-        padding: 28px 0;
-
-        display: flex;
-
-        align-items: center;
-    }
-
-    .about-image {
-        width: 100%;
-
-        aspect-ratio: 0.7 / 1;
-
-        object-fit: cover;
-        object-position: center center;
-    }
-
-    .about-copy {
-        padding: 28px 20px;
-    }
-
-    .about-copy h2 {
-        margin-top: 10px;
-
-        font-size: 4vw;
-
-        line-height: 0.95;
-    }
-
-    .about-text {
-        margin-top: 12px;
-
-        font-size: 6px;
-
-        line-height: 1.7;
-    }
-
-    .about-skills {
-        margin: 28px 0;
-
-        padding: 0 15px;
-
-        border-left: 1px solid rgba(24,22,20,0.15);
-    }
-
-
-    /* SKILLS */
-
-    .skills {
-        margin-top: 12px;
-
-        gap: 4px;
-    }
-
-    .skills span {
-        padding: 4px 6px;
-
-        font-size: 5px;
-    }
-
-
-    /* CONTACT */
-
-    .contact-section {
-        min-height: 230px;
-
-        padding: 35px 5vw;
-
-        flex-direction: row;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        gap: 25px;
-    }
-
-    .contact-left .small-label {
-        margin-bottom: 10px;
-
-        font-size: 5px;
-    }
-
-    .contact-left h2 {
-        font-size: 7vw;
-
-        line-height: 0.85;
-    }
-
-    .contact-links {
-        display: flex;
-
-        flex-direction: row;
-
-        gap: 6px;
-    }
-
-    .contact-links a {
-        width: auto;
-        min-width: 80px;
-
-        padding: 8px 10px;
-
-        font-size: 5px;
-    }
-
-
-    /* FOOTER */
-
-    footer {
-        padding: 15px 5vw;
-
-        flex-direction: row;
-
-        justify-content: space-between;
-
-        font-size: 5px;
-    }
-}
-
-/* =========================================
-   EMMA LUNDSTRÖM — MOBILE PORTFOLIO
-   EDITORIAL MOBILE EXPERIENCE
+   MOBILE DESIGN
+   COMPLETE RESPONSIVE VERSION
 ========================================= */
 
 @media (max-width: 700px) {
@@ -1311,15 +826,16 @@ footer {
 
 
     /* =====================================
-       HERO
+       HERO — FULLSCREEN
     ====================================== */
 
     .hero {
+        position: relative;
+
         height: 100svh;
         min-height: 580px;
         max-height: 950px;
 
-        position: relative;
         overflow: hidden;
     }
 
@@ -1343,51 +859,101 @@ footer {
 
     /* =====================================
        NAVIGATION
+       GROWTH MARKETING LEFT
+       WORK / ABOUT / CONTACT RIGHT
     ====================================== */
 
     .navbar {
-        padding: 28px 6%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        padding: 26px 5%;
 
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
 
-        gap: 20px;
+        gap: 8px;
+        z-index: 10;
     }
+
+    /* Show shortened label only on mobile */
 
     .nav-small {
-        font-size: 10px;
-        letter-spacing: 0.1em;
+        display: block;
+
+        font-size: 0;
+        letter-spacing: 0;
+
+        white-space: nowrap;
+        flex-shrink: 0;
     }
+
+    .nav-small::after {
+        content: "GROWTH MARKETING";
+
+        font-family: "DM Mono", monospace;
+
+        font-size: 8px;
+        letter-spacing: 0.02em;
+
+        color: var(--cream-light);
+    }
+
+    /* Menu to the right */
 
     .nav-menu {
         display: flex;
-        gap: 25px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 14px;
+        flex-shrink: 0;
     }
 
     .nav-link {
-        font-size: 10px;
-        letter-spacing: 0.1em;
+        font-size: 9px;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
     }
 
 
     /* =====================================
-       HERO NAME
+       HERO NAME — MOVED UP
     ====================================== */
 
     .hero-title {
+        position: absolute;
+
         left: 6%;
         right: 6%;
-        bottom: 65px;
+        bottom: 145px;
+
+        z-index: 2;
     }
 
     .hero-title h1 {
-        font-size: clamp(49px, 12.5vw, 78px);
+        font-family: "Inter Tight", sans-serif;
 
-        line-height: 0.9;
+        font-size: clamp(46px, 12vw, 70px);
+        font-weight: 200;
+
+        line-height: 0.92;
         letter-spacing: -0.055em;
 
+        color: var(--cream-light);
+
         overflow-wrap: normal;
+    }
+
+    /* Hide the desktop hero statement on mobile */
+
+    .hero-statement {
+        display: none;
     }
 
 
@@ -1445,13 +1011,21 @@ footer {
         font-size: 10px;
     }
 
+    .work-heading-left {
+        gap: 12px;
+    }
+
+    .work-line {
+        width: 45px;
+    }
+
     .project-showcase {
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
 
-    /* Project rows become vertical */
+    /* One project card per row */
 
     .project-row {
         display: flex;
@@ -1459,19 +1033,14 @@ footer {
         gap: 15px;
     }
 
-    /* All project cards */
-
     .showcase-project,
     .project-arsenal,
     .project-scraping,
     .project-row .showcase-project {
         width: 100%;
-
         aspect-ratio: auto;
         min-height: 350px;
     }
-
-    /* Individual card heights */
 
     .project-arsenal {
         min-height: 420px;
@@ -1504,18 +1073,9 @@ footer {
         background-position: center;
     }
 
-    .arsenal-image {
-        background-position: center;
-    }
-
-    .wine-image {
-        background-position: center;
-    }
-
-    .global-image {
-        background-position: center;
-    }
-
+    .arsenal-image,
+    .wine-image,
+    .global-image,
     .scraping-image {
         background-position: center;
     }
@@ -1535,6 +1095,11 @@ footer {
         right: 22px;
     }
 
+    .showcase-number {
+        margin-bottom: 18px;
+        font-size: 10px;
+    }
+
     .showcase-content h3,
     .project-row .showcase-content h3,
     .project-aroma .showcase-content h3,
@@ -1545,6 +1110,7 @@ footer {
 
     .showcase-content p {
         margin-top: 14px;
+
         font-size: 10px;
         line-height: 1.6;
     }
@@ -1557,6 +1123,7 @@ footer {
     .project-side-text {
         right: 20px;
         bottom: 20px;
+
         font-size: 9px;
         line-height: 1.6;
     }
@@ -1573,7 +1140,6 @@ footer {
         flex-direction: column;
 
         min-height: auto;
-
         margin-bottom: 80px;
     }
 
@@ -1653,6 +1219,10 @@ footer {
         gap: 50px;
     }
 
+    .contact-left {
+        width: 100%;
+    }
+
     .contact-left .small-label {
         margin-bottom: 25px;
     }
@@ -1667,7 +1237,6 @@ footer {
 
         display: flex;
         flex-direction: column;
-
         gap: 12px;
     }
 
@@ -1676,13 +1245,12 @@ footer {
         min-height: 55px;
 
         padding: 17px 20px;
-
         font-size: 13px;
     }
 
 
     /* =====================================
-       FOOTER
+       FOOTER — DIRECTLY BELOW CONTACT
     ====================================== */
 
     footer {
@@ -1693,6 +1261,9 @@ footer {
         align-items: flex-start;
 
         gap: 12px;
+
+        background: var(--burgundy);
+        color: var(--cream-light);
 
         font-size: 10px;
         line-height: 1.5;
@@ -1707,18 +1278,49 @@ footer {
 
 @media (max-width: 380px) {
 
+    /* NAVIGATION */
+
+    .navbar {
+        padding: 24px 4%;
+        gap: 5px;
+    }
+
+    .nav-small::after {
+        font-size: 7px;
+    }
+
+    .nav-menu {
+        gap: 8px;
+    }
+
+    .nav-link {
+        font-size: 8px;
+    }
+
+    /* HERO */
+
+    .hero-title {
+        bottom: 135px;
+    }
+
     .hero-title h1 {
         font-size: 12vw;
     }
+
+    /* INTRO */
 
     .intro-left h2 {
         font-size: 10vw;
     }
 
+    /* PROJECTS */
+
     .showcase-content h3,
     .project-row .showcase-content h3 {
         font-size: 9vw;
     }
+
+    /* ABOUT */
 
     .about-copy {
         padding-inline: 20px;
@@ -1727,6 +1329,8 @@ footer {
     .about-skills {
         padding-inline: 20px;
     }
+
+    /* CONTACT */
 
     .contact-left h2 {
         font-size: 11vw;
@@ -1748,4 +1352,5 @@ footer {
     * {
         transition-duration: 0.01ms !important;
     }
+
 }
